@@ -280,9 +280,27 @@ body {
 }
 
 /* Hero */
-.hero { position: relative; min-height: 100vh; overflow: hidden; }
-.hero-media { position: absolute; inset: 0; z-index: 0; }
-.hero-video { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.9) contrast(1.05) brightness(0.9); }
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  contain: layout style paint; /* Prevent content from bleeding outside */
+  isolation: isolate; /* Create new stacking context */
+}
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  contain: layout style; /* Contain video within this element */
+}
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.9) contrast(1.05) brightness(0.9);
+  max-width: 100%; /* Prevent overflow */
+  max-height: 100%; /* Prevent overflow */
+}
 @supports (-webkit-touch-callout: none) {
   /* iOS tweaks to avoid video pausing on scroll/overscroll */
   .hero-video {
@@ -314,15 +332,14 @@ body {
   }
 }
 
-/* Prevent video from triggering iOS fullscreen on orientation change */
-@media (orientation: landscape) {
+/* iOS landscape orientation handling - keep video contained within hero section */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Only apply to very short landscape screens (like iPhone in landscape) */
   .hero-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }

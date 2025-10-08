@@ -85,8 +85,8 @@ export default function Hero({ posterImage }: HeroProps) {
   }, []);
 
   return (
-    <section className="hero">
-      <div className="hero-media">
+    <section className="hero" style={{ contain: 'layout style paint', isolation: 'isolate' }}>
+      <div className="hero-media" style={{ contain: 'layout style' }}>
         <video
           ref={videoRef}
           className="hero-video"
@@ -102,6 +102,13 @@ export default function Hero({ posterImage }: HeroProps) {
           webkit-playsinline="true"
           x5-video-player-type="h5-page"
           x5-video-player-fullscreen="false"
+          style={{
+            maxWidth: '100%',
+            maxHeight: '100%',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
         >
           <source src="/banner-vid.mp4" type="video/mp4" />
         </video>
