@@ -84,9 +84,9 @@ export default function Testimonials() {
           <p className="text-gray-400 mb-6">
             Ready to join our satisfied clients?
           </p>
-          <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
+          <a href="/contact" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25 inline-block text-center">
             Start Your Project
-          </button>
+          </a>
         </div>
       </div>
     </section>
