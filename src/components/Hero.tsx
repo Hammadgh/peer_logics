@@ -13,29 +13,73 @@ export default function Hero({ posterImage }: HeroProps) {
     const videoEl = videoRef.current;
     if (!videoEl) return;
 
-    // Ensure attributes for iOS inline autoplay
+    // Enhanced iOS compatibility - ensure all required attributes
     videoEl.muted = true;
     videoEl.playsInline = true;
-    try { videoEl.setAttribute("webkit-playsinline", "true"); } catch {}
-    try { videoEl.setAttribute("playsinline", "true"); } catch {}
+    videoEl.autoplay = true;
 
-    const tryPlay = () => {
-      const p = videoEl.play();
-      if (p && typeof p.then === "function") {
-        p.catch(() => {});
+    // Set iOS-specific attributes for inline playback
+    try {
+      videoEl.setAttribute("webkit-playsinline", "true");
+      videoEl.setAttribute("playsinline", "true");
+      videoEl.setAttribute("x5-video-player-type", "h5-page");
+      videoEl.setAttribute("x5-video-player-fullscreen", "false");
+    } catch (e) {
+      // Silently handle any attribute setting errors
+    }
+
+    // Enhanced play function with better error handling
+    const tryPlay = async () => {
+      try {
+        if (videoEl.paused) {
+          const playPromise = videoEl.play();
+          if (playPromise !== undefined) {
+            await playPromise;
+          }
+        }
+      } catch (error) {
+        // Silently handle autoplay failures (common on iOS)
+        console.warn('Video autoplay prevented:', error);
       }
     };
 
-    // Attempt to play immediately and when page becomes visible
-    tryPlay();
-    const onVisibility = () => { if (document.visibilityState === "visible") tryPlay(); };
-    document.addEventListener("visibilitychange", onVisibility);
+    // iOS-specific event listeners for better playback
+    const handleCanPlay = () => {
+      tryPlay();
+      setIsLoaded(true);
+    };
 
-    // Set loaded state for animations
-    const timer = setTimeout(() => setIsLoaded(true), 300);
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        tryPlay();
+      }
+    };
+
+    const handleTouchStart = () => {
+      // Pre-emptively try to play on user interaction (iOS requirement)
+      tryPlay();
+      document.removeEventListener('touchstart', handleTouchStart);
+    };
+
+    // Set up event listeners
+    videoEl.addEventListener('canplay', handleCanPlay);
+    videoEl.addEventListener('loadeddata', handleCanPlay);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
+
+    // Attempt initial play
+    tryPlay();
+
+    // Set loaded state for animations (backup timeout)
+    const timer = setTimeout(() => setIsLoaded(true), 500);
 
     return () => {
-      document.removeEventListener("visibilitychange", onVisibility);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      document.removeEventListener('touchstart', handleTouchStart);
+      if (videoEl) {
+        videoEl.removeEventListener('canplay', handleCanPlay);
+        videoEl.removeEventListener('loadeddata', handleCanPlay);
+      }
       clearTimeout(timer);
     };
   }, []);
@@ -50,12 +94,14 @@ export default function Hero({ posterImage }: HeroProps) {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           crossOrigin="anonymous"
           poster={posterImage}
           controls={false}
           disablePictureInPicture
-          onLoadedData={() => setIsLoaded(true)}
+          webkit-playsinline="true"
+          x5-video-player-type="h5-page"
+          x5-video-player-fullscreen="false"
         >
           <source src="/banner-vid.mp4" type="video/mp4" />
         </video>
