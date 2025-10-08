@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -37,11 +36,11 @@ export default function AboutPage() {
                   </p>
                   <p className="mb-6">
                     Our team of senior engineers and designers brings decades of combined experience in web development,
-                    e-commerce platforms, and enterprise software solutions. We believe that great software isn't just
-                    about lines of code—it's about understanding your business and delivering solutions that drive real results.
+                    e-commerce platforms, and enterprise software solutions. We believe that great software isn&apos;t just
+                    about lines of code—it&apos;s about understanding your business and delivering solutions that drive real results.
                   </p>
                   <p>
-                    From startups to Fortune 500 companies, we've helped organizations across industries build scalable,
+                    From startups to Fortune 500 companies, we&apos;ve helped organizations across industries build scalable,
                     secure, and user-friendly digital products that stand the test of time.
                   </p>
                 </div>
@@ -81,7 +80,7 @@ export default function AboutPage() {
                   <p className="text-gray-300">
                     To empower businesses with cutting-edge technology solutions that drive growth,
                     efficiency, and competitive advantage. We believe in building software that not
-                    only meets today's needs but scales for tomorrow's challenges.
+                    only meets today&apos;s needs but scales for tomorrow&apos;s challenges.
                   </p>
                 </div>
 

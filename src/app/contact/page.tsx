@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 
 export default function ContactPage() {
   return (
@@ -13,11 +12,11 @@ export default function ContactPage() {
 
           <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-cyan-200 bg-clip-text text-transparent">
-              Let's Build Something Amazing
+              Let&apos;s Build Something Amazing
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
-              Ready to transform your ideas into reality? We're here to help you create digital solutions that drive results.
+              Ready to transform your ideas into reality? We&apos;re here to help you create digital solutions that drive results.
             </p>
 
            
@@ -155,7 +154,7 @@ export default function ContactPage() {
                 Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Start Your Project?</span>
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Don't wait for tomorrow. Every great project starts with a single conversation. Let's discuss how we can bring your vision to life.
+                Don&apos;t wait for tomorrow. Every great project starts with a single conversation. Let&apos;s discuss how we can bring your vision to life.
               </p>
 
               

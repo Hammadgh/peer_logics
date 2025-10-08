@@ -29,7 +29,7 @@ export default function Testimonials() {
             What <span className="text-blue-400">Clients Say</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our clients have to say about our partnership and results.
+            Don&apos;t just take our word for it. Here&apos;s what our clients have to say about our partnership and results.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export default function Testimonials() {
               {/* Quote */}
               <div className="pt-8 pb-6">
                 <blockquote className="text-lg font-medium text-white leading-relaxed">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
               </div>
 

@@ -24,7 +24,7 @@ export default function Hero({ posterImage }: HeroProps) {
       videoEl.setAttribute("playsinline", "true");
       videoEl.setAttribute("x5-video-player-type", "h5-page");
       videoEl.setAttribute("x5-video-player-fullscreen", "false");
-    } catch (e) {
+    } catch {
       // Silently handle any attribute setting errors
     }
 

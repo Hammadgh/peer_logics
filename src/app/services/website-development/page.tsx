@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function WebsiteDevelopmentPage() {
@@ -14,7 +15,7 @@ export default function WebsiteDevelopmentPage() {
 
           <div className="relative z-10 text-center text-white max-w-3xl mx-auto px-6">
             <nav className="mb-6 text-sm">
-              <a href="/" className="hover:text-cyan-300 transition-colors">Home</a>
+              <Link href="/" className="hover:text-cyan-300 transition-colors">Home</Link>
               <span className="mx-2">›</span>
               <span className="text-cyan-300">Website Development</span>
             </nav>

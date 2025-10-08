@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -8,7 +10,13 @@ export default function Footer() {
             {/* Company Info */}
             <div className="footer-section">
               <div className="footer-logo">
-                <img src="/assests/peerlogics.png" alt="PeerLogics" className="footer-logo-img" />
+                <Image
+                  src="/assests/peerlogics.png"
+                  alt="PeerLogics"
+                  className="footer-logo-img"
+                  width={160}
+                  height={40}
+                />
                 
               </div>
               <p className="footer-description">

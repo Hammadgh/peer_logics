@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
+import Link from "next/link";
 
 export default function HRManagementPage() {
   return (
@@ -14,7 +14,7 @@ export default function HRManagementPage() {
 
           <div className="relative z-10 text-center text-white max-w-3xl mx-auto px-6">
             <nav className="mb-6 text-sm">
-              <a href="/" className="hover:text-blue-300 transition-colors">Home</a>
+              <Link href="/" className="hover:text-blue-300 transition-colors">Home</Link>
               <span className="mx-2">›</span>
               <span className="text-blue-300">HR Management</span>
             </nav>
