@@ -118,7 +118,7 @@ export default function Hero({ posterImage }: HeroProps) {
       </div>
 
       <div className="container hero-center">
-        <div className={`glass-panel hero-panel text-center ${isLoaded ? 'hero-panel-loaded' : ''}`}>
+            <div className={`glass-panel hero-panel text-center ${isLoaded ? 'morph-in' : ''}`}>
           <div className={`eyebrow-badge ${isLoaded ? 'fade-in-up' : ''}`}>END-TO-END PRODUCT DELIVERY</div>
           <h1 className={`text-white hero-title ${isLoaded ? 'fade-in-up fade-in-up-delay-1' : ''}`}>
             <span className="headline">Ship Impact</span>, not just releases.

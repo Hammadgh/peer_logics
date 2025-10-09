@@ -34,8 +34,13 @@ export default function Navbar() {
           <Link href="/">Home</Link>
           <a href="#about">About</a>
           <a href="#services">Services</a>
-          <Link href="/contact">Contact</Link>
         </nav>
+
+        <div className="nav-contact-btn">
+          <Link href="/contact" className="contact-us-btn">
+            Contact Us
+          </Link>
+        </div>
 
         <button
           className="nav-toggle"
@@ -55,7 +60,7 @@ export default function Navbar() {
           <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
           <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
           <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
-          <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link href="/contact" onClick={() => setMenuOpen(false)} className="mobile-contact-btn">Contact Us</Link>
         </nav>
       </div>
     </header>

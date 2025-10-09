@@ -105,8 +105,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="text-sm font-bold text-white mb-1">Email</h4>
-                        <a href="mailto:hello@peerlogics.com" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">
-                          hello@peerlogics.com
+                        <a href="mailto:info@peerlogics.com" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">
+                          info@peerlogics.com
                         </a>
                       </div>
                     </div>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                       <div>
                         <h4 className="text-sm font-bold text-white mb-1">Phone</h4>
                         <a href="tel:+15551234567" className="text-green-400 hover:text-green-300 transition-colors text-sm">
-                          +1 (555) 123-4567
+                          +92 339 9909972
                         </a>
                       </div>
                     </div>
@@ -134,8 +134,7 @@ export default function ContactPage() {
                       <div>
                         <h4 className="text-sm font-bold text-white mb-1">Office</h4>
                         <address className="text-purple-400 not-italic text-sm">
-                          123 Innovation Drive<br />
-                          San Francisco, CA 94105
+                        3rd Floor, 35-C Empress Rd, Lahore, 54000
                         </address>
                       </div>
                     </div>
