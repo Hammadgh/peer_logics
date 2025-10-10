@@ -1,28 +1,49 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useState } from "react";
 
 export default function CTA() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section className="cta-glass-section py-5">
+    <section className="cta-section">
       <div className="container">
-        <div className="cta-glass">
-          <div className="cta-content text-md-start text-center">
-            <p className="eyebrow-badge">Let&apos;s Connect</p>
-            <h2 className="cta-title">Build something <span className="headline">great</span> with us</h2>
-            <p className="cta-sub">From idea to launch—ship faster with senior engineers, quality, and clarity.</p>
-            <div className="cta-actions d-flex justify-content-center justify-content-lg-start">
-              <a className="btn-cta" href="/contact">Let&apos;s talk <span aria-hidden>→</span></a>
+        <div className="cta-wrapper">
+          <div className="cta-content">
+            <div className="cta-badge">
+              <span>Ready to collaborate?</span>
             </div>
-          </div>
-          <div className="cta-media" aria-hidden>
-            <div className="cta-img-wrap">
-              <Image
-                src="/assests/cta-right.png"
-                alt="Team discussion"
-                fill
-                sizes="(min-width: 1024px) 640px, 50vw"
-                className="cta-img"
-                priority
-              />
+
+            <h2 className="cta-title">
+              Transform your ideas into <span 
+                className="gradient-text scroll-gradient-cta"
+                style={{ 
+                  backgroundPosition: `${scrollPosition * 0.5}px center`
+                }}
+              >digital reality</span>
+            </h2>
+
+            <p className="cta-description">
+              Partner with our expert team to build scalable, secure, and innovative solutions
+              that drive real business results. From concept to deployment—we make it happen.
+            </p>
+
+            <div className="cta-actions">
+              <a className="btn-primary" href="/contact">
+                Start Your Project
+              </a>
+              <a className="btn-secondary" href="#services">
+                View Our Services
+              </a>
             </div>
           </div>
         </div>

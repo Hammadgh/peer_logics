@@ -1,22 +1,38 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function WebsiteDevelopmentPage() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       <Navbar />
       <main className="min-h-screen">
         {/* Enhanced Hero Section with Glass Effects */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900">
-          <div className="absolute inset-0 bg-black/40"></div>
-          <div className="absolute inset-0 bg-[url('/assests/webdevelopment.png')] bg-cover bg-center opacity-20"></div>
+          <div className="absolute inset-0 bg-black/30"></div>
 
-          {/* Animated background elements */}
+          {/* Enhanced background elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-500/15 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-40 right-40 w-48 h-48 bg-sky-400/10 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-40 left-40 w-64 h-64 bg-teal-400/10 rounded-full blur-2xl"></div>
           </div>
 
           <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-6">
@@ -27,9 +43,16 @@ export default function WebsiteDevelopmentPage() {
             </nav>
 
             <div className={`ios-glass ios-glass-load hero-panel text-center fade-in-up fade-in-up-delay-1`}>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent">
-              Website Development
-            </h1>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                <span 
+                  className="scroll-gradient-website"
+                  style={{ 
+                    backgroundPosition: `${scrollPosition * 0.5}px center`
+                  }}
+                >
+                  Website Development
+                </span>
+              </h1>
 
               <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed fade-in-up fade-in-up-delay-2">
                 Build powerful, scalable web applications that drive results. From concept to deployment, we deliver cutting-edge solutions that transform your digital presence.

@@ -8,6 +8,7 @@ type HeroProps = {
 export default function Hero({ posterImage }: HeroProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     const videoEl = videoRef.current;
@@ -84,6 +85,16 @@ export default function Hero({ posterImage }: HeroProps) {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="hero" style={{ contain: 'layout style paint', isolation: 'isolate' }}>
       <div className="hero-media" style={{ contain: 'layout style' }}>
@@ -95,13 +106,7 @@ export default function Hero({ posterImage }: HeroProps) {
           loop
           playsInline
           preload="metadata"
-          crossOrigin="anonymous"
           poster={posterImage}
-          controls={false}
-          disablePictureInPicture
-          webkit-playsinline="true"
-          x5-video-player-type="h5-page"
-          x5-video-player-fullscreen="false"
           style={{
             maxWidth: '100%',
             maxHeight: '100%',
@@ -118,30 +123,43 @@ export default function Hero({ posterImage }: HeroProps) {
       </div>
 
       <div className="container hero-center">
-            <div className={`glass-panel hero-panel text-center ${isLoaded ? 'morph-in' : ''}`}>
-          <div className={`eyebrow-badge ${isLoaded ? 'fade-in-up' : ''}`}>END-TO-END PRODUCT DELIVERY</div>
-          <h1 className={`text-white hero-title ${isLoaded ? 'fade-in-up fade-in-up-delay-1' : ''}`}>
-            <span className="headline">Ship Impact</span>, not just releases.
+            <div className="glass-panel-enhanced hero-panel text-center">
+          <div className="eyebrow-badge">END-TO-END PRODUCT DELIVERY</div>
+          <h1 className="text-white hero-title">
+            <span 
+              className="headline scroll-gradient" 
+              style={{ 
+                backgroundPosition: `${scrollPosition * 0.5}px center`
+              }}
+            >
+              Ship Impact
+            </span>, not just releases.
           </h1>
-          <p className={`text-white hero-sub ${isLoaded ? 'fade-in-up fade-in-up-delay-2' : ''}`}>
+          <p className="text-white hero-sub">
             We architect cloud-native platforms, craft usable interfaces, and turn data into decisions—fast.
           </p>
-          <div className={`cta-group d-flex justify-content-center ${isLoaded ? 'fade-in-up fade-in-up-delay-3' : ''}`}>
-            <a href="/contact" className="btn-primary" aria-label="Get Started">Get Started</a>
+          <div className="cta-group d-flex justify-content-center">
+            <a href="/contact" className="btn-hero-glass" aria-label="Get Started">Get Started</a>
             <a className="btn-secondary" href="#services" aria-label="Explore Services">Explore Services</a>
           </div>
-          <ul className={`hero-stats hero-stats-center ${isLoaded ? 'fade-in-up fade-in-up-delay-4' : ''}`}>
-            <li><strong className="stat-num">50+</strong><span className="stat-label">Products launched</span></li>
-            <li><strong className="stat-num">95%</strong><span className="stat-label">On-time delivery</span></li>
-            <li><strong className="stat-num">24/7</strong><span className="stat-label">Support & SLAs</span></li>
+          <ul className="hero-stats hero-stats-center">
+            <li className="glass-card-realistic"><strong className="stat-num">50+</strong><span className="stat-label">Products launched</span></li>
+            <li className="glass-card-realistic"><strong className="stat-num">95%</strong><span className="stat-label">On-time delivery</span></li>
+            <li className="glass-card-realistic"><strong className="stat-num">24/7</strong><span className="stat-label">Support & SLAs</span></li>
           </ul>
         </div>
       </div>
 
-      <div className={`scroll-cue ${isLoaded ? 'fade-in' : ''}`}>
+      <div className="scroll-cue">
         <span></span>
         <small className="text-white">Scroll</small>
       </div>
+
+      {/* Corner Elements */}
+      <div className="hero-corner top-left"></div>
+      <div className="hero-corner top-right"></div>
+      <div className="hero-corner bottom-left"></div>
+      <div className="hero-corner bottom-right"></div>
     </section>
   );
 }

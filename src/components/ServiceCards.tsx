@@ -59,7 +59,7 @@ export default function ServiceCards() {
         <div className="row g-4">
           {services.map((svc) => (
             <div key={svc.title} className="col-md-4">
-              <article className="svc-card">
+              <article className="svc-card glass-card-realistic">
                 <div className="svc-icon">
                   <Image src={svc.icon} alt="" width={40} height={40} />
                 </div>

@@ -7,20 +7,80 @@ import Image from "next/image";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    // Trigger loaded animation
+    setTimeout(() => setIsLoaded(true), 100);
+    
+    // Handle hash in URL on page load (for navigation from other pages)
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const elementId = hash.replace('#', '');
+        const element = document.getElementById(elementId);
+        if (element) {
+          const navbarHeight = 80;
+          const elementPosition = element.offsetTop - navbarHeight;
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 300);
+    }
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const smoothScrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      // We're on a page that has this section, smooth scroll to it
+      const navbarHeight = 80; // Account for fixed navbar
+      const elementPosition = element.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+      setMenuOpen(false);
+    } else {
+      // Section doesn't exist, navigate to home with hash
+      window.location.href = `/#${elementId}`;
+    }
+  };
+
+  const scrollToTop = () => {
+    // Check if we're on home page
+    if (window.location.pathname === '/') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      window.location.href = '/';
+    }
+  };
+
   return (
-    <header className={`navbar ${menuOpen ? "navbar-open" : ""} ${isScrolled ? "navbar-scrolled" : ""}`}>
+    <header className={`navbar ${menuOpen ? "navbar-open" : ""} ${isScrolled ? "navbar-scrolled" : ""} ${isLoaded ? "navbar-loaded" : ""}`}>
       <div className="container navbar-inner">
-        <Link href="/" className="brand brand-logo" aria-label="Peerlogics home">
+        <button onClick={scrollToTop} className="brand brand-logo" aria-label="Peerlogics home">
           <Image
             src="/assests/peerlogics.png"
             alt="Peerlogics"
@@ -28,12 +88,12 @@ export default function Navbar() {
             width={160}
             height={40}
           />
-        </Link>
+        </button>
 
         <nav className="nav-links nav-center" aria-label="Primary">
-          <Link href="/">Home</Link>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
+          <button onClick={scrollToTop} className="nav-link-btn">Home</button>
+          <button onClick={() => smoothScrollTo('about')} className="nav-link-btn">About</button>
+          <button onClick={() => smoothScrollTo('services')} className="nav-link-btn">Services</button>
         </nav>
 
         <div className="nav-contact-btn">
@@ -57,9 +117,9 @@ export default function Navbar() {
       <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
         <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)}></div>
         <nav className="mobile-nav" aria-label="Mobile Primary">
-          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
+          <button onClick={() => { scrollToTop(); setMenuOpen(false); }} className="mobile-nav-link-btn">Home</button>
+          <button onClick={() => smoothScrollTo('about')} className="mobile-nav-link-btn">About</button>
+          <button onClick={() => smoothScrollTo('services')} className="mobile-nav-link-btn">Services</button>
           <Link href="/contact" onClick={() => setMenuOpen(false)} className="mobile-contact-btn">Contact Us</Link>
         </nav>
       </div>
