@@ -125,7 +125,7 @@ export default function Hero({ posterImage }: HeroProps) {
       <div className="container hero-center">
             <div className="glass-panel-enhanced hero-panel text-center">
           <div className="eyebrow-badge">END-TO-END PRODUCT DELIVERY</div>
-          <h1 className="text-white hero-title">
+          <h1 className="service-heading hero-title">
             <span 
               className="headline scroll-gradient" 
               style={{ 
@@ -135,7 +135,7 @@ export default function Hero({ posterImage }: HeroProps) {
               Ship Impact
             </span>, not just releases.
           </h1>
-          <p className="text-white hero-sub">
+          <p className="service-text hero-sub">
             We architect cloud-native platforms, craft usable interfaces, and turn data into decisions—fast.
           </p>
           <div className="cta-group d-flex justify-content-center">
@@ -150,10 +150,7 @@ export default function Hero({ posterImage }: HeroProps) {
         </div>
       </div>
 
-      <div className="scroll-cue">
-        <span></span>
-        <small className="text-white">Scroll</small>
-      </div>
+      
 
       {/* Corner Elements */}
       <div className="hero-corner top-left"></div>

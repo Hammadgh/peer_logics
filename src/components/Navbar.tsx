@@ -3,13 +3,18 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     let ticking = false;
     
     const handleScroll = () => {
@@ -81,13 +86,24 @@ export default function Navbar() {
     <header className={`navbar ${menuOpen ? "navbar-open" : ""} ${isScrolled ? "navbar-scrolled" : ""} ${isLoaded ? "navbar-loaded" : ""}`}>
       <div className="container navbar-inner">
         <button onClick={scrollToTop} className="brand brand-logo" aria-label="Peerlogics home">
-          <Image
-            src="/assests/peerlogics.png"
-            alt="Peerlogics"
-            className="logo"
-            width={160}
-            height={40}
-          />
+          <div className="logo-wrapper">
+            <Image
+              src="/assests/peerlogics.png"
+              alt="Peerlogics"
+              className={`logo logo-dark ${mounted && theme === 'dark' ? 'logo-active' : 'logo-hidden'}`}
+              width={160}
+              height={40}
+              priority
+            />
+            <Image
+              src="/assests/PL-Logo-in-grey-color.png"
+              alt="Peerlogics"
+              className={`logo logo-light ${mounted && theme === 'light' ? 'logo-active' : 'logo-hidden'}`}
+              width={160}
+              height={40}
+              priority
+            />
+          </div>
         </button>
 
         <nav className="nav-links nav-center" aria-label="Primary">
@@ -96,22 +112,28 @@ export default function Navbar() {
           <button onClick={() => smoothScrollTo('services')} className="nav-link-btn">Services</button>
         </nav>
 
-        <div className="nav-contact-btn">
-          <Link href="/contact" className="contact-us-btn">
-            Contact Us
-          </Link>
+        <div className="nav-right-controls">
+          <ThemeToggle />
+          <div className="nav-contact-btn">
+            <Link href="/contact" className="contact-us-btn">
+              Contact Us
+            </Link>
+          </div>
         </div>
 
-        <button
-          className="nav-toggle"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((v) => !v)}
-        >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
+        <div className="nav-mobile-controls">
+          <ThemeToggle />
+          <button
+            className="nav-toggle"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
+        </div>
       </div>
 
       <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>

@@ -1,7 +1,55 @@
+'use client';
+
+import { useState } from 'react';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const formData = new FormData(e.currentTarget);
+    
+    // Convert FormData to JSON object
+    const object: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      object[key] = value.toString();
+    });
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(object),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus('success');
+        (e.target as HTMLFormElement).reset();
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+        console.error('Web3Forms error:', data.message);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -30,20 +78,51 @@ export default function ContactPage() {
               {/* Contact Form */}
               <div id="contact-form" className="glass-card-enhanced p-6">
                 <h2 className="text-2xl font-bold mb-4 text-white">Send Us a Message</h2>
-                <form className="space-y-4">
+                
+                {/* Success Message */}
+                {submitStatus === 'success' && (
+                  <div className="mb-4 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-sm">
+                    ✓ Thank you! Your message has been sent successfully. We&apos;ll get back to you soon!
+                  </div>
+                )}
+
+                {/* Error Message */}
+                {submitStatus === 'error' && (
+                  <div className="mb-4 p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-sm">
+                    ✗ Oops! Something went wrong. Please try again or email us directly.
+                  </div>
+                )}
+
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  {/* Web3Forms Access Key */}
+                  <input type="hidden" name="access_key" value="6cd08af0-ba46-41c4-84de-613a55966974" />
+                  
+                  {/* Optional: Redirect URL after submission */}
+                  <input type="hidden" name="redirect" value="false" />
+                  
+                  {/* Optional: Custom subject line */}
+                  <input type="hidden" name="subject" value="New Contact Form Submission from PeerLogics Website" />
+                  
+                  {/* Optional: From name that appears in email */}
+                  <input type="hidden" name="from_name" value="PeerLogics Website Contact Form" />
+
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">First Name</label>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">First Name *</label>
                       <input
                         type="text"
+                        name="first_name"
+                        required
                         className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                         placeholder="John"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">Last Name *</label>
                       <input
                         type="text"
+                        name="last_name"
+                        required
                         className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                         placeholder="Doe"
                       />
@@ -51,31 +130,39 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Email *</label>
                     <input
                       type="email"
+                      name="email"
+                      required
                       className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                       placeholder="john@example.com"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Project Type</label>
-                    <select className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm">
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Project Type *</label>
+                    <select 
+                      name="project_type"
+                      required
+                      className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                    >
                       <option value="">Select a service</option>
-                      <option value="web-development">Website Development</option>
-                      <option value="ecommerce">E-Commerce</option>
-                      <option value="ui-ux">UI/UX Design</option>
-                      <option value="software">Software Development</option>
-                      <option value="medical-billing">Medical Billing</option>
-                      <option value="hr-management">HR Management</option>
-                      <option value="other">Other</option>
+                      <option value="Website Development">Website Development</option>
+                      <option value="E-Commerce">E-Commerce</option>
+                      <option value="UI/UX Design">UI/UX Design</option>
+                      <option value="Software Development">Software Development</option>
+                      <option value="Medical Billing">Medical Billing</option>
+                      <option value="HR Management">HR Management</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Message *</label>
                     <textarea
+                      name="message"
+                      required
                       rows={4}
                       className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                       placeholder="Tell us about your project..."
@@ -84,9 +171,10 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 px-4 rounded-lg font-bold hover:scale-105 transition-all duration-300 shadow-lg text-sm"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 px-4 rounded-lg font-bold hover:scale-105 transition-all duration-300 shadow-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    Send Message →
+                    {isSubmitting ? 'Sending...' : 'Send Message →'}
                   </button>
                 </form>
               </div>
@@ -105,8 +193,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="text-sm font-bold text-white mb-1">Email</h4>
-                        <a href="mailto:info@peerlogics.com" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">
-                          info@peerlogics.com
+                        <a href="mailto:info@peerlogics.com.pk" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">
+                          info@peerlogics.com.pk
                         </a>
                       </div>
                     </div>

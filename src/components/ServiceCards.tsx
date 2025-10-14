@@ -30,7 +30,7 @@ const services: Service[] = [
     href: "/services/medical-billing",
   },
   {
-    title: "E‑Commerce Develop",
+    title: "E‑Commerce Developent",
     description:
       "From catalog to checkout, we build performant storefronts that scale and convert.",
     icon: "/assests/online-shop.png",
@@ -65,8 +65,9 @@ export default function ServiceCards() {
                 </div>
                 <h3 className="svc-title">{svc.title}</h3>
                 <p className="svc-desc">{svc.description}</p>
-                <a className="svc-link" href={svc.href ?? "#"}>
-                  More About <span aria-hidden>→</span>
+                <a className="svc-btn" href={svc.href ?? "#"}>
+                  <span>Learn More</span>
+                  <span className="svc-btn-arrow" aria-hidden>→</span>
                 </a>
               </article>
             </div>

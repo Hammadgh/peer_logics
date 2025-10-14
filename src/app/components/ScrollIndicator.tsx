@@ -30,7 +30,7 @@ export default function ScrollIndicator() {
           <polyline points="18,15 12,9 6,15"></polyline>
         </svg>
       </div>
-      <div className="scroll-text">Scroll to Top</div>
+      
     </div>
   );
 }

@@ -20,25 +20,25 @@ export default function HRManagementPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen">
+      <main className="min-h-screen bg-white dark:bg-black transition-colors">
         {/* Enhanced Hero Section with Glass Effects */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-          <div className="absolute inset-0 bg-black/30"></div>
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg-cyan">
+          <div className="absolute inset-0 bg-white/40 dark:bg-black/30"></div>
 
           {/* Enhanced background elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/15 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-40 right-40 w-48 h-48 bg-cyan-400/10 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-40 left-40 w-64 h-64 bg-teal-400/10 rounded-full blur-2xl"></div>
+            <div className="absolute top-20 left-20 w-72 h-72 bg-blue-200/40 dark:bg-blue-500/15 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-200/40 dark:bg-indigo-500/15 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-200/30 to-indigo-200/30 dark:from-blue-400/10 dark:to-indigo-400/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-40 right-40 w-48 h-48 bg-cyan-200/30 dark:bg-cyan-400/10 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-40 left-40 w-64 h-64 bg-teal-200/30 dark:bg-teal-400/10 rounded-full blur-2xl"></div>
           </div>
 
-          <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-6">
+          <div className="relative z-10 text-center service-heading max-w-5xl mx-auto px-6">
             <nav className="mb-8 text-sm fade-in-up">
-              <Link href="/" className="hover:text-blue-300 transition-colors">Home</Link>
-              <span className="mx-2">›</span>
-              <span className="text-blue-300">HR Management</span>
+              <Link href="/" className="service-text hover:accent-cyan transition-colors">Home</Link>
+              <span className="mx-2 service-text-muted">›</span>
+              <span className="accent-cyan">HR Management</span>
             </nav>
 
             <div className={`glass-panel hero-panel text-center fade-in-up fade-in-up-delay-1`}>
@@ -53,26 +53,26 @@ export default function HRManagementPage() {
                 </span>
               </h1>
 
-              <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed fade-in-up fade-in-up-delay-2">
+              <p className="text-xl md:text-2xl mb-8 service-text max-w-3xl mx-auto leading-relaxed fade-in-up fade-in-up-delay-2">
                 Comprehensive healthcare HR solutions that streamline recruitment, employee management, payroll, and compliance. Built specifically for medical environments with HIPAA compliance at the core.
               </p>
 
               {/* Enhanced feature badges with animations */}
               <div className="flex flex-wrap justify-center gap-4 mb-12 fade-in-up fade-in-up-delay-3">
-                <div className="ios-glass px-6 py-3 text-sm">
-                  <span className="text-blue-300">👥</span>
+                <div className="ios-glass px-6 py-3 text-sm service-text">
+                  <span className="accent-cyan">👥</span>
                   <span className="ml-2 font-semibold">Smart Recruitment</span>
                 </div>
-                <div className="ios-glass px-6 py-3 text-sm">
-                  <span className="text-blue-300">💰</span>
+                <div className="ios-glass px-6 py-3 text-sm service-text">
+                  <span className="accent-cyan">💰</span>
                   <span className="ml-2 font-semibold">Automated Payroll</span>
                 </div>
-                <div className="ios-glass px-6 py-3 text-sm">
-                  <span className="text-blue-300">🔒</span>
+                <div className="ios-glass px-6 py-3 text-sm service-text">
+                  <span className="accent-cyan">🔒</span>
                   <span className="ml-2 font-semibold">HIPAA Compliant</span>
                 </div>
-                <div className="ios-glass px-6 py-3 text-sm">
-                  <span className="text-blue-300">📊</span>
+                <div className="ios-glass px-6 py-3 text-sm service-text">
+                  <span className="accent-cyan">📊</span>
                   <span className="ml-2 font-semibold">Real-time Analytics</span>
                 </div>
               </div>
@@ -80,20 +80,20 @@ export default function HRManagementPage() {
               {/* Key statistics with glass cards */}
               <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12 fade-in-up fade-in-up-delay-4">
                 <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold text-blue-300 mb-2">80%</div>
-                  <div className="text-sm text-gray-300">Faster Hiring</div>
+                  <div className="text-3xl font-bold accent-cyan mb-2">80%</div>
+                  <div className="text-sm service-text">Faster Hiring</div>
                 </div>
                 <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold text-blue-300 mb-2">95%</div>
-                  <div className="text-sm text-gray-300">Payroll Accuracy</div>
+                  <div className="text-3xl font-bold accent-cyan mb-2">95%</div>
+                  <div className="text-sm service-text">Payroll Accuracy</div>
                 </div>
                 <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold text-blue-300 mb-2">100%</div>
-                  <div className="text-sm text-gray-300">Compliance</div>
+                  <div className="text-3xl font-bold accent-cyan mb-2">100%</div>
+                  <div className="text-sm service-text">Compliance</div>
                 </div>
                 <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold text-blue-300 mb-2">300+</div>
-                  <div className="text-sm text-gray-300">Healthcare Clients</div>
+                  <div className="text-3xl font-bold accent-cyan mb-2">300+</div>
+                  <div className="text-sm service-text">Healthcare Clients</div>
               </div>
               </div>
             </div>
@@ -101,14 +101,14 @@ export default function HRManagementPage() {
         </section>
 
         {/* Healthcare HR Solutions & Recruitment */}
-        <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-slate-900">
+        <section className="py-20 service-bg-primary">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                  Healthcare <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">HR Solutions</span>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
+                  Healthcare <span className="gradient-cyan">HR Solutions</span>
                 </h2>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p className="text-xl service-text max-w-3xl mx-auto">
                   Complete HR management systems designed specifically for healthcare organizations, ensuring compliance, efficiency, and exceptional employee experience.
                 </p>
               </div>
@@ -119,8 +119,8 @@ export default function HRManagementPage() {
                   <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
                     <span className="text-2xl">👥</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-white text-center">Smart Recruitment</h3>
-                  <ul className="space-y-3 text-gray-300">
+                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Smart Recruitment</h3>
+                  <ul className="space-y-3 service-text">
                     <li className="flex items-center">
                       <span className="text-blue-400 mr-3">✓</span>
                       AI-powered candidate matching
@@ -145,8 +145,8 @@ export default function HRManagementPage() {
                   <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
                     <span className="text-2xl">👤</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-white text-center">Employee Management</h3>
-                  <ul className="space-y-3 text-gray-300">
+                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Employee Management</h3>
+                  <ul className="space-y-3 service-text">
                     <li className="flex items-center">
                       <span className="text-blue-400 mr-3">✓</span>
                       Digital employee profiles
@@ -171,8 +171,8 @@ export default function HRManagementPage() {
                   <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
                     <span className="text-2xl">🔒</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-white text-center">Compliance & Security</h3>
-                  <ul className="space-y-3 text-gray-300">
+                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Compliance & Security</h3>
+                  <ul className="space-y-3 service-text">
                     <li className="flex items-center">
                       <span className="text-blue-400 mr-3">✓</span>
                       HIPAA & HITECH compliant
@@ -197,15 +197,15 @@ export default function HRManagementPage() {
         </section>
 
         {/* Payroll & Benefits Management */}
-        <section className="py-20 bg-gradient-to-br from-slate-900 via-black to-gray-900">
+        <section className="py-20 service-bg-alternate">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div className="fade-in-left">
-                  <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-                    Automated <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Payroll & Benefits</span>
+                  <h2 className="text-4xl md:text-5xl font-bold mb-8 service-heading">
+                    Automated <span className="gradient-cyan">Payroll & Benefits</span>
               </h2>
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                  <p className="text-xl service-text mb-8 leading-relaxed">
                     Streamlined payroll processing and benefits administration designed for healthcare organizations with complex scheduling, overtime, and compliance requirements.
                   </p>
 
@@ -213,11 +213,11 @@ export default function HRManagementPage() {
                     <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
                       <div className="flex items-start">
                         <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="text-white font-bold text-sm">💰</span>
+                          <span className="service-heading font-bold text-sm">💰</span>
                         </div>
                         <div>
-                          <h4 className="text-lg font-bold text-white mb-2">Automated Payroll Processing</h4>
-                          <p className="text-gray-300">Accurate calculations, tax compliance, and direct deposit for all healthcare staff including shift differentials.</p>
+                          <h4 className="text-lg font-bold service-heading mb-2">Automated Payroll Processing</h4>
+                          <p className="service-text">Accurate calculations, tax compliance, and direct deposit for all healthcare staff including shift differentials.</p>
                         </div>
                       </div>
                     </div>
@@ -225,11 +225,11 @@ export default function HRManagementPage() {
                     <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
                       <div className="flex items-start">
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="text-white font-bold text-sm">🏥</span>
+                          <span className="service-heading font-bold text-sm">🏥</span>
                     </div>
                     <div>
-                          <h4 className="text-lg font-bold text-white mb-2">Benefits Administration</h4>
-                          <p className="text-gray-300">Healthcare-specific benefits management including insurance, retirement, and wellness programs.</p>
+                          <h4 className="text-lg font-bold service-heading mb-2">Benefits Administration</h4>
+                          <p className="service-text">Healthcare-specific benefits management including insurance, retirement, and wellness programs.</p>
                         </div>
                       </div>
                     </div>
@@ -237,11 +237,11 @@ export default function HRManagementPage() {
                     <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
                       <div className="flex items-start">
                         <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="text-white font-bold text-sm">📊</span>
+                          <span className="service-heading font-bold text-sm">📊</span>
                         </div>
                         <div>
-                          <h4 className="text-lg font-bold text-white mb-2">Time & Attendance</h4>
-                          <p className="text-gray-300">Smart scheduling, time tracking, and leave management optimized for healthcare shift work.</p>
+                          <h4 className="text-lg font-bold service-heading mb-2">Time & Attendance</h4>
+                          <p className="service-text">Smart scheduling, time tracking, and leave management optimized for healthcare shift work.</p>
                     </div>
                     </div>
                   </div>
@@ -249,11 +249,11 @@ export default function HRManagementPage() {
                     <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
                       <div className="flex items-start">
                         <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="text-white font-bold text-sm">📋</span>
+                          <span className="service-heading font-bold text-sm">📋</span>
                     </div>
                     <div>
-                          <h4 className="text-lg font-bold text-white mb-2">Regulatory Compliance</h4>
-                          <p className="text-gray-300">FLSA compliance, wage & hour tracking, and automated reporting for healthcare regulations.</p>
+                          <h4 className="text-lg font-bold service-heading mb-2">Regulatory Compliance</h4>
+                          <p className="service-text">FLSA compliance, wage & hour tracking, and automated reporting for healthcare regulations.</p>
                         </div>
                       </div>
                     </div>
@@ -262,26 +262,26 @@ export default function HRManagementPage() {
 
                 <div className="fade-in-right">
                   <div className="glass-card-enhanced p-8">
-                    <h3 className="text-2xl font-bold text-white mb-6 text-center">Key Performance Metrics</h3>
+                    <h3 className="text-2xl font-bold service-heading mb-6 text-center">Key Performance Metrics</h3>
                     <div className="space-y-6">
                       <div className="text-center">
                         <div className="text-4xl font-bold text-blue-400 mb-2">95%</div>
-                        <div className="text-sm text-gray-300">Payroll Accuracy Rate</div>
+                        <div className="text-sm service-text">Payroll Accuracy Rate</div>
                     </div>
 
                       <div className="text-center">
                         <div className="text-4xl font-bold text-blue-400 mb-2">80%</div>
-                        <div className="text-sm text-gray-300">Faster Recruitment</div>
+                        <div className="text-sm service-text">Faster Recruitment</div>
                     </div>
 
                       <div className="text-center">
                         <div className="text-4xl font-bold text-blue-400 mb-2">60%</div>
-                        <div className="text-sm text-gray-300">Administrative Time Saved</div>
+                        <div className="text-sm service-text">Administrative Time Saved</div>
                   </div>
 
                       <div className="text-center">
                         <div className="text-4xl font-bold text-blue-400 mb-2">100%</div>
-                        <div className="text-sm text-gray-300">HIPAA Compliance</div>
+                        <div className="text-sm service-text">HIPAA Compliance</div>
                     </div>
                     </div>
                   </div>
@@ -292,14 +292,14 @@ export default function HRManagementPage() {
         </section>
 
         {/* Why Choose Us - Enhanced */}
-        <section className="py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900">
+        <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900 dark:via-indigo-900 dark:to-purple-900">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                  Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300">PeerLogics HR?</span>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
+                  Why Choose <span className="gradient-cyan">PeerLogics HR?</span>
                 </h2>
-                <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+                <p className="text-xl service-text max-w-3xl mx-auto">
                   We&apos;re healthcare HR technology experts with deep industry knowledge, ensuring your organization attracts, retains, and develops top healthcare talent while maintaining complete compliance.
                 </p>
               </div>
@@ -309,8 +309,8 @@ export default function HRManagementPage() {
                   <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
                     <span className="text-2xl">🏥</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-white">Healthcare Specialized</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <h3 className="text-xl font-bold mb-4 service-heading">Healthcare Specialized</h3>
+                  <p className="service-text leading-relaxed">
                     Built specifically for medical environments with deep understanding of healthcare regulations, licensing, and credentialing requirements.
                   </p>
                 </div>
@@ -319,8 +319,8 @@ export default function HRManagementPage() {
                   <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
                     <span className="text-2xl">🤖</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-white">AI-Powered Automation</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <h3 className="text-xl font-bold mb-4 service-heading">AI-Powered Automation</h3>
+                  <p className="service-text leading-relaxed">
                     Intelligent automation for routine tasks, predictive analytics for retention, and smart matching for optimal candidate placement.
                   </p>
                 </div>
@@ -329,8 +329,8 @@ export default function HRManagementPage() {
                   <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
                     <span className="text-2xl">📊</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-white">Advanced Analytics</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <h3 className="text-xl font-bold mb-4 service-heading">Advanced Analytics</h3>
+                  <p className="service-text leading-relaxed">
                     Comprehensive HR analytics, turnover prediction, diversity tracking, and performance insights for data-driven decisions.
                   </p>
                 </div>
@@ -339,8 +339,8 @@ export default function HRManagementPage() {
                   <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center">
                     <span className="text-2xl">🔒</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-white">Complete Compliance</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <h3 className="text-xl font-bold mb-4 service-heading">Complete Compliance</h3>
+                  <p className="service-text leading-relaxed">
                     HIPAA, FLSA, EEOC, and healthcare-specific compliance with automated reporting, audit trails, and regulatory updates.
                   </p>
                 </div>
@@ -349,8 +349,8 @@ export default function HRManagementPage() {
                   <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-full flex items-center justify-center">
                     <span className="text-2xl">👥</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-white">Employee Experience</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <h3 className="text-xl font-bold mb-4 service-heading">Employee Experience</h3>
+                  <p className="service-text leading-relaxed">
                     Self-service portals, mobile apps, wellness tracking, and engagement tools to improve healthcare worker satisfaction and retention.
                   </p>
                 </div>
@@ -359,8 +359,8 @@ export default function HRManagementPage() {
                   <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full flex items-center justify-center">
                     <span className="text-2xl">🔄</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-white">Scalable Solutions</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <h3 className="text-xl font-bold mb-4 service-heading">Scalable Solutions</h3>
+                  <p className="service-text leading-relaxed">
                     From small clinics to large hospital systems, our solutions scale with your organization&apos;s growth and complexity.
                   </p>
                 </div>
@@ -368,25 +368,25 @@ export default function HRManagementPage() {
 
               {/* Success Metrics */}
               <div className="glass-card-enhanced p-12 fade-in-up fade-in-up-delay-2">
-                <h3 className="text-3xl font-bold mb-8 text-white text-center">
+                <h3 className="text-3xl font-bold mb-8 service-heading text-center">
                   Measurable Impact on Healthcare HR Operations
                 </h3>
                 <div className="grid md:grid-cols-4 gap-8 text-center">
                   <div>
-                    <div className="text-4xl font-bold text-blue-300 mb-2">80%</div>
-                    <div className="text-gray-300">Faster Hiring</div>
+                    <div className="text-4xl font-bold accent-cyan mb-2">80%</div>
+                    <div className="service-text">Faster Hiring</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-blue-300 mb-2">95%</div>
-                    <div className="text-gray-300">Payroll Accuracy</div>
+                    <div className="text-4xl font-bold accent-cyan mb-2">95%</div>
+                    <div className="service-text">Payroll Accuracy</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-blue-300 mb-2">60%</div>
-                    <div className="text-gray-300">Admin Time Saved</div>
+                    <div className="text-4xl font-bold accent-cyan mb-2">60%</div>
+                    <div className="service-text">Admin Time Saved</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-blue-300 mb-2">40%</div>
-                    <div className="text-gray-300">Turnover Reduction</div>
+                    <div className="text-4xl font-bold accent-cyan mb-2">40%</div>
+                    <div className="service-text">Turnover Reduction</div>
                   </div>
                 </div>
               </div>
@@ -395,14 +395,14 @@ export default function HRManagementPage() {
         </section>
 
         {/* Enhanced CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-slate-900">
+        <section className="py-20 service-bg-primary">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
               <div className="glass-card-enhanced p-12 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                  Ready to Transform Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300">Healthcare HR?</span>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
+                  Ready to Transform Your <span className="gradient-cyan">Healthcare HR?</span>
               </h2>
-                <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
+                <p className="text-xl service-text mb-8 leading-relaxed max-w-2xl mx-auto">
                   Join 300+ healthcare organizations that have revolutionized their HR operations with our intelligent, compliant solutions. Focus on patient care while we optimize your workforce management.
                 </p>
 
@@ -410,23 +410,23 @@ export default function HRManagementPage() {
                   <a href="/contact" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-lg text-lg">
                     Transform HR Operations <span className="text-xl">→</span>
                   </a>
-                  <a href="tel:+923399909972" className="inline-flex items-center justify-center gap-2 border-2 border-blue-400 text-blue-400 px-8 py-4 rounded-full font-bold hover:bg-blue-400 hover:text-black transition-all duration-300 text-lg">
+                  <a href="tel:+923399909972" className="inline-flex items-center justify-center gap-2 border-2 border-cyan-500 dark:border-cyan-400 accent-cyan px-8 py-4 rounded-full font-bold hover:bg-cyan-500 dark:hover:bg-cyan-400 hover:text-white dark:hover:text-black transition-all duration-300 text-lg">
                     📞 Call Now: +92 339 9909972
                   </a>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-6 text-center">
                   <div className="flex items-center justify-center gap-2">
-                    <span className="text-green-400">✓</span>
-                    <span className="text-gray-300">Free HR Assessment</span>
+                    <span className="text-green-600 dark:text-green-400">✓</span>
+                    <span className="service-text">Free HR Assessment</span>
                   </div>
                   <div className="flex items-center justify-center gap-2">
-                    <span className="text-green-400">✓</span>
-                    <span className="text-gray-300">Custom Implementation Plan</span>
+                    <span className="text-green-600 dark:text-green-400">✓</span>
+                    <span className="service-text">Custom Implementation Plan</span>
                   </div>
                   <div className="flex items-center justify-center gap-2">
-                    <span className="text-green-400">✓</span>
-                    <span className="text-gray-300">HIPAA Compliance Guarantee</span>
+                    <span className="text-green-600 dark:text-green-400">✓</span>
+                    <span className="service-text">HIPAA Compliance Guarantee</span>
                   </div>
                 </div>
               </div>
