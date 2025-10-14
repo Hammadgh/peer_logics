@@ -92,7 +92,7 @@ export default function SoftwareDevelopmentPage() {
                   <div className="text-sm service-text">Monitoring</div>
                 </div>
                 <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold accent-purple mb-2">5 Years</div>
+                  <div className="text-3xl font-bold accent-purple mb-2">1 Years</div>
                   <div className="text-sm service-text">Average Support</div>
               </div>
               </div>

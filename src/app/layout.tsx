@@ -4,6 +4,7 @@ import "./globals.css";
 import "./services/service-colors.css";
 import ScrollIndicator from "./components/ScrollIndicator";
 import ThemeProvider from "@/components/ThemeProvider";
+import CookieConsent from "@/components/CookieConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
           <ScrollIndicator />
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>

@@ -34,11 +34,7 @@ export default function AboutSection() {
             software with speed and confidence. Our senior engineers focus on outcomes,
             observability, and secure-by-default practices so your product scales without drama.
           </p>
-          <ul className="about-bullets">
-            <li>Outcome‑driven roadmaps aligned to your KPIs</li>
-            <li>Cloud‑native architecture with maintainability as a first principle</li>
-            <li>Accessible, performant UI with security and testing built‑in</li>
-          </ul>
+          
           <div className="about-highlights">
             <div className="ah-card glass-card-realistic">
               <div className="ah-icon" aria-hidden>⚡</div>

@@ -6,10 +6,20 @@ import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 import { useTheme } from "next-themes";
 
+const services = [
+  { name: "Website Development", href: "/services/website-development" },
+  { name: "E-Commerce Solutions", href: "/services/ecommerce" },
+  { name: "UI/UX Design", href: "/services/ui-ux" },
+  { name: "Software Development", href: "/services/software-development" },
+  { name: "Medical Billing", href: "/services/medical-billing" },
+  { name: "HR Management", href: "/services/hr-management" },
+];
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -109,7 +119,35 @@ export default function Navbar() {
         <nav className="nav-links nav-center" aria-label="Primary">
           <button onClick={scrollToTop} className="nav-link-btn">Home</button>
           <button onClick={() => smoothScrollTo('about')} className="nav-link-btn">About</button>
-          <button onClick={() => smoothScrollTo('services')} className="nav-link-btn">Services</button>
+          
+          {/* Services Dropdown */}
+          <div 
+            className="nav-dropdown"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button className="nav-link-btn nav-dropdown-trigger">
+              Services
+              <svg className="dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            
+            {servicesOpen && (
+              <div className="nav-dropdown-menu">
+                {services.map((service) => (
+                  <Link 
+                    key={service.href} 
+                    href={service.href} 
+                    className="nav-dropdown-item"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    {service.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </nav>
 
         <div className="nav-right-controls">
@@ -141,7 +179,41 @@ export default function Navbar() {
         <nav className="mobile-nav" aria-label="Mobile Primary">
           <button onClick={() => { scrollToTop(); setMenuOpen(false); }} className="mobile-nav-link-btn">Home</button>
           <button onClick={() => smoothScrollTo('about')} className="mobile-nav-link-btn">About</button>
-          <button onClick={() => smoothScrollTo('services')} className="mobile-nav-link-btn">Services</button>
+          
+          {/* Mobile Services Dropdown */}
+          <div className="mobile-nav-dropdown">
+            <button 
+              onClick={() => setServicesOpen(!servicesOpen)} 
+              className="mobile-nav-link-btn mobile-dropdown-trigger"
+            >
+              Services
+              <svg 
+                className={`mobile-dropdown-arrow ${servicesOpen ? 'open' : ''}`} 
+                width="12" 
+                height="12" 
+                viewBox="0 0 12 12" 
+                fill="none"
+              >
+                <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            
+            {servicesOpen && (
+              <div className="mobile-dropdown-content">
+                {services.map((service) => (
+                  <Link 
+                    key={service.href} 
+                    href={service.href} 
+                    className="mobile-dropdown-item"
+                    onClick={() => { setMenuOpen(false); setServicesOpen(false); }}
+                  >
+                    {service.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+          
           <Link href="/contact" onClick={() => setMenuOpen(false)} className="mobile-contact-btn">Contact Us</Link>
         </nav>
       </div>

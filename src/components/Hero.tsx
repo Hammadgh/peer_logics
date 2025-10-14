@@ -7,7 +7,6 @@ type HeroProps = {
 
 export default function Hero({ posterImage }: HeroProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -47,7 +46,6 @@ export default function Hero({ posterImage }: HeroProps) {
     // iOS-specific event listeners for better playback
     const handleCanPlay = () => {
       tryPlay();
-      setIsLoaded(true);
     };
 
     const handleVisibilityChange = () => {
@@ -71,9 +69,6 @@ export default function Hero({ posterImage }: HeroProps) {
     // Attempt initial play
     tryPlay();
 
-    // Set loaded state for animations (backup timeout)
-    const timer = setTimeout(() => setIsLoaded(true), 500);
-
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       document.removeEventListener('touchstart', handleTouchStart);
@@ -81,7 +76,6 @@ export default function Hero({ posterImage }: HeroProps) {
         videoEl.removeEventListener('canplay', handleCanPlay);
         videoEl.removeEventListener('loadeddata', handleCanPlay);
       }
-      clearTimeout(timer);
     };
   }, []);
 
