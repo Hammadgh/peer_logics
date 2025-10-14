@@ -55,40 +55,62 @@ export default function ContactPage() {
       <Navbar />
       <main className="min-h-screen">
         {/* Hero Section with CTAs */}
-        <section className="relative py-32 flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-black">
-          <div className="absolute inset-0 bg-black/40"></div>
+        <section className="contact-hero-professional relative py-20 flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-black dark:from-slate-900 dark:via-gray-900 dark:to-black light:from-white light:via-gray-50 light:to-slate-50">
+          {/* Subtle Overlay */}
+          <div className="absolute inset-0 bg-black/20 dark:bg-black/20 light:bg-white/60"></div>
+          
+          {/* Professional Gradient Shapes - Static */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/5 dark:bg-blue-500/5 light:bg-blue-400/8 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/5 dark:bg-purple-500/5 light:bg-purple-400/8 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-cyan-500/4 dark:bg-cyan-500/4 light:bg-cyan-400/6 rounded-full blur-3xl"></div>
+          </div>
 
-          <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-cyan-200 bg-clip-text text-transparent">
-              Let&apos;s Build Something Amazing
+          {/* Subtle Grid Pattern */}
+          <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.03] light:opacity-[0.015]">
+            <div className="w-full h-full" style={{
+              backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+              backgroundSize: '60px 60px'
+            }}></div>
+          </div>
+
+          {/* Accent Line at Top */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent dark:via-blue-500/20 light:via-blue-400/30"></div>
+
+          <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight service-heading">
+              Get in Touch
             </h1>
 
-            <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
-              Ready to transform your ideas into reality? We&apos;re here to help you create digital solutions that drive results.
+            <p className="text-base md:text-lg service-text max-w-xl mx-auto leading-relaxed">
+              Have a project in mind? We&apos;re here to help bring your vision to life with professional solutions.
             </p>
 
-           
+            {/* Simple Accent */}
+            <div className="flex justify-center items-center mt-6">
+              <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-500/40 dark:via-blue-400/40 light:via-blue-500/50 to-transparent"></div>
+            </div>
           </div>
         </section>
 
         {/* Compact Contact Form & Info */}
-        <section className="py-16 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+        <section className="py-16 service-bg-primary">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Contact Form */}
               <div id="contact-form" className="glass-card-enhanced p-6">
-                <h2 className="text-2xl font-bold mb-4 text-white">Send Us a Message</h2>
+                <h2 className="text-2xl font-bold mb-4 service-heading">Send Us a Message</h2>
                 
                 {/* Success Message */}
                 {submitStatus === 'success' && (
-                  <div className="mb-4 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-sm">
+                  <div className="mb-4 p-4 bg-green-500/20 dark:bg-green-500/20 light:bg-green-100 border border-green-500/50 dark:border-green-500/50 light:border-green-300 rounded-lg text-green-400 dark:text-green-400 light:text-green-700 text-sm">
                     ✓ Thank you! Your message has been sent successfully. We&apos;ll get back to you soon!
                   </div>
                 )}
 
                 {/* Error Message */}
                 {submitStatus === 'error' && (
-                  <div className="mb-4 p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-sm">
+                  <div className="mb-4 p-4 bg-red-500/20 dark:bg-red-500/20 light:bg-red-100 border border-red-500/50 dark:border-red-500/50 light:border-red-300 rounded-lg text-red-400 dark:text-red-400 light:text-red-700 text-sm">
                     ✗ Oops! Something went wrong. Please try again or email us directly.
                   </div>
                 )}
@@ -108,63 +130,63 @@ export default function ContactPage() {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">First Name *</label>
+                      <label className="block text-sm font-medium service-text mb-2">First Name *</label>
                       <input
                         type="text"
                         name="first_name"
                         required
-                        className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                        className="w-full px-3 py-2 bg-white/10 dark:bg-white/10 light:bg-white border border-white/20 dark:border-white/20 light:border-gray-300 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 dark:placeholder-gray-400 light:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-colors"
                         placeholder="John"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">Last Name *</label>
+                      <label className="block text-sm font-medium service-text mb-2">Last Name *</label>
                       <input
                         type="text"
                         name="last_name"
                         required
-                        className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                        className="w-full px-3 py-2 bg-white/10 dark:bg-white/10 light:bg-white border border-white/20 dark:border-white/20 light:border-gray-300 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 dark:placeholder-gray-400 light:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-colors"
                         placeholder="Doe"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+                    <label className="block text-sm font-medium service-text mb-2">Email *</label>
                     <input
                       type="email"
                       name="email"
                       required
-                      className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-3 py-2 bg-white/10 dark:bg-white/10 light:bg-white border border-white/20 dark:border-white/20 light:border-gray-300 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 dark:placeholder-gray-400 light:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Project Type *</label>
+                    <label className="block text-sm font-medium service-text mb-2">Project Type *</label>
                     <select 
                       name="project_type"
                       required
-                      className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-3 py-2 bg-white/10 dark:bg-white/10 light:bg-white border border-white/20 dark:border-white/20 light:border-gray-300 rounded-lg text-white dark:text-white light:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-colors"
                     >
-                      <option value="">Select a service</option>
-                      <option value="Website Development">Website Development</option>
-                      <option value="E-Commerce">E-Commerce</option>
-                      <option value="UI/UX Design">UI/UX Design</option>
-                      <option value="Software Development">Software Development</option>
-                      <option value="Medical Billing">Medical Billing</option>
-                      <option value="HR Management">HR Management</option>
-                      <option value="Other">Other</option>
+                      <option value="" className="text-gray-500 dark:text-gray-400 light:text-gray-500">Select a service</option>
+                      <option value="Website Development" className="text-gray-900 dark:text-white light:text-gray-900">Website Development</option>
+                      <option value="E-Commerce" className="text-gray-900 dark:text-white light:text-gray-900">E-Commerce</option>
+                      <option value="UI/UX Design" className="text-gray-900 dark:text-white light:text-gray-900">UI/UX Design</option>
+                      <option value="Software Development" className="text-gray-900 dark:text-white light:text-gray-900">Software Development</option>
+                      <option value="Medical Billing" className="text-gray-900 dark:text-white light:text-gray-900">Medical Billing</option>
+                      <option value="HR Management" className="text-gray-900 dark:text-white light:text-gray-900">HR Management</option>
+                      <option value="Other" className="text-gray-900 dark:text-white light:text-gray-900">Other</option>
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Message *</label>
+                    <label className="block text-sm font-medium service-text mb-2">Message *</label>
                     <textarea
                       name="message"
                       required
                       rows={4}
-                      className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-3 py-2 bg-white/10 dark:bg-white/10 light:bg-white border border-white/20 dark:border-white/20 light:border-gray-300 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 dark:placeholder-gray-400 light:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-colors resize-none"
                       placeholder="Tell us about your project..."
                     ></textarea>
                   </div>
@@ -182,7 +204,7 @@ export default function ContactPage() {
               {/* Contact Info */}
               <div className="space-y-6">
                 <div className="glass-card-enhanced p-6">
-                  <h3 className="text-xl font-bold mb-4 text-white">Get In Touch</h3>
+                  <h3 className="text-xl font-bold mb-4 service-heading">Get In Touch</h3>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -192,7 +214,7 @@ export default function ContactPage() {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-white mb-1">Email</h4>
+                        <h4 className="text-sm font-bold service-heading mb-1">Email</h4>
                         <a href="mailto:info@peerlogics.com.pk" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">
                           info@peerlogics.com.pk
                         </a>
@@ -206,7 +228,7 @@ export default function ContactPage() {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-white mb-1">Phone</h4>
+                        <h4 className="text-sm font-bold service-heading mb-1">Phone</h4>
                         <a href="tel:+15551234567" className="text-green-400 hover:text-green-300 transition-colors text-sm">
                           +92 339 9909972
                         </a>
@@ -220,7 +242,7 @@ export default function ContactPage() {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-white mb-1">Office</h4>
+                        <h4 className="text-sm font-bold service-heading mb-1">Office</h4>
                         <address className="text-purple-400 not-italic text-sm">
                         3rd Floor, 35-C Empress Rd, Lahore, 54000
                         </address>
@@ -234,13 +256,13 @@ export default function ContactPage() {
         </section>
 
         {/* Additional CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-black via-gray-900 to-black">
+        <section className="py-16 service-bg-alternate">
           <div className="container mx-auto px-6 text-center">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold service-heading mb-6">
                 Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Start Your Project?</span>
               </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl service-text mb-8 max-w-2xl mx-auto">
                 Don&apos;t wait for tomorrow. Every great project starts with a single conversation. Let&apos;s discuss how we can bring your vision to life.
               </p>
 
@@ -254,8 +276,8 @@ export default function ContactPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">Fast Response</h3>
-                  <p className="text-gray-400">We respond to all inquiries within 24 hours</p>
+                  <h3 className="text-lg font-bold service-heading mb-2">Fast Response</h3>
+                  <p className="service-text-muted">We respond to all inquiries within 24 hours</p>
                 </div>
 
                 <div className="text-center">
@@ -264,8 +286,8 @@ export default function ContactPage() {
                       <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">Expert Team</h3>
-                  <p className="text-gray-400">Senior developers and designers only</p>
+                  <h3 className="text-lg font-bold service-heading mb-2">Expert Team</h3>
+                  <p className="service-text-muted">Senior developers and designers only</p>
                 </div>
 
                 <div className="text-center">
@@ -274,8 +296,8 @@ export default function ContactPage() {
                       <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd"/>
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">Quality Guaranteed</h3>
-                  <p className="text-gray-400">100% satisfaction or money back</p>
+                  <h3 className="text-lg font-bold service-heading mb-2">Quality Guaranteed</h3>
+                  <p className="service-text-muted">100% satisfaction or money back</p>
                 </div>
               </div>
             </div>

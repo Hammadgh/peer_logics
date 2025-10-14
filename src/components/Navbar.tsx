@@ -113,16 +113,15 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-right-controls">
-          <ThemeToggle />
           <div className="nav-contact-btn">
             <Link href="/contact" className="contact-us-btn">
               Contact Us
             </Link>
           </div>
+          <ThemeToggle />
         </div>
 
         <div className="nav-mobile-controls">
-          <ThemeToggle />
           <button
             className="nav-toggle"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -133,6 +132,7 @@ export default function Navbar() {
             <span className="hamburger-line"></span>
             <span className="hamburger-line"></span>
           </button>
+          <ThemeToggle />
         </div>
       </div>
 

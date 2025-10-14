@@ -431,6 +431,69 @@ body {
   background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
 }
 
+/* Theme Toggle with Text */
+.theme-toggle-btn-with-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.light .theme-toggle-btn-with-text {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #171717;
+}
+
+.theme-toggle-btn-with-text:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.light .theme-toggle-btn-with-text:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle-btn-with-text .theme-icon {
+  width: 18px;
+  height: 18px;
+  color: #D54E3E;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-text {
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+/* Responsive - hide text on smaller screens */
+@media (max-width: 768px) {
+  .theme-toggle-text {
+    display: none;
+  }
+  
+  .theme-toggle-btn-with-text {
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+  }
+}
+
 /* Layout utilities mimicking Bootstrap-like classes used in markup */
 .container { max-width: min(1600px, 94vw); margin: 0 auto; padding: 0 28px; }
 @media (min-width: 1536px) { .container { max-width: min(1800px, 92vw); } }
@@ -557,8 +620,7 @@ body {
 }
 
 .brand:hover {
-  transform: scale(1.05) translateY(-1px);
-  filter: brightness(1.1);
+  /* No hover effects - logo remains static */
 }
 /* Logo wrapper for smooth transitions */
 .logo-wrapper {
@@ -629,7 +691,6 @@ body {
 .nav-links a:hover {
   opacity: 1;
   color: #CB4F41;
-  transform: translateY(-1px);
 }
 
 /* Smooth scroll navigation buttons */
@@ -677,18 +738,10 @@ body {
 .nav-link-btn:hover {
   opacity: 1;
   color: #CB4F41;
-  transform: translateY(-2px);
-  background: rgba(255,255,255,0.05);
-  box-shadow: 0 4px 16px rgba(203, 79, 65, 0.2);
 }
 
 .light .nav-link-btn:hover {
-  background: rgba(213, 78, 62, 0.08);
-  box-shadow: 0 4px 16px rgba(203, 79, 65, 0.15);
-}
-
-.nav-link-btn:hover::before {
-  left: 100%;
+  color: #CB4F41;
 }
 
 .mobile-nav-link-btn {
@@ -747,14 +800,7 @@ body {
 }
 
 .mobile-nav-link-btn:hover {
-  border-color: rgba(255,255,255,0.2);
-  transform: translateY(-3px);
-  background: rgba(255,255,255,0.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-}
-
-.mobile-nav-link-btn:hover::before {
-  left: 100%;
+  color: #CB4F41;
 }
 
 /* Contact button with elegant glass effect */
@@ -824,18 +870,11 @@ body {
 }
 
 .contact-us-btn:hover {
-  background: rgba(213, 78, 62, 0.35);
-  border-color: rgba(213, 78, 62, 0.8);
-  box-shadow:
-    0 6px 24px rgba(213, 78, 62, 0.35),
-    0 0 0 1px rgba(213, 78, 62, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transform: translateY(-1px);
+  /* Only cursor change on hover */
 }
 
 .light .contact-us-btn:hover {
-  background: linear-gradient(135deg, #e55a4a 0%, #d54e3e 100%);
-  box-shadow: 0 6px 24px rgba(213, 78, 62, 0.4);
+  /* Only cursor change on hover */
 }
 .nav-toggle {
   background: rgba(255,255,255,0.08);
@@ -933,7 +972,11 @@ body {
 
 .light .mobile-menu {
   background: rgba(255,255,255,0.98);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  backdrop-filter: blur(30px) saturate(180%);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 
+    0 4px 24px rgba(0,0,0,0.08),
+    0 0 0 1px rgba(0,0,0,0.04);
 }
 
 .navbar-open .mobile-menu {
@@ -947,6 +990,11 @@ body {
   inset: 0;
   background: rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
+}
+
+.light .mobile-menu-overlay {
+  background: rgba(0,0,0,0.02);
+  backdrop-filter: blur(5px);
 }
 
 .mobile-nav {
@@ -977,14 +1025,11 @@ body {
 }
 
 .mobile-nav a:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.2);
-  transform: translateY(-2px);
+  color: #CB4F41;
 }
 
 .light .mobile-nav a:hover {
-  background: rgba(0,0,0,0.05);
-  border-color: rgba(0,0,0,0.1);
+  color: #CB4F41;
 }
 
 /* Mobile contact button styling with elegant glass effect */
@@ -1001,6 +1046,15 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+.light .mobile-nav a[href="/contact"] {
+  background: linear-gradient(135deg, #D54E3E 0%, #c43f31 100%);
+  border-color: rgba(213, 78, 62, 0.8);
+  color: white;
+  box-shadow: 
+    0 4px 16px rgba(213, 78, 62, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
 .mobile-nav a[href="/contact"]::before {
   content: '';
   position: absolute;
@@ -1011,13 +1065,11 @@ body {
 }
 
 .mobile-nav a[href="/contact"]:hover {
-  background: rgba(213, 78, 62, 0.25);
-  border-color: rgba(213, 78, 62, 0.6);
-  box-shadow:
-    0 6px 24px rgba(213, 78, 62, 0.25),
-    0 0 0 1px rgba(213, 78, 62, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
+  color: #CB4F41;
+}
+
+.light .mobile-nav a[href="/contact"]:hover {
+  color: white;
 }
 
 /* Mobile Contact Us button styling - Higher opacity */
@@ -1055,18 +1107,11 @@ body {
 }
 
 .mobile-contact-btn:hover {
-  background: rgba(213, 78, 62, 0.35);
-  border-color: rgba(213, 78, 62, 0.8);
-  box-shadow:
-    0 6px 24px rgba(213, 78, 62, 0.35),
-    0 0 0 1px rgba(213, 78, 62, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
+  /* Only cursor change on hover */
 }
 
 .light .mobile-contact-btn:hover {
-  background: linear-gradient(135deg, #e55a4a 0%, #d54e3e 100%);
-  box-shadow: 0 6px 24px rgba(213, 78, 62, 0.4);
+  /* Only cursor change on hover */
 }
 
 /* Hero */
@@ -1993,11 +2038,58 @@ body {
 
 .services-section { 
   padding: 64px 0 24px; 
-  background: #0a0a0a; 
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.05), transparent),
+    radial-gradient(ellipse 80% 50% at 50% 120%, rgba(147, 51, 234, 0.05), transparent),
+    linear-gradient(180deg, #0a0a0a 0%, #0d0e0f 50%, #0a0a0a 100%); 
   color: white; 
-  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.light .services-section { background: #f5f5f5; color: #171717; }
+
+.light .services-section { 
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.04), transparent),
+    radial-gradient(ellipse 80% 50% at 50% 120%, rgba(147, 51, 234, 0.04), transparent),
+    linear-gradient(180deg, #ffffff 0%, #fafbfc 50%, #f5f7f9 100%); 
+  color: #171717; 
+}
+
+/* Diagonal stripe pattern */
+.services-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 80px,
+      rgba(255,255,255,0.01) 80px,
+      rgba(255,255,255,0.01) 160px
+    );
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.light .services-section::before {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 80px,
+      rgba(0,0,0,0.008) 80px,
+      rgba(0,0,0,0.008) 160px
+    );
+}
+
+/* Ensure content is above background elements */
+.services-section > * {
+  position: relative;
+  z-index: 1;
+}
 .expertise-text { color: #71c2ff; letter-spacing: 0.06em; }
 .services-text { 
   font-size: clamp(48px, 6vw, 84px); 
@@ -2008,39 +2100,42 @@ body {
 .service-cards {
   position: relative;
   padding: 40px 0 80px;
-  background: linear-gradient(180deg, #0a0b0c, #0d0e0f);
+  background: 
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(218,79,63,0.08), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 70%, rgba(113,194,255,0.08), transparent 60%),
+    linear-gradient(180deg, #0d0e0f 0%, #0a0a0a 100%);
   overflow: hidden;
   transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .light .service-cards {
-  background: linear-gradient(180deg, #f9fafb, #ffffff);
+  background: 
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(218,79,63,0.04), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 70%, rgba(113,194,255,0.04), transparent 60%),
+    linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
 }
-/* unique luminous background behind cards */
+
+/* Dotted pattern overlay */
 .service-cards::before {
   content: "";
   position: absolute;
-  inset: -12% -10% -22% -10%;
-  /* dotted grid + vertical fade */
-  background:
-    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.07) 1px, rgba(0,0,0,0) 1px) 0 0/40px 40px,
-    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0) 28%);
-  opacity: 0.75;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.6;
   pointer-events: none;
-  mask-image: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0.18));
+  z-index: 0;
 }
-.service-cards::after {
-  content: "";
-  position: absolute;
-  inset: -35% -25% -45% -25%;
-  background:
-    radial-gradient(800px 560px at 12% 14%, rgba(218,79,63,0.26), rgba(218,79,63,0) 62%),
-    radial-gradient(840px 600px at 88% 10%, rgba(113,194,255,0.24), rgba(113,194,255,0) 64%),
-    radial-gradient(900px 680px at 76% 88%, rgba(255,255,255,0.12), rgba(255,255,255,0) 64%),
-    conic-gradient(from 210deg at 30% 40%, rgba(255,255,255,0.16), rgba(255,255,255,0) 40%);
-  filter: blur(32px) saturate(118%);
-  opacity: 0.96;
-  pointer-events: none;
+
+.light .service-cards::before {
+  background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.025) 1px, transparent 1px);
+  opacity: 0.8;
+}
+
+/* Ensure cards are above background elements */
+.service-cards > * {
+  position: relative;
+  z-index: 1;
 }
 /* new service card design */
 .svc-card {
@@ -2162,6 +2257,108 @@ body {
 
 .svc-btn:hover .svc-btn-arrow {
   transform: translateX(4px);
+}
+
+/* Contact Form Dark Mode Optimizations */
+.light .glass-card-enhanced {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(20px);
+}
+
+.light .glass-card-enhanced input,
+.light .glass-card-enhanced select,
+.light .glass-card-enhanced textarea {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  color: #1f2937 !important;
+}
+
+.light .glass-card-enhanced input:focus,
+.light .glass-card-enhanced select:focus,
+.light .glass-card-enhanced textarea:focus {
+  background: rgba(255, 255, 255, 1) !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+.light .glass-card-enhanced input::placeholder,
+.light .glass-card-enhanced textarea::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Dark mode form optimizations */
+.dark .glass-card-enhanced {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .glass-card-enhanced input,
+.dark .glass-card-enhanced select,
+.dark .glass-card-enhanced textarea {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+.dark .glass-card-enhanced input:focus,
+.dark .glass-card-enhanced select:focus,
+.dark .glass-card-enhanced textarea:focus {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+.dark .glass-card-enhanced input::placeholder,
+.dark .glass-card-enhanced textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Fix for text clipping in gradient text */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1 !important;
+  padding-bottom: 0.1em;
+}
+
+/* Ensure proper text rendering for large headings */
+h1.bg-clip-text {
+  line-height: 1.05 !important;
+  padding-bottom: 0.15em;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Professional Contact Hero Section */
+.contact-hero-professional {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.light .contact-hero-professional {
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(249,250,251,1));
+}
+
+/* Subtle background accent for professional look */
+.contact-hero-professional::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59,130,246,0.3), transparent);
+  opacity: 0.5;
+}
+
+.light .contact-hero-professional::after {
+  background: linear-gradient(90deg, transparent, rgba(59,130,246,0.4), transparent);
+  opacity: 0.6;
 }
 
 .get-in-touch { padding: 64px 0; background: #0e0e0e; color: white; }
