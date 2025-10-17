@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhyPeerLogics from "@/components/WhyPeerLogics";
 import Link from "next/link";
 
 export default function HRManagementPage() {
@@ -20,18 +21,24 @@ export default function HRManagementPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white dark:bg-black transition-colors">
+      <main className="min-h-screen bg-white dark:bg-black transition-colors services:hr-management">
         {/* Enhanced Hero Section with Glass Effects */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg-cyan">
           <div className="absolute inset-0 bg-white/40 dark:bg-black/30"></div>
 
-          {/* Enhanced background elements */}
+          {/* Animated background elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-20 w-72 h-72 bg-blue-200/40 dark:bg-blue-500/15 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-200/40 dark:bg-indigo-500/15 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-200/30 to-indigo-200/30 dark:from-blue-400/10 dark:to-indigo-400/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-40 right-40 w-48 h-48 bg-cyan-200/30 dark:bg-cyan-400/10 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-40 left-40 w-64 h-64 bg-teal-200/30 dark:bg-teal-400/10 rounded-full blur-2xl"></div>
+            <div className="absolute top-20 left-20 w-72 h-72 bg-blue-200/40 dark:bg-blue-500/15 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-200/40 dark:bg-indigo-500/15 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-200/30 to-indigo-200/30 dark:from-blue-400/10 dark:to-indigo-400/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-40 right-40 w-48 h-48 bg-cyan-200/30 dark:bg-cyan-400/10 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute bottom-40 left-40 w-64 h-64 bg-teal-200/30 dark:bg-teal-400/10 rounded-full blur-2xl animate-pulse"></div>
+            
+            {/* Moving shapes like main services section */}
+            <div className="hero-moving-shape-1"></div>
+            <div className="hero-moving-shape-2"></div>
+            <div className="hero-moving-shape-3"></div>
+            <div className="hero-moving-shape-4"></div>
           </div>
 
           <div className="relative z-10 text-center service-heading max-w-5xl mx-auto px-6">
@@ -394,6 +401,9 @@ export default function HRManagementPage() {
           </div>
         </section>
 
+        {/* Why PeerLogics Section */}
+        <WhyPeerLogics theme="hr" />
+
         {/* Enhanced CTA Section */}
         <section className="py-20 service-bg-primary">
           <div className="container mx-auto px-6">
@@ -410,9 +420,6 @@ export default function HRManagementPage() {
                   <a href="/contact" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-lg text-lg">
                     Transform HR Operations <span className="text-xl">→</span>
                   </a>
-                  <a href="tel:+923399909972" className="inline-flex items-center justify-center gap-2 border-2 border-cyan-500 dark:border-cyan-400 accent-cyan px-8 py-4 rounded-full font-bold hover:bg-cyan-500 dark:hover:bg-cyan-400 hover:text-white dark:hover:text-black transition-all duration-300 text-lg">
-                    📞 Call Now: +92 339 9909972
-                  </a>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-6 text-center">
@@ -426,7 +433,7 @@ export default function HRManagementPage() {
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span className="service-text">HIPAA Compliance Guarantee</span>
+                    <span className="service-text">HIPAA Compliant Solutions</span>
                   </div>
                 </div>
               </div>

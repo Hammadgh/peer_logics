@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "PeerLogics - End-to-End Product Delivery",
-  description: "We architect cloud-native platforms, craft usable interfaces, and turn data into decisions—fast. Partner with our expert team for reliable software development.",
+  description: "We architect cloud-native platforms, craft usable interfaces, and turn data into decisions, fast. Partner with our expert team for reliable software development.",
 };
 
 export default function RootLayout({

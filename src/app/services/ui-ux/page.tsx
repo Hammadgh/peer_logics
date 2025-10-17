@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhyPeerLogics from "@/components/WhyPeerLogics";
 import Link from "next/link";
 
 export default function UIUXPage() {
@@ -20,18 +21,24 @@ export default function UIUXPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white dark:bg-black transition-colors">
+      <main className="min-h-screen bg-white dark:bg-black transition-colors services:ui-ux">
         {/* Enhanced Hero Section with Glass Effects */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg-purple">
           <div className="absolute inset-0 bg-white/40 dark:bg-black/30"></div>
 
-          {/* Enhanced background elements */}
+          {/* Animated background elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-20 w-72 h-72 bg-pink-200/40 dark:bg-pink-500/15 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-200/40 dark:bg-purple-500/15 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-purple-200/30 to-pink-200/30 dark:from-purple-400/10 dark:to-pink-400/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-40 right-40 w-48 h-48 bg-rose-200/30 dark:bg-rose-400/10 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-40 left-40 w-64 h-64 bg-fuchsia-200/30 dark:bg-fuchsia-400/10 rounded-full blur-2xl"></div>
+            <div className="absolute top-20 left-20 w-72 h-72 bg-pink-200/40 dark:bg-pink-500/15 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-200/40 dark:bg-purple-500/15 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-purple-200/30 to-pink-200/30 dark:from-purple-400/10 dark:to-pink-400/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-40 right-40 w-48 h-48 bg-rose-200/30 dark:bg-rose-400/10 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute bottom-40 left-40 w-64 h-64 bg-fuchsia-200/30 dark:bg-fuchsia-400/10 rounded-full blur-2xl animate-pulse"></div>
+            
+            {/* Moving shapes like main services section */}
+            <div className="hero-moving-shape-1"></div>
+            <div className="hero-moving-shape-2"></div>
+            <div className="hero-moving-shape-3"></div>
+            <div className="hero-moving-shape-4"></div>
           </div>
 
           <div className="relative z-10 text-center service-heading max-w-5xl mx-auto px-6">
@@ -251,7 +258,7 @@ export default function UIUXPage() {
                   Why Choose <span className="gradient-purple">PeerLogics Design?</span>
                 </h2>
                 <p className="text-xl service-text max-w-3xl mx-auto">
-                  We&apos;re not just designers—we&apos;re strategic partners who understand how great design drives business growth and user satisfaction.
+                  We&apos;re not just designers, we&apos;re strategic partners who understand how great design drives business growth and user satisfaction.
                 </p>
               </div>
 
@@ -272,7 +279,7 @@ export default function UIUXPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-4 service-heading">Accessibility First</h3>
                   <p className="service-text leading-relaxed">
-                    WCAG 2.1 AA compliant designs that work for everyone, including users with disabilities. Inclusive design is not optional—it&apos;s essential.
+                    WCAG 2.1 AA compliant designs that work for everyone, including users with disabilities. Inclusive design is not optional, it&apos;s essential.
                   </p>
                 </div>
 
@@ -345,6 +352,9 @@ export default function UIUXPage() {
           </div>
         </section>
 
+        {/* Why PeerLogics Section */}
+        <WhyPeerLogics theme="uiux" />
+
         {/* Enhanced CTA Section */}
         <section className="py-20 service-bg-primary">
           <div className="container mx-auto px-6">
@@ -360,9 +370,6 @@ export default function UIUXPage() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                   <a href="/contact" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-lg text-lg">
                     Start Your Design <span className="text-xl">→</span>
-                  </a>
-                  <a href="tel:+923399909972" className="inline-flex items-center justify-center gap-2 border-2 border-purple-500 dark:border-pink-400 accent-purple px-8 py-4 rounded-full font-bold hover:bg-purple-500 dark:hover:bg-pink-400 hover:text-white dark:hover:text-black transition-all duration-300 text-lg">
-                    📞 Call Now: +92 339 9909972
                   </a>
                 </div>
 

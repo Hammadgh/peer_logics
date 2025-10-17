@@ -26,30 +26,34 @@ export default function AboutSection() {
               style={{ 
                 backgroundPosition: `${scrollPosition * 0.5}px center`
               }}
-            >reliable</span> software, fast</h2>
+            >secure</span> healthcare solutions, fast</h2>
             <div className="about-divider" aria-hidden></div>
           </div>
           <p className="about-lede">
-            We partner with you end‑to‑end—from validation to launch—to ship high‑quality
-            software with speed and confidence. Our senior engineers focus on outcomes,
-            observability, and secure-by-default practices so your product scales without drama.
+            We specialize in healthcare technology solutions, from medical billing automation to HR management systems. 
+            Our team combines deep healthcare industry knowledge with modern technology practices to deliver 
+            HIPAA-compliant, scalable solutions that improve operational efficiency and patient care.
           </p>
-          
+          <ul className="about-bullets">
+            <li>HIPAA-compliant solutions with enterprise-grade security</li>
+            <li>Streamlined medical billing and revenue cycle management</li>
+            <li>Integrated HR systems designed for healthcare organizations</li>
+          </ul>
           <div className="about-highlights">
             <div className="ah-card glass-card-realistic">
+              <div className="ah-icon" aria-hidden>🏥</div>
+              <h3 className="ah-title">Healthcare expertise</h3>
+              <p className="ah-text">Deep understanding of medical billing, compliance, and healthcare workflows.</p>
+            </div>
+            <div className="ah-card glass-card-realistic">
+              <div className="ah-icon" aria-hidden>🔒</div>
+              <h3 className="ah-title">HIPAA compliant</h3>
+              <p className="ah-text">Security-first approach with built-in compliance and audit capabilities.</p>
+            </div>
+            <div className="ah-card glass-card-realistic">
               <div className="ah-icon" aria-hidden>⚡</div>
-              <h3 className="ah-title">Speed with quality</h3>
-              <p className="ah-text">Small, senior teams shipping iteratively with CI/CD and test automation.</p>
-            </div>
-            <div className="ah-card glass-card-realistic">
-              <div className="ah-icon" aria-hidden>🎯</div>
-              <h3 className="ah-title">Outcomes aligned</h3>
-              <p className="ah-text">Roadmaps shaped by KPIs and customer value—not vanity features.</p>
-            </div>
-            <div className="ah-card glass-card-realistic">
-              <div className="ah-icon" aria-hidden>🛡️</div>
-              <h3 className="ah-title">Reliable at scale</h3>
-              <p className="ah-text">Cloud-native patterns, security-first, and observability baked in.</p>
+              <h3 className="ah-title">Rapid deployment</h3>
+              <p className="ah-text">Fast implementation with minimal disruption to your existing operations.</p>
             </div>
           </div>
         </div>

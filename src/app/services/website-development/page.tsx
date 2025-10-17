@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhyPeerLogics from "@/components/WhyPeerLogics";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -21,18 +22,24 @@ export default function WebsiteDevelopmentPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white dark:bg-black transition-colors">
+      <main className="min-h-screen bg-white dark:bg-black transition-colors services:website-development">
         {/* Enhanced Hero Section with Glass Effects */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg-cyan">
           <div className="absolute inset-0 bg-white/40 dark:bg-black/30"></div>
 
-          {/* Enhanced background elements */}
+          {/* Animated background elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-200/40 dark:bg-cyan-500/15 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-200/40 dark:bg-blue-500/15 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-200/30 to-cyan-200/30 dark:from-blue-400/10 dark:to-cyan-400/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-40 right-40 w-48 h-48 bg-sky-200/30 dark:bg-sky-400/10 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-40 left-40 w-64 h-64 bg-teal-200/30 dark:bg-teal-400/10 rounded-full blur-2xl"></div>
+            <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-200/40 dark:bg-cyan-500/15 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-200/40 dark:bg-blue-500/15 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-200/30 to-cyan-200/30 dark:from-blue-400/10 dark:to-cyan-400/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-40 right-40 w-48 h-48 bg-sky-200/30 dark:bg-sky-400/10 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute bottom-40 left-40 w-64 h-64 bg-teal-200/30 dark:bg-teal-400/10 rounded-full blur-2xl animate-pulse"></div>
+            
+            {/* Moving shapes like main services section */}
+            <div className="hero-moving-shape-1"></div>
+            <div className="hero-moving-shape-2"></div>
+            <div className="hero-moving-shape-3"></div>
+            <div className="hero-moving-shape-4"></div>
           </div>
 
           <div className="relative z-10 text-center service-heading max-w-5xl mx-auto px-6">
@@ -103,6 +110,11 @@ export default function WebsiteDevelopmentPage() {
 
         {/* Technologies & Frameworks Section */}
         <section className="py-20 service-bg-primary">
+          {/* Moving background shapes */}
+          <div className="moving-shape-1"></div>
+          <div className="moving-shape-2"></div>
+          <div className="moving-shape-3"></div>
+          
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 fade-in-up">
@@ -199,6 +211,11 @@ export default function WebsiteDevelopmentPage() {
 
         {/* Development Process Section */}
         <section className="py-20 service-bg-alternate">
+          {/* Moving background shapes */}
+          <div className="moving-shape-1"></div>
+          <div className="moving-shape-2"></div>
+          <div className="moving-shape-3"></div>
+          
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -286,7 +303,7 @@ export default function WebsiteDevelopmentPage() {
                   Why Choose <span className="gradient-cyan">PeerLogics?</span>
                 </h2>
                 <p className="text-xl service-text max-w-3xl mx-auto">
-                  We&apos;re not just developers—we&apos;re strategic partners who understand business growth through technology. Here&apos;s what sets us apart.
+                  We&apos;re not just developers, we&apos;re strategic partners who understand business growth through technology. Here&apos;s what sets us apart.
                 </p>
               </div>
 
@@ -297,7 +314,7 @@ export default function WebsiteDevelopmentPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-4 service-heading">Business-First Approach</h3>
                   <p className="service-text leading-relaxed">
-                    We don&apos;t just build websites—we create digital solutions that drive measurable business results. Every line of code serves a strategic purpose.
+                    We don&apos;t just build websites, we create digital solutions that drive measurable business results. Every line of code serves a strategic purpose.
                   </p>
                 </div>
 
@@ -307,7 +324,7 @@ export default function WebsiteDevelopmentPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-4 service-heading">Lightning Performance</h3>
                   <p className="service-text leading-relaxed">
-                    Our websites load in under 100ms with 99.9% uptime. We optimize every aspect—from code splitting to CDN distribution—for unmatched speed.
+                    Our websites load in under 100ms with 99.9% uptime. We optimize every aspect, from code splitting to CDN distribution, for unmatched speed.
                   </p>
                 </div>
 
@@ -371,7 +388,7 @@ export default function WebsiteDevelopmentPage() {
                     <div className="service-text">Average Partnership</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold accent-cyan mb-2">$2M+</div>
+                    <div className="text-4xl font-bold accent-cyan mb-2">$100k+</div>
                     <div className="service-text">Client Revenue Generated</div>
                   </div>
                 </div>
@@ -380,86 +397,16 @@ export default function WebsiteDevelopmentPage() {
           </div>
         </section>
 
-        {/* Case Studies Section */}
-        <section className="py-20 service-bg-primary">
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
-                  Success <span className="gradient-cyan">Stories</span>
-                </h2>
-                <p className="text-xl service-text max-w-3xl mx-auto">
-                  See how we&apos;ve transformed businesses with our web development expertise.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-8 fade-in-up fade-in-up-delay-1">
-                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                  <div className="mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mb-4">
-                      <span className="service-heading font-bold">E</span>
-                    </div>
-                    <h3 className="text-2xl font-bold service-heading mb-2">E-Commerce Platform</h3>
-                    <p className="service-text-muted mb-4">B2B Marketplace • React & Node.js</p>
-                  </div>
-
-                  <div className="space-y-4 mb-6">
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">Performance Improvement</span>
-                      <span className="accent-cyan font-bold">85% faster</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">Conversion Rate</span>
-                      <span className="accent-cyan font-bold">+230%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">Mobile Traffic</span>
-                      <span className="accent-cyan font-bold">+180%</span>
-                    </div>
-                  </div>
-
-                  <p className="service-text leading-relaxed">
-                    &ldquo;PeerLogics transformed our outdated platform into a modern, high-performance marketplace. The results speak for themselves.&rdquo;
-                  </p>
-                  <p className="accent-cyan font-semibold mt-4">- Sarah Johnson, CTO</p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                  <div className="mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-cyan-500 rounded-full flex items-center justify-center mb-4">
-                      <span className="service-heading font-bold">S</span>
-                    </div>
-                    <h3 className="text-2xl font-bold service-heading mb-2">SaaS Application</h3>
-                    <p className="service-text-muted mb-4">Project Management Tool • Next.js & AWS</p>
-                  </div>
-
-                  <div className="space-y-4 mb-6">
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">Load Time Reduction</span>
-                      <span className="accent-cyan font-bold">90% faster</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">User Engagement</span>
-                      <span className="accent-cyan font-bold">+150%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">Server Costs</span>
-                      <span className="accent-cyan font-bold">-60%</span>
-                    </div>
-                  </div>
-
-                  <p className="service-text leading-relaxed">
-                    &ldquo;The team&apos;s technical expertise and attention to detail delivered exactly what we needed. Outstanding results!&rdquo;
-                  </p>
-                  <p className="accent-cyan font-semibold mt-4">- Michael Chen, CEO</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Why PeerLogics Section */}
+        <WhyPeerLogics theme="website" />
 
         {/* Enhanced CTA Section */}
         <section className="py-20 service-bg-primary">
+          {/* Moving background shapes */}
+          <div className="moving-shape-1"></div>
+          <div className="moving-shape-2"></div>
+          <div className="moving-shape-3"></div>
+          
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
               <div className="glass-card-enhanced p-12 fade-in-up">
@@ -474,9 +421,6 @@ export default function WebsiteDevelopmentPage() {
                   <a href="/contact" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-lg text-lg">
                     Start Your Project <span className="text-xl">→</span>
                   </a>
-                  <a href="tel:+923399909972" className="inline-flex items-center justify-center gap-2 border-2 border-cyan-500 dark:border-cyan-400 accent-cyan px-8 py-4 rounded-full font-bold hover:bg-cyan-500 dark:hover:bg-cyan-400 hover:text-white dark:hover:text-black transition-all duration-300 text-lg">
-                    📞 Call Now: +92 339 9909972
-                  </a>
               </div>
 
                 <div className="grid md:grid-cols-3 gap-6 text-center">
@@ -490,7 +434,7 @@ export default function WebsiteDevelopmentPage() {
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span className="service-text">30-Day Guarantee</span>
+                    <span className="service-text">30-Day Support</span>
                   </div>
                 </div>
               </div>
@@ -500,6 +444,11 @@ export default function WebsiteDevelopmentPage() {
 
         {/* FAQ Section */}
         <section className="py-20 service-bg-alternate">
+          {/* Moving background shapes */}
+          <div className="moving-shape-1"></div>
+          <div className="moving-shape-2"></div>
+          <div className="moving-shape-3"></div>
+          
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16 fade-in-up">

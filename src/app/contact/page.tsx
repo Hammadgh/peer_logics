@@ -221,19 +221,6 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold service-heading mb-1">Phone</h4>
-                        <a href="tel:+15551234567" className="text-green-400 hover:text-green-300 transition-colors text-sm">
-                          +92 339 9909972
-                        </a>
-                      </div>
-                    </div>
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -266,8 +253,6 @@ export default function ContactPage() {
                 Don&apos;t wait for tomorrow. Every great project starts with a single conversation. Let&apos;s discuss how we can bring your vision to life.
               </p>
 
-              
-
               {/* Trust Indicators */}
               <div className="grid md:grid-cols-3 gap-8 mt-12">
                 <div className="text-center">
@@ -296,8 +281,8 @@ export default function ContactPage() {
                       <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd"/>
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold service-heading mb-2">Quality Guaranteed</h3>
-                  <p className="service-text-muted">100% satisfaction or money back</p>
+                  <h3 className="text-lg font-bold service-heading mb-2">Quality Focused</h3>
+                  <p className="service-text-muted">Dedicated to delivering excellence</p>
                 </div>
               </div>
             </div>

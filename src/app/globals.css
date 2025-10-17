@@ -318,7 +318,7 @@ a[href="/contact"].bg-gradient-to-r:hover {
 
 
 /* Light mode colors */
-:root {
+  :root {
   --background: #ffffff;
   --foreground: #171717;
   --background-secondary: #f5f5f5;
@@ -330,8 +330,8 @@ a[href="/contact"].bg-gradient-to-r:hover {
 
 /* Dark mode colors */
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+    --background: #0a0a0a;
+    --foreground: #ededed;
   --background-secondary: #1a1a1a;
   --background-tertiary: #2a2a2a;
   --text-primary: #ededed;
@@ -1589,125 +1589,7 @@ body {
 }
 
 /* Hero Corner Elements - L-shaped brackets */
-.hero-corner {
-  position: fixed;
-  width: 80px;
-  height: 80px;
-  pointer-events: none;
-  z-index: 20;
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
-  /* animation removed for smoother performance */
-}
-
-.light .hero-corner {
-  opacity: 0.5;
-}
-
-.hero-corner.top-left {
-  top: 30px;
-  left: 30px;
-  animation-delay: 0s;
-}
-
-.hero-corner.top-right {
-  top: 30px;
-  right: 30px;
-  animation-delay: 1.5s;
-}
-
-.hero-corner.bottom-left {
-  bottom: 30px;
-  left: 30px;
-  animation-delay: 3s;
-}
-
-.hero-corner.bottom-right {
-  bottom: 30px;
-  right: 30px;
-  animation-delay: 4.5s;
-}
-
-.hero-corner::before,
-.hero-corner::after {
-  content: '';
-  position: absolute;
-  background: linear-gradient(135deg, #D54E3E 0%, #FF6B6B 50%, #71C2FF 100%);
-  border-radius: 1px;
-  transition: background 0.3s ease;
-}
-
-.light .hero-corner::before,
-.light .hero-corner::after {
-  background: linear-gradient(135deg, #D54E3E 0%, #FF6B6B 50%, #4D96FF 100%);
-}
-
-/* Top corners - brackets point inward */
-.hero-corner.top-left::before {
-  width: 40px;
-  height: 3px;
-  top: 0;
-  left: 0;
-}
-
-.hero-corner.top-left::after {
-  width: 3px;
-  height: 40px;
-  top: 0;
-  left: 0;
-}
-
-.hero-corner.top-right::before {
-  width: 40px;
-  height: 3px;
-  top: 0;
-  right: 0;
-}
-
-.hero-corner.top-right::after {
-  width: 3px;
-  height: 40px;
-  top: 0;
-  right: 0;
-}
-
-/* Bottom corners - brackets point inward */
-.hero-corner.bottom-left::before {
-  width: 40px;
-  height: 3px;
-  bottom: 0;
-  left: 0;
-}
-
-.hero-corner.bottom-left::after {
-  width: 3px;
-  height: 40px;
-  bottom: 0;
-  left: 0;
-}
-
-.hero-corner.bottom-right::before {
-  width: 40px;
-  height: 3px;
-  bottom: 0;
-  right: 0;
-}
-
-.hero-corner.bottom-right::after {
-  width: 3px;
-  height: 40px;
-  bottom: 0;
-  right: 0;
-}
-
-/* Corner pulse animation removed for smoother performance */
-
-/* Mobile responsive corners - Hide on mobile */
-@media (max-width: 768px) {
-  .hero-corner {
-    display: none;
-  }
-}
+/* Hero corner decorations removed for cleaner design */
 .hero-center { position: relative; z-index: 10; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding-top: 86px; }
 .hero-panel { 
   max-width: 980px; 
@@ -1780,7 +1662,29 @@ body {
   background: rgba(0,0,0,0.08);
   border-color: rgba(0,0,0,0.15);
 }
-.hero-title { font-size: clamp(46px, 5.6vw, 72px); line-height: 1.02; margin-top: 12px; margin-bottom: 12px; letter-spacing: -0.02em; }
+.hero-title { font-size: clamp(28px, 4vw, 72px); line-height: 1.1; margin-top: 12px; margin-bottom: 12px; letter-spacing: -0.02em; }
+.hero-title-responsive { white-space: nowrap; }
+.hero-text-secondary { color: white; }
+.light .hero-text-secondary { color: #171717; }
+
+/* Large laptop screens */
+@media (max-width: 1400px) {
+  .hero-title-responsive { white-space: normal; }
+  .hero-title { font-size: clamp(24px, 3.5vw, 60px); }
+  .hero-panel { padding: 30px 32px; }
+}
+
+/* Tablet and laptop screens */
+@media (max-width: 1200px) {
+  .hero-title-responsive { white-space: normal; }
+  .hero-title { font-size: clamp(22px, 4vw, 52px); }
+  .hero-panel { padding: 28px 28px; }
+}
+
+@media (max-width: 768px) { 
+  .hero-title-responsive { white-space: normal; }
+  .hero-title { font-size: clamp(20px, 6vw, 40px); }
+}
 @media (min-width: 1536px) { .hero-title { font-size: 84px; } }
 @media (min-width: 1920px) { .hero-title { font-size: 96px; } }
 .headline { color: var(--brand-accent); }
@@ -1789,16 +1693,17 @@ body {
 .scroll-gradient {
   background: linear-gradient(
     90deg,
-    #DA4F3F 0%,
-    #FF6B6B 15%,
-    #FFD93D 30%,
-    #6BCF7F 45%,
-    #4D96FF 60%,
-    #9D4EDD 75%,
-    #DA4F3F 90%,
-    #FF6B6B 100%
+    #FFD700 0%,
+    #FFA500 12.5%,
+    #FF6B35 25%,
+    #FF0080 37.5%,
+    #00FF80 50%,
+    #FFD700 62.5%,
+    #FFA500 75%,
+    #FF6B35 87.5%,
+    #FF0080 100%
   );
-  background-size: 200% 100%;
+  background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -2377,13 +2282,15 @@ body {
 .ah-title { font-size: 18px; margin-bottom: 6px; letter-spacing: -0.01em; }
 .ah-text { opacity: 0.9; }
 .about-heading { 
-  font-size: clamp(42px, 5.5vw, 72px); 
+  font-size: clamp(32px, 4.5vw, 72px); 
   margin-top: 10px; 
   margin-bottom: 10px; 
   letter-spacing: -0.02em; 
   font-weight: 800;
-  white-space: nowrap;
+  white-space: normal;
   line-height: 1.1;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 .about-lede { opacity: 0.92; max-width: 900px; margin-left: auto; margin-right: auto; }
 .about-divider { width: 84px; height: 2px; margin: 12px auto 14px; background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.6), rgba(255,255,255,0)); }
@@ -2442,8 +2349,329 @@ body {
     );
 }
 
+/* Moving background shapes for services section */
+.services-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  padding: 80px 0;
+}
+
+.services-section .moving-shape-1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.2) 50%, transparent 70%);
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+  animation: servicesShapeMove1 15s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+  /* Temporary border for debugging */
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.services-section .moving-shape-2 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.35) 0%, rgba(147, 51, 234, 0.15) 50%, transparent 70%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  top: 60%;
+  right: 15%;
+  animation: servicesShapeMove2 18s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+  /* Temporary border for debugging */
+  border: 2px solid rgba(147, 51, 234, 0.3);
+}
+
+.services-section .moving-shape-3 {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.3) 0%, rgba(34, 197, 94, 0.12) 50%, transparent 70%);
+  border-radius: 50%;
+  top: 30%;
+  right: 30%;
+  animation: servicesShapeMove3 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+.services-section .moving-shape-4 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 165, 0, 0.25) 0%, rgba(255, 165, 0, 0.1) 50%, transparent 70%);
+  border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+  bottom: 20%;
+  left: 20%;
+  animation: servicesShapeMove4 22s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+/* Moving shapes for service cards section */
+.service-cards {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  padding: 60px 0;
+}
+
+.service-cards .moving-shape-1 {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(218, 79, 63, 0.3) 0%, rgba(218, 79, 63, 0.12) 50%, transparent 70%);
+  border-radius: 50%;
+  top: 15%;
+  right: 10%;
+  animation: serviceCardsShapeMove1 25s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+.service-cards .moving-shape-2 {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(113, 194, 255, 0.25) 0%, rgba(113, 194, 255, 0.1) 50%, transparent 70%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  bottom: 25%;
+  left: 15%;
+  animation: serviceCardsShapeMove2 30s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+.service-cards .moving-shape-3 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(34, 197, 94, 0.08) 50%, transparent 70%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  animation: serviceCardsShapeMove3 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+/* Shape animations */
+@keyframes servicesShapeMove1 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  25% { 
+    transform: translate(100px, -60px) rotate(90deg) scale(1.4);
+    opacity: 1;
+  }
+  50% { 
+    transform: translate(-60px, -120px) rotate(180deg) scale(0.6);
+    opacity: 0.6;
+  }
+  75% { 
+    transform: translate(120px, -40px) rotate(270deg) scale(1.3);
+    opacity: 0.9;
+  }
+}
+
+@keyframes servicesShapeMove2 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  33% { 
+    transform: translate(-120px, 60px) rotate(120deg) scale(1.6);
+    opacity: 1;
+  }
+  66% { 
+    transform: translate(60px, -90px) rotate(240deg) scale(0.4);
+    opacity: 0.5;
+  }
+}
+
+@keyframes servicesShapeMove3 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  20% { 
+    transform: translate(50px, 30px) rotate(72deg) scale(1.3);
+  }
+  40% { 
+    transform: translate(-30px, 70px) rotate(144deg) scale(0.7);
+  }
+  60% { 
+    transform: translate(-70px, -20px) rotate(216deg) scale(1.2);
+  }
+  80% { 
+    transform: translate(20px, -50px) rotate(288deg) scale(0.9);
+  }
+}
+
+@keyframes servicesShapeMove4 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  30% { 
+    transform: translate(70px, -50px) rotate(108deg) scale(1.5);
+  }
+  60% { 
+    transform: translate(-50px, 40px) rotate(216deg) scale(0.5);
+  }
+  90% { 
+    transform: translate(30px, 60px) rotate(324deg) scale(1.2);
+  }
+}
+
+/* Service cards shape animations */
+@keyframes serviceCardsShapeMove1 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% { 
+    transform: translate(-60px, 40px) rotate(90deg) scale(1.4);
+  }
+  50% { 
+    transform: translate(40px, -60px) rotate(180deg) scale(0.6);
+  }
+  75% { 
+    transform: translate(80px, 20px) rotate(270deg) scale(1.2);
+  }
+}
+
+@keyframes serviceCardsShapeMove2 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  33% { 
+    transform: translate(50px, -40px) rotate(120deg) scale(1.5);
+  }
+  66% { 
+    transform: translate(-40px, 50px) rotate(240deg) scale(0.5);
+  }
+}
+
+@keyframes serviceCardsShapeMove3 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  20% { 
+    transform: translate(40px, 30px) rotate(72deg) scale(1.6);
+  }
+  40% { 
+    transform: translate(-30px, 50px) rotate(144deg) scale(0.4);
+  }
+  60% { 
+    transform: translate(-50px, -20px) rotate(216deg) scale(1.4);
+  }
+  80% { 
+    transform: translate(20px, -40px) rotate(288deg) scale(0.8);
+  }
+}
+
+/* Light mode adjustments */
+.light .services-section .moving-shape-1 {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+}
+
+.light .services-section .moving-shape-2 {
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.06) 0%, transparent 70%);
+}
+
+.light .services-section .moving-shape-3 {
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.05) 0%, transparent 70%);
+}
+
+.light .services-section .moving-shape-4 {
+  background: radial-gradient(circle, rgba(255, 165, 0, 0.04) 0%, transparent 70%);
+}
+
+.light .service-cards .moving-shape-1 {
+  background: radial-gradient(circle, rgba(218, 79, 63, 0.06) 0%, transparent 70%);
+}
+
+.light .service-cards .moving-shape-2 {
+  background: radial-gradient(circle, rgba(113, 194, 255, 0.05) 0%, transparent 70%);
+}
+
+.light .service-cards .moving-shape-3 {
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.04) 0%, transparent 70%);
+}
+
+/* Mobile responsiveness for moving shapes */
+@media (max-width: 768px) {
+  .services-section .moving-shape-1,
+  .services-section .moving-shape-2,
+  .services-section .moving-shape-3,
+  .services-section .moving-shape-4 {
+    width: 80px;
+    height: 80px;
+    filter: blur(1px);
+  }
+  
+  .service-cards .moving-shape-1,
+  .service-cards .moving-shape-2,
+  .service-cards .moving-shape-3 {
+    width: 60px;
+    height: 60px;
+    filter: blur(1px);
+  }
+  
+  .services-section .moving-shape-1 {
+    top: 5%;
+    left: 5%;
+  }
+  
+  .services-section .moving-shape-2 {
+    top: 70%;
+    right: 5%;
+  }
+  
+  .services-section .moving-shape-3 {
+    top: 40%;
+    right: 20%;
+  }
+  
+  .services-section .moving-shape-4 {
+    bottom: 10%;
+    left: 10%;
+  }
+  
+  .service-cards .moving-shape-1 {
+    top: 10%;
+    right: 5%;
+  }
+  
+  .service-cards .moving-shape-2 {
+    bottom: 20%;
+    left: 10%;
+  }
+  
+  .service-cards .moving-shape-3 {
+    top: 60%;
+    left: 60%;
+  }
+}
+
 /* Ensure content is above background elements */
 .services-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.service-cards > * {
   position: relative;
   z-index: 1;
 }
@@ -2466,7 +2694,7 @@ body {
 }
 
 .light .service-cards {
-  background: 
+  background:
     radial-gradient(ellipse 60% 40% at 20% 30%, rgba(218,79,63,0.04), transparent 60%),
     radial-gradient(ellipse 60% 40% at 80% 70%, rgba(113,194,255,0.04), transparent 60%),
     linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
@@ -2539,12 +2767,27 @@ body {
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.06); 
   overflow: hidden; 
   transition: all 0.3s ease;
+  color: var(--brand-accent);
+  filter: drop-shadow(0 2px 4px rgba(218, 79, 63, 0.2));
+}
+
+.svc-card:hover .svc-icon {
+  transform: scale(1.1) rotate(3deg);
+  color: #FFD700;
+  filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.3));
 }
 
 .light .svc-icon {
   background: rgba(0,0,0,0.08);
   border-color: rgba(0,0,0,0.15);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+  color: var(--brand-accent);
+  filter: drop-shadow(0 2px 4px rgba(218, 79, 63, 0.15));
+}
+
+.light .svc-card:hover .svc-icon {
+  color: #FFA500;
+  filter: drop-shadow(0 4px 8px rgba(255, 165, 0, 0.25));
 }
 .svc-title { font-size: 22px; margin: 14px 0 8px; letter-spacing: -0.01em; }
 .svc-desc { opacity: 0.92; font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
@@ -2729,6 +2972,62 @@ h1.bg-clip-text {
   color: #888;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(255, 0, 128, 0.04) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%);
+  background-size: 600px 600px, 800px 800px, 1000px 1000px, 200px 200px;
+  animation: footerBackgroundFloat 25s ease-in-out infinite;
+  z-index: 1;
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.015) 2px,
+      rgba(255, 255, 255, 0.015) 4px
+    );
+  z-index: 1;
+}
+
+@keyframes footerBackgroundFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-15px) rotate(0.5deg);
+  }
+  66% {
+    transform: translateY(8px) rotate(-0.5deg);
+  }
 }
 
 .light .footer {
@@ -2737,8 +3036,36 @@ h1.bg-clip-text {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.light .footer::before {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(255, 0, 128, 0.06) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(0, 0, 0, 0.02) 50%, transparent 70%);
+}
+
+.light .footer::after {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.02) 2px,
+      rgba(0, 0, 0, 0.02) 4px
+    );
+}
+
 .footer-main {
   padding: 64px 0 48px;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-grid {
@@ -2915,6 +3242,8 @@ h1.bg-clip-text {
   padding: 32px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
 }
 
 .newsletter-content {
@@ -2991,6 +3320,8 @@ h1.bg-clip-text {
 /* Bottom Footer */
 .footer-bottom {
   padding: 24px 0;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-bottom-content {
@@ -3559,6 +3890,14 @@ h1.bg-clip-text {
 }
 
 /* Small-screen responsive rules for hero */
+/* Tablet and smaller laptop screens */
+@media (max-width: 1024px) {
+  .about-heading {
+    font-size: clamp(28px, 5vw, 56px);
+    line-height: 1.15;
+  }
+}
+
 @media (max-width: 767.98px) {
   .hero-center { padding-top: calc(var(--navbar-h) + 12px); padding-left: 12px; padding-right: 12px; }
   .hero-panel { padding: 24px 20px; border-radius: 20px; margin: 0 8px; }
@@ -3567,7 +3906,8 @@ h1.bg-clip-text {
   /* Make headings wrap on mobile */
   .about-heading {
     white-space: normal;
-    font-size: clamp(32px, 8vw, 42px);
+    font-size: clamp(28px, 6vw, 48px);
+    line-height: 1.2;
   }
   
   .cta-title {
@@ -3785,6 +4125,912 @@ h1.bg-clip-text {
 @media (min-width: 992px) { .cta-img-wrap { height: 340px; } }
 .cta-img { object-fit: cover; filter: saturate(1.02) contrast(1.04) brightness(0.98); }
 .cta-img-wrap::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.48), rgba(0,0,0,0.06) 50%, rgba(0,0,0,0)); pointer-events: none; }
+
+/* Scroll-triggered gradient animation - Why PeerLogics */
+.scroll-gradient-why {
+  background: linear-gradient(
+    90deg,
+    #FFD700 0%,
+    #FFA500 20%,
+    #FF6B35 40%,
+    #FF0080 60%,
+    #00FF80 80%,
+    #FFD700 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Why PeerLogics Section */
+.why-peerlogics-section {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-peerlogics-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 0, 128, 0.06) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%);
+  background-size: 800px 800px, 600px 600px, 1000px 1000px, 200px 200px;
+  animation: backgroundFloat 20s ease-in-out infinite;
+  z-index: 1;
+}
+
+.why-peerlogics-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    );
+  z-index: 1;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+.light .why-peerlogics-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #171717;
+}
+
+.light .why-peerlogics-section::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 0, 128, 0.08) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(0, 0, 0, 0.02) 50%, transparent 70%);
+}
+
+.light .why-peerlogics-section::after {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.02) 2px,
+      rgba(0, 0, 0, 0.02) 4px
+    );
+}
+
+.why-peerlogics-panel {
+  padding: 80px 40px;
+  border-radius: 24px;
+  margin: 40px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.why-peerlogics-header-wrapper {
+  margin-bottom: 32px;
+}
+
+.why-peerlogics-heading {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.why-peerlogics-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-accent), #FFD700);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.why-peerlogics-lede {
+  font-size: 20px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin: 0 auto 48px auto;
+}
+
+.light .why-peerlogics-lede {
+  color: rgba(23, 23, 23, 0.7);
+}
+
+.why-peerlogics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.why-peerlogics-card {
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-peerlogics-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.light .why-peerlogics-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.why-peerlogics-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 20px auto;
+  display: block;
+  color: var(--brand-accent);
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(218, 79, 63, 0.2));
+}
+
+.why-peerlogics-card:hover .why-peerlogics-icon {
+  transform: scale(1.1) rotate(5deg);
+  color: #FFD700;
+  filter: drop-shadow(0 6px 12px rgba(255, 215, 0, 0.3));
+}
+
+.light .why-peerlogics-icon {
+  color: var(--brand-accent);
+  filter: drop-shadow(0 4px 8px rgba(218, 79, 63, 0.15));
+}
+
+.light .why-peerlogics-card:hover .why-peerlogics-icon {
+  color: #FFA500;
+  filter: drop-shadow(0 6px 12px rgba(255, 165, 0, 0.25));
+}
+
+.why-peerlogics-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: white;
+}
+
+.light .why-peerlogics-title {
+  color: #171717;
+}
+
+.why-peerlogics-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.light .why-peerlogics-description {
+  color: rgba(23, 23, 23, 0.7);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .why-peerlogics-panel {
+    padding: 60px 24px;
+    margin: 20px 0;
+  }
+  
+  .why-peerlogics-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  
+  .why-peerlogics-card {
+    padding: 24px 20px;
+  }
+  
+  .why-peerlogics-heading {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+  
+  .why-peerlogics-lede {
+    font-size: 18px;
+  }
+}
+
+/* Why PeerLogics Theme Variations */
+.why-peerlogics-ecommerce {
+  background: linear-gradient(135deg, #1a0a0a 0%, #2a1a0a 100%);
+}
+
+.why-peerlogics-ecommerce::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 165, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 69, 0, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 99, 71, 0.08) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(255, 165, 0, 0.02) 50%, transparent 70%);
+}
+
+.why-peerlogics-website {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2a 100%);
+}
+
+.why-peerlogics-website::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 191, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 123, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(30, 144, 255, 0.08) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(0, 191, 255, 0.02) 50%, transparent 70%);
+}
+
+.why-peerlogics-software {
+  background: linear-gradient(135deg, #1a0a1a 0%, #2a1a2a 100%);
+}
+
+.why-peerlogics-software::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(156, 39, 176, 0.08) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(138, 43, 226, 0.02) 50%, transparent 70%);
+}
+
+.why-peerlogics-medical {
+  background: linear-gradient(135deg, #0a1a0a 0%, #1a2a1a 100%);
+}
+
+.why-peerlogics-medical::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(5, 150, 105, 0.08) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(34, 197, 94, 0.02) 50%, transparent 70%);
+}
+
+.why-peerlogics-hr {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2a 100%);
+}
+
+.why-peerlogics-hr::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(6, 182, 212, 0.02) 50%, transparent 70%);
+}
+
+.why-peerlogics-uiux {
+  background: linear-gradient(135deg, #1a0a1a 0%, #2a1a2a 100%);
+}
+
+.why-peerlogics-uiux::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(244, 114, 182, 0.08) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(168, 85, 247, 0.02) 50%, transparent 70%);
+}
+
+/* Light mode theme variations */
+.light .why-peerlogics-ecommerce {
+  background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+}
+
+.light .why-peerlogics-ecommerce::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 165, 0, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 69, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 99, 71, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(255, 165, 0, 0.03) 50%, transparent 70%);
+}
+
+.light .why-peerlogics-website {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.light .why-peerlogics-website::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 191, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 123, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(30, 144, 255, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(0, 191, 255, 0.03) 50%, transparent 70%);
+}
+
+.light .why-peerlogics-software {
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+}
+
+.light .why-peerlogics-software::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(156, 39, 176, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(138, 43, 226, 0.03) 50%, transparent 70%);
+}
+
+.light .why-peerlogics-medical {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.light .why-peerlogics-medical::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(5, 150, 105, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(34, 197, 94, 0.03) 50%, transparent 70%);
+}
+
+.light .why-peerlogics-hr {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.light .why-peerlogics-hr::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(6, 182, 212, 0.03) 50%, transparent 70%);
+}
+
+.light .why-peerlogics-uiux {
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+}
+
+.light .why-peerlogics-uiux::before {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(244, 114, 182, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(168, 85, 247, 0.03) 50%, transparent 70%);
+}
+
+/* CTA heading fixed for full text display */
+.cta-heading-fixed {
+  font-size: clamp(18px, 3vw, 44px) !important;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: visible;
+  max-width: 100%;
+  word-spacing: -2px;
+  letter-spacing: -1px;
+  text-overflow: unset;
+}
+
+@media (max-width: 1400px) {
+  .cta-heading-fixed {
+    font-size: clamp(16px, 2.8vw, 40px) !important;
+    word-spacing: -1.5px;
+    letter-spacing: -0.8px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cta-heading-fixed {
+    white-space: normal;
+    font-size: clamp(14px, 4vw, 36px) !important;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+/* Service Pages Moving Background Shapes */
+.service-bg-primary,
+.service-bg-alternate {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-bg-primary .moving-shape-1,
+.service-bg-alternate .moving-shape-1 {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  top: 15%;
+  left: 10%;
+  animation: servicePageShapeMove1 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+.service-bg-primary .moving-shape-2,
+.service-bg-alternate .moving-shape-2 {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  top: 60%;
+  right: 15%;
+  animation: servicePageShapeMove2 25s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+.service-bg-primary .moving-shape-3,
+.service-bg-alternate .moving-shape-3 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  top: 30%;
+  right: 30%;
+  animation: servicePageShapeMove3 18s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+/* E-commerce colors (Orange/Red theme) */
+.services\:ecommerce .service-bg-primary .moving-shape-1,
+.services\:ecommerce .service-bg-alternate .moving-shape-1 {
+  background: radial-gradient(circle, rgba(255, 165, 0, 0.3) 0%, rgba(255, 69, 0, 0.15) 50%, transparent 70%);
+}
+
+.services\:ecommerce .service-bg-primary .moving-shape-2,
+.services\:ecommerce .service-bg-alternate .moving-shape-2 {
+  background: radial-gradient(circle, rgba(255, 99, 71, 0.25) 0%, rgba(255, 140, 0, 0.12) 50%, transparent 70%);
+}
+
+.services\:ecommerce .service-bg-primary .moving-shape-3,
+.services\:ecommerce .service-bg-alternate .moving-shape-3 {
+  background: radial-gradient(circle, rgba(255, 69, 0, 0.2) 0%, rgba(255, 165, 0, 0.1) 50%, transparent 70%);
+}
+
+/* Website Development colors (Cyan/Blue theme) */
+.services\:website-development .service-bg-primary .moving-shape-1,
+.services\:website-development .service-bg-alternate .moving-shape-1 {
+  background: radial-gradient(circle, rgba(0, 191, 255, 0.3) 0%, rgba(0, 123, 255, 0.15) 50%, transparent 70%);
+}
+
+.services\:website-development .service-bg-primary .moving-shape-2,
+.services\:website-development .service-bg-alternate .moving-shape-2 {
+  background: radial-gradient(circle, rgba(30, 144, 255, 0.25) 0%, rgba(0, 191, 255, 0.12) 50%, transparent 70%);
+}
+
+.services\:website-development .service-bg-primary .moving-shape-3,
+.services\:website-development .service-bg-alternate .moving-shape-3 {
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.2) 0%, rgba(30, 144, 255, 0.1) 50%, transparent 70%);
+}
+
+/* Software Development colors (Purple theme) */
+.services\:software-development .service-bg-primary .moving-shape-1,
+.services\:software-development .service-bg-alternate .moving-shape-1 {
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.3) 0%, rgba(147, 51, 234, 0.15) 50%, transparent 70%);
+}
+
+.services\:software-development .service-bg-primary .moving-shape-2,
+.services\:software-development .service-bg-alternate .moving-shape-2 {
+  background: radial-gradient(circle, rgba(156, 39, 176, 0.25) 0%, rgba(138, 43, 226, 0.12) 50%, transparent 70%);
+}
+
+.services\:software-development .service-bg-primary .moving-shape-3,
+.services\:software-development .service-bg-alternate .moving-shape-3 {
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.2) 0%, rgba(156, 39, 176, 0.1) 50%, transparent 70%);
+}
+
+/* Medical Billing colors (Green theme) */
+.services\:medical-billing .service-bg-primary .moving-shape-1,
+.services\:medical-billing .service-bg-alternate .moving-shape-1 {
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.3) 0%, rgba(16, 185, 129, 0.15) 50%, transparent 70%);
+}
+
+.services\:medical-billing .service-bg-primary .moving-shape-2,
+.services\:medical-billing .service-bg-alternate .moving-shape-2 {
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.25) 0%, rgba(34, 197, 94, 0.12) 50%, transparent 70%);
+}
+
+.services\:medical-billing .service-bg-primary .moving-shape-3,
+.services\:medical-billing .service-bg-alternate .moving-shape-3 {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.1) 50%, transparent 70%);
+}
+
+/* HR Management colors (Cyan theme) */
+.services\:hr-management .service-bg-primary .moving-shape-1,
+.services\:hr-management .service-bg-alternate .moving-shape-1 {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, rgba(14, 165, 233, 0.15) 50%, transparent 70%);
+}
+
+.services\:hr-management .service-bg-primary .moving-shape-2,
+.services\:hr-management .service-bg-alternate .moving-shape-2 {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(6, 182, 212, 0.12) 50%, transparent 70%);
+}
+
+.services\:hr-management .service-bg-primary .moving-shape-3,
+.services\:hr-management .service-bg-alternate .moving-shape-3 {
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
+}
+
+/* UI/UX Design colors (Purple/Pink theme) */
+.services\:ui-ux .service-bg-primary .moving-shape-1,
+.services\:ui-ux .service-bg-alternate .moving-shape-1 {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, rgba(236, 72, 153, 0.15) 50%, transparent 70%);
+}
+
+.services\:ui-ux .service-bg-primary .moving-shape-2,
+.services\:ui-ux .service-bg-alternate .moving-shape-2 {
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.25) 0%, rgba(168, 85, 247, 0.12) 50%, transparent 70%);
+}
+
+.services\:ui-ux .service-bg-primary .moving-shape-3,
+.services\:ui-ux .service-bg-alternate .moving-shape-3 {
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, rgba(244, 114, 182, 0.1) 50%, transparent 70%);
+}
+
+/* Service page shape animations */
+@keyframes servicePageShapeMove1 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  25% { 
+    transform: translate(80px, -50px) rotate(90deg) scale(1.3);
+    opacity: 1;
+  }
+  50% { 
+    transform: translate(-60px, -100px) rotate(180deg) scale(0.7);
+    opacity: 0.6;
+  }
+  75% { 
+    transform: translate(100px, -30px) rotate(270deg) scale(1.2);
+    opacity: 0.9;
+  }
+}
+
+@keyframes servicePageShapeMove2 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  33% { 
+    transform: translate(-100px, 50px) rotate(120deg) scale(1.5);
+    opacity: 1;
+  }
+  66% { 
+    transform: translate(60px, -80px) rotate(240deg) scale(0.5);
+    opacity: 0.5;
+  }
+}
+
+@keyframes servicePageShapeMove3 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  20% { 
+    transform: translate(60px, 40px) rotate(72deg) scale(1.4);
+    opacity: 0.9;
+  }
+  40% { 
+    transform: translate(-40px, 80px) rotate(144deg) scale(0.6);
+    opacity: 0.4;
+  }
+  60% { 
+    transform: translate(-80px, -30px) rotate(216deg) scale(1.3);
+    opacity: 0.8;
+  }
+  80% { 
+    transform: translate(30px, -60px) rotate(288deg) scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+/* Light mode adjustments for service page shapes */
+.light .service-bg-primary .moving-shape-1,
+.light .service-bg-alternate .moving-shape-1,
+.light .service-bg-primary .moving-shape-2,
+.light .service-bg-alternate .moving-shape-2,
+.light .service-bg-primary .moving-shape-3,
+.light .service-bg-alternate .moving-shape-3 {
+  opacity: 0.6;
+}
+
+/* Ensure content is above moving shapes */
+.service-bg-primary > *,
+.service-bg-alternate > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile responsiveness for service page shapes */
+@media (max-width: 768px) {
+  .service-bg-primary .moving-shape-1,
+  .service-bg-alternate .moving-shape-1,
+  .service-bg-primary .moving-shape-2,
+  .service-bg-alternate .moving-shape-2,
+  .service-bg-primary .moving-shape-3,
+  .service-bg-alternate .moving-shape-3 {
+    width: 60px;
+    height: 60px;
+    filter: blur(1px);
+  }
+}
+
+/* Hero Section Moving Background Shapes */
+.hero-moving-shape-1,
+.hero-moving-shape-2,
+.hero-moving-shape-3,
+.hero-moving-shape-4 {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(3px);
+  opacity: 0.6;
+}
+
+.hero-moving-shape-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 5%;
+  animation: heroShapeMove1 25s ease-in-out infinite;
+}
+
+.hero-moving-shape-2 {
+  width: 150px;
+  height: 150px;
+  top: 70%;
+  right: 10%;
+  animation: heroShapeMove2 30s ease-in-out infinite;
+}
+
+.hero-moving-shape-3 {
+  width: 120px;
+  height: 120px;
+  top: 40%;
+  right: 20%;
+  animation: heroShapeMove3 20s ease-in-out infinite;
+}
+
+.hero-moving-shape-4 {
+  width: 180px;
+  height: 180px;
+  top: 60%;
+  left: 15%;
+  animation: heroShapeMove4 35s ease-in-out infinite;
+}
+
+/* E-commerce hero shapes (Orange/Red theme) */
+.services\:ecommerce .hero-moving-shape-1 {
+  background: radial-gradient(circle, rgba(255, 165, 0, 0.4) 0%, rgba(255, 69, 0, 0.2) 50%, transparent 70%);
+}
+
+.services\:ecommerce .hero-moving-shape-2 {
+  background: radial-gradient(circle, rgba(255, 99, 71, 0.35) 0%, rgba(255, 140, 0, 0.15) 50%, transparent 70%);
+}
+
+.services\:ecommerce .hero-moving-shape-3 {
+  background: radial-gradient(circle, rgba(255, 69, 0, 0.3) 0%, rgba(255, 165, 0, 0.15) 50%, transparent 70%);
+}
+
+.services\:ecommerce .hero-moving-shape-4 {
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.25) 0%, rgba(255, 99, 71, 0.12) 50%, transparent 70%);
+}
+
+/* Website Development hero shapes (Cyan/Blue theme) */
+.services\:website-development .hero-moving-shape-1 {
+  background: radial-gradient(circle, rgba(0, 191, 255, 0.4) 0%, rgba(0, 123, 255, 0.2) 50%, transparent 70%);
+}
+
+.services\:website-development .hero-moving-shape-2 {
+  background: radial-gradient(circle, rgba(30, 144, 255, 0.35) 0%, rgba(0, 191, 255, 0.15) 50%, transparent 70%);
+}
+
+.services\:website-development .hero-moving-shape-3 {
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.3) 0%, rgba(30, 144, 255, 0.15) 50%, transparent 70%);
+}
+
+.services\:website-development .hero-moving-shape-4 {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(0, 191, 255, 0.12) 50%, transparent 70%);
+}
+
+/* Software Development hero shapes (Purple theme) */
+.services\:software-development .hero-moving-shape-1 {
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.4) 0%, rgba(147, 51, 234, 0.2) 50%, transparent 70%);
+}
+
+.services\:software-development .hero-moving-shape-2 {
+  background: radial-gradient(circle, rgba(156, 39, 176, 0.35) 0%, rgba(138, 43, 226, 0.15) 50%, transparent 70%);
+}
+
+.services\:software-development .hero-moving-shape-3 {
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, rgba(156, 39, 176, 0.15) 50%, transparent 70%);
+}
+
+.services\:software-development .hero-moving-shape-4 {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, rgba(138, 43, 226, 0.12) 50%, transparent 70%);
+}
+
+/* Medical Billing hero shapes (Green theme) */
+.services\:medical-billing .hero-moving-shape-1 {
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.4) 0%, rgba(16, 185, 129, 0.2) 50%, transparent 70%);
+}
+
+.services\:medical-billing .hero-moving-shape-2 {
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.35) 0%, rgba(34, 197, 94, 0.15) 50%, transparent 70%);
+}
+
+.services\:medical-billing .hero-moving-shape-3 {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, rgba(5, 150, 105, 0.15) 50%, transparent 70%);
+}
+
+.services\:medical-billing .hero-moving-shape-4 {
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.25) 0%, rgba(16, 185, 129, 0.12) 50%, transparent 70%);
+}
+
+/* HR Management hero shapes (Cyan theme) */
+.services\:hr-management .hero-moving-shape-1 {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, rgba(14, 165, 233, 0.2) 50%, transparent 70%);
+}
+
+.services\:hr-management .hero-moving-shape-2 {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, rgba(6, 182, 212, 0.15) 50%, transparent 70%);
+}
+
+.services\:hr-management .hero-moving-shape-3 {
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, rgba(59, 130, 246, 0.15) 50%, transparent 70%);
+}
+
+.services\:hr-management .hero-moving-shape-4 {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, rgba(14, 165, 233, 0.12) 50%, transparent 70%);
+}
+
+/* UI/UX Design hero shapes (Purple/Pink theme) */
+.services\:ui-ux .hero-moving-shape-1 {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, rgba(236, 72, 153, 0.2) 50%, transparent 70%);
+}
+
+.services\:ui-ux .hero-moving-shape-2 {
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.35) 0%, rgba(168, 85, 247, 0.15) 50%, transparent 70%);
+}
+
+.services\:ui-ux .hero-moving-shape-3 {
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, rgba(244, 114, 182, 0.15) 50%, transparent 70%);
+}
+
+.services\:ui-ux .hero-moving-shape-4 {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, rgba(236, 72, 153, 0.12) 50%, transparent 70%);
+}
+
+/* Hero shape animations */
+@keyframes heroShapeMove1 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  25% { 
+    transform: translate(100px, -60px) rotate(90deg) scale(1.4);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translate(-80px, -120px) rotate(180deg) scale(0.8);
+    opacity: 0.4;
+  }
+  75% { 
+    transform: translate(120px, -40px) rotate(270deg) scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes heroShapeMove2 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.5;
+  }
+  33% { 
+    transform: translate(-120px, 60px) rotate(120deg) scale(1.6);
+    opacity: 0.8;
+  }
+  66% { 
+    transform: translate(80px, -100px) rotate(240deg) scale(0.6);
+    opacity: 0.3;
+  }
+}
+
+@keyframes heroShapeMove3 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+  20% { 
+    transform: translate(80px, 50px) rotate(72deg) scale(1.5);
+    opacity: 0.7;
+  }
+  40% { 
+    transform: translate(-60px, 100px) rotate(144deg) scale(0.7);
+    opacity: 0.2;
+  }
+  60% { 
+    transform: translate(-100px, -40px) rotate(216deg) scale(1.3);
+    opacity: 0.6;
+  }
+  80% { 
+    transform: translate(40px, -80px) rotate(288deg) scale(0.9);
+    opacity: 0.5;
+  }
+}
+
+@keyframes heroShapeMove4 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.5;
+  }
+  20% { 
+    transform: translate(60px, 80px) rotate(72deg) scale(1.3);
+    opacity: 0.8;
+  }
+  40% { 
+    transform: translate(-100px, 40px) rotate(144deg) scale(0.7);
+    opacity: 0.3;
+  }
+  60% { 
+    transform: translate(-60px, -100px) rotate(216deg) scale(1.4);
+    opacity: 0.7;
+  }
+  80% { 
+    transform: translate(100px, -60px) rotate(288deg) scale(0.8);
+    opacity: 0.4;
+  }
+}
+
+/* Light mode adjustments for hero shapes */
+.light .hero-moving-shape-1,
+.light .hero-moving-shape-2,
+.light .hero-moving-shape-3,
+.light .hero-moving-shape-4 {
+  opacity: 0.4;
+}
+
+/* Mobile responsiveness for hero shapes */
+@media (max-width: 768px) {
+  .hero-moving-shape-1,
+  .hero-moving-shape-2,
+  .hero-moving-shape-3,
+  .hero-moving-shape-4 {
+    width: 80px;
+    height: 80px;
+    filter: blur(2px);
+  }
+}
 
 /* compact premium CTA button */
 .btn-cta { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 999px; text-decoration: none; color: #fff; background: linear-gradient(180deg, #DA4F3F, #c43f31); box-shadow: 0 10px 24px rgba(218,79,63,0.35), inset 0 1px 0 rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.18); font-weight: 700; letter-spacing: 0.01em; }

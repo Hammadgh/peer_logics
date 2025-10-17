@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhyPeerLogics from "@/components/WhyPeerLogics";
 import Link from "next/link";
 
 export default function EcommercePage() {
@@ -20,18 +21,24 @@ export default function EcommercePage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white dark:bg-black transition-colors">
+      <main className="min-h-screen bg-white dark:bg-black transition-colors services:ecommerce">
         {/* Enhanced Hero Section with Glass Effects */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-50 via-red-50 to-purple-50 dark:from-slate-900 dark:via-orange-900 dark:to-purple-900">
           <div className="absolute inset-0 bg-white/40 dark:bg-black/30"></div>
 
-          {/* Enhanced background elements */}
+          {/* Animated background elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-20 w-72 h-72 bg-orange-200/40 dark:bg-orange-500/15 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-200/40 dark:bg-purple-500/15 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-orange-200/30 to-purple-200/30 dark:from-orange-400/10 dark:to-purple-400/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-40 right-40 w-48 h-48 bg-yellow-200/30 dark:bg-yellow-400/10 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-40 left-40 w-64 h-64 bg-red-200/30 dark:bg-red-400/10 rounded-full blur-2xl"></div>
+            <div className="absolute top-20 left-20 w-72 h-72 bg-orange-200/40 dark:bg-orange-500/15 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-200/40 dark:bg-purple-500/15 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-orange-200/30 to-purple-200/30 dark:from-orange-400/10 dark:to-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-40 right-40 w-48 h-48 bg-yellow-200/30 dark:bg-yellow-400/10 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute bottom-40 left-40 w-64 h-64 bg-red-200/30 dark:bg-red-400/10 rounded-full blur-2xl animate-pulse"></div>
+            
+            {/* Moving shapes like main services section */}
+            <div className="hero-moving-shape-1"></div>
+            <div className="hero-moving-shape-2"></div>
+            <div className="hero-moving-shape-3"></div>
+            <div className="hero-moving-shape-4"></div>
           </div>
 
           <div className="relative z-10 text-center service-heading max-w-5xl mx-auto px-6">
@@ -80,7 +87,7 @@ export default function EcommercePage() {
               {/* Key statistics with glass cards */}
               <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12 fade-in-up fade-in-up-delay-4">
                 <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold accent-orange mb-2">$2.5M+</div>
+                  <div className="text-3xl font-bold accent-orange mb-2">$100k+</div>
                   <div className="text-sm service-text">Revenue Generated</div>
                 </div>
                 <div className="ios-glass p-6 text-center">
@@ -201,6 +208,11 @@ export default function EcommercePage() {
 
         {/* Payment Systems & Security */}
         <section className="py-20 service-bg-alternate">
+          {/* Moving background shapes */}
+          <div className="moving-shape-1"></div>
+          <div className="moving-shape-2"></div>
+          <div className="moving-shape-3"></div>
+          
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -404,90 +416,20 @@ export default function EcommercePage() {
           </div>
         </section>
 
-        {/* Case Studies Section */}
-        <section className="py-20 service-bg-primary">
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
-                  Success <span className="gradient-orange">Stories</span>
-                </h2>
-                <p className="text-xl service-text max-w-3xl mx-auto">
-                  See how we&apos;ve helped businesses transform their online presence and boost revenue.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-8 fade-in-up fade-in-up-delay-1">
-                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                  <div className="mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center mb-4">
-                      <span className="service-heading font-bold">F</span>
-                    </div>
-                    <h3 className="text-2xl font-bold service-heading mb-2">Fashion Retailer</h3>
-                    <p className="service-text-muted mb-4">Clothing & Accessories • Shopify Plus</p>
-                  </div>
-
-                  <div className="space-y-4 mb-6">
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">Revenue Increase</span>
-                      <span className="accent-orange font-bold">+280%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">Conversion Rate</span>
-                      <span className="accent-orange font-bold">+150%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">Mobile Sales</span>
-                      <span className="accent-orange font-bold">+200%</span>
-                    </div>
-                  </div>
-
-                  <p className="service-text leading-relaxed">
-                    &ldquo;PeerLogics transformed our online store into a revenue-generating powerhouse. The results exceeded our wildest expectations.&rdquo;
-                  </p>
-                  <p className="accent-orange font-semibold mt-4">- Jessica Martinez, CEO</p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                  <div className="mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mb-4">
-                      <span className="service-heading font-bold">T</span>
-                    </div>
-                    <h3 className="text-2xl font-bold service-heading mb-2">Tech Marketplace</h3>
-                    <p className="service-text-muted mb-4">Electronics & Gadgets • Custom Platform</p>
-                  </div>
-
-                  <div className="space-y-4 mb-6">
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">Platform Launch</span>
-                      <span className="accent-orange font-bold">6 weeks</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">Vendors Onboarded</span>
-                      <span className="accent-orange font-bold">500+</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="service-text">Transaction Volume</span>
-                      <span className="accent-orange font-bold">$1.2M/month</span>
-                    </div>
-                  </div>
-
-                  <p className="service-text leading-relaxed">
-                    &ldquo;The custom marketplace solution perfectly handles our complex multi-vendor requirements. Outstanding technical execution!&rdquo;
-                  </p>
-                  <p className="accent-orange font-semibold mt-4">- David Kim, CTO</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Why PeerLogics Section */}
+        <WhyPeerLogics theme="ecommerce" />
 
         {/* Enhanced CTA Section */}
         <section className="py-20 service-bg-alternate">
+          {/* Moving background shapes */}
+          <div className="moving-shape-1"></div>
+          <div className="moving-shape-2"></div>
+          <div className="moving-shape-3"></div>
+          
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-6xl mx-auto text-center">
               <div className="glass-card-enhanced p-12 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading cta-heading-fixed">
                   Ready to Launch Your <span className="gradient-orange">E-Commerce Empire?</span>
               </h2>
                 <p className="text-xl service-text mb-8 leading-relaxed max-w-2xl mx-auto">
@@ -497,9 +439,6 @@ export default function EcommercePage() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                   <a href="/contact" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-lg text-lg">
                     Start Your Store <span className="text-xl">→</span>
-                  </a>
-                  <a href="tel:+923399909972" className="inline-flex items-center justify-center gap-2 border-2 border-orange-500 dark:border-orange-400 accent-orange px-8 py-4 rounded-full font-bold hover:bg-orange-500 dark:hover:bg-orange-400 hover:text-white dark:hover:text-black transition-all duration-300 text-lg">
-                    📞 Call Now: +92 339 9909972
                   </a>
                 </div>
 
@@ -514,7 +453,7 @@ export default function EcommercePage() {
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span className="service-text">90-Day Success Guarantee</span>
+                    <span className="service-text">90-Day Support</span>
                   </div>
                 </div>
               </div>
@@ -524,6 +463,11 @@ export default function EcommercePage() {
 
         {/* FAQ Section */}
         <section className="py-20 service-bg-primary">
+          {/* Moving background shapes */}
+          <div className="moving-shape-1"></div>
+          <div className="moving-shape-2"></div>
+          <div className="moving-shape-3"></div>
+          
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16 fade-in-up">

@@ -37,7 +37,7 @@ export default function AboutPage() {
                   <p className="mb-6">
                     Our team of senior engineers and designers brings decades of combined experience in web development,
                     e-commerce platforms, and enterprise software solutions. We believe that great software isn&apos;t just
-                    about lines of code—it&apos;s about understanding your business and delivering solutions that drive real results.
+                    about lines of code, it&apos;s about understanding your business and delivering solutions that drive real results.
                   </p>
                   <p>
                     From startups to Fortune 500 companies, we&apos;ve helped organizations across industries build scalable,
@@ -61,7 +61,7 @@ export default function AboutPage() {
                     <span className="text-2xl">🎯</span>
                   </div>
                   <h3 className="text-xl font-bold mb-3 service-heading">Outcomes Aligned</h3>
-                  <p className="service-text">Roadmaps shaped by KPIs and customer value—not vanity features or scope creep.</p>
+                  <p className="service-text">Roadmaps shaped by KPIs and customer value, not vanity features or scope creep.</p>
                 </div>
 
                 <div className="glass-card-enhanced p-6 text-center group hover:scale-105 transition-all duration-300">
@@ -94,88 +94,12 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Leadership */}
-              <div className="glass-card-enhanced p-8">
-                <h3 className="text-2xl font-bold mb-8 service-heading text-center">Leadership Team</h3>
-                <div className="grid md:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
-                      <span className="text-2xl text-white">JD</span>
-                    </div>
-                    <h4 className="text-lg font-bold service-heading mb-2">John Doe</h4>
-                    <p className="text-sm service-text-muted mb-3">CEO & Founder</p>
-                    <p className="text-sm service-text">
-                      15+ years in enterprise software development and digital transformation.
-                    </p>
-                  </div>
-
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
-                      <span className="text-2xl text-white">SM</span>
-                    </div>
-                    <h4 className="text-lg font-bold service-heading mb-2">Sarah Miller</h4>
-                    <p className="text-sm service-text-muted mb-3">CTO</p>
-                    <p className="text-sm service-text">
-                      Expert in cloud architecture and scalable system design with 12+ years experience.
-                    </p>
-                  </div>
-
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
-                      <span className="text-2xl text-white">MJ</span>
-                    </div>
-                    <h4 className="text-lg font-bold service-heading mb-2">Mike Johnson</h4>
-                    <p className="text-sm service-text-muted mb-3">Head of Design</p>
-                    <p className="text-sm service-text">
-                      UX/UI specialist focused on creating intuitive and engaging user experiences.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-20 service-bg-alternate">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 service-heading text-center">
-                By The Numbers
-              </h2>
-
-              <div className="grid md:grid-cols-4 gap-8">
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-2">
-                    50+
-                  </div>
-                  <p className="service-text">Projects Delivered</p>
-                </div>
-
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-2">
-                    95%
-                  </div>
-                  <p className="service-text">On-Time Delivery</p>
-                </div>
-
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">
-                    24/7
-                  </div>
-                  <p className="service-text">Support Available</p>
-                </div>
-
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 mb-2">
-                    5★
-                  </div>
-                  <p className="service-text">Client Satisfaction</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+       
 
         {/* CTA Section */}
         <section className="py-20 service-bg-primary">

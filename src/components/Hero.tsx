@@ -118,39 +118,32 @@ export default function Hero({ posterImage }: HeroProps) {
 
       <div className="container hero-center">
             <div className="glass-panel-enhanced hero-panel text-center">
-          <div className="eyebrow-badge">END-TO-END PRODUCT DELIVERY</div>
-          <h1 className="service-heading hero-title">
+          <div className="eyebrow-badge">HEALTHCARE & BUSINESS TECHNOLOGY SOLUTIONS</div>
+          <h1 className="service-heading hero-title hero-title-responsive">
             <span 
               className="headline scroll-gradient" 
               style={{ 
-                backgroundPosition: `${scrollPosition * 0.5}px center`
+                backgroundPosition: `${scrollPosition * 1.8}px center`,
+                backgroundSize: '300% 100%'
               }}
             >
-              Ship Impact
-            </span>, not just releases.
+              Build Impact
+            </span>, <span className="hero-text-secondary">Not Just Software.</span>
           </h1>
           <p className="service-text hero-sub">
-            We architect cloud-native platforms, craft usable interfaces, and turn data into decisions—fast.
+            We specialize in medical billing automation, HR management systems, and custom IT solutions that drive efficiency and compliance for healthcare and business organizations.
           </p>
           <div className="cta-group d-flex justify-content-center">
             <a href="/contact" className="btn-hero-glass" aria-label="Get Started">Get Started</a>
             <a className="btn-secondary" href="#services" aria-label="Explore Services">Explore Services</a>
           </div>
           <ul className="hero-stats hero-stats-center">
-            <li className="glass-card-realistic"><strong className="stat-num">50+</strong><span className="stat-label">Products launched</span></li>
-            <li className="glass-card-realistic"><strong className="stat-num">95%</strong><span className="stat-label">On-time delivery</span></li>
-            <li className="glass-card-realistic"><strong className="stat-num">24/7</strong><span className="stat-label">Support & SLAs</span></li>
+            <li className="glass-card-realistic"><strong className="stat-num">100+</strong><span className="stat-label">Healthcare clients served</span></li>
+            <li className="glass-card-realistic"><strong className="stat-num">99.9%</strong><span className="stat-label">System uptime</span></li>
+            <li className="glass-card-realistic"><strong className="stat-num">HIPAA</strong><span className="stat-label">Compliant solutions</span></li>
           </ul>
         </div>
       </div>
-
-      
-
-      {/* Corner Elements */}
-      <div className="hero-corner top-left"></div>
-      <div className="hero-corner top-right"></div>
-      <div className="hero-corner bottom-left"></div>
-      <div className="hero-corner bottom-right"></div>
     </section>
   );
 }

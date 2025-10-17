@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import ServiceCards from "@/components/ServiceCards";
-import Testimonials from "@/components/Testimonials";
+import WhyPeerLogics from "@/components/WhyPeerLogics";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 
@@ -25,7 +25,6 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <AboutSection />
 
       <section id="services">
         <div className="services-section">
@@ -46,9 +45,11 @@ export default function Home() {
         </div>
       </section>
 
+      <AboutSection />
+
       <CTA />
 
-      <Testimonials />
+      <WhyPeerLogics />
       <Footer />
     </>
   );

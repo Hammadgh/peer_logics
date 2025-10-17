@@ -34,7 +34,7 @@ export default function CTA() {
 
             <p className="cta-description">
               Partner with our expert team to build scalable, secure, and innovative solutions
-              that drive real business results. From concept to deployment—we make it happen.
+              that drive real business results. From concept to deployment, we make it happen.
             </p>
 
             <div className="cta-actions">
