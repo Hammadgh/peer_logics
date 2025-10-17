@@ -1,22 +1,8 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 interface WhyPeerLogicsProps {
   theme?: 'default' | 'ecommerce' | 'website' | 'software' | 'medical' | 'hr' | 'uiux';
 }
 
 export default function WhyPeerLogics({ theme = 'default' }: WhyPeerLogicsProps) {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const features = [
     {
@@ -67,18 +53,13 @@ export default function WhyPeerLogics({ theme = 'default' }: WhyPeerLogicsProps)
           <p className="eyebrow-badge">WHY PEERLOGICS?</p>
           <div className="why-peerlogics-header-wrapper">
             <h2 className="why-peerlogics-heading">
-              Why <span 
-                className="headline scroll-gradient-why"
-                style={{ 
-                  backgroundPosition: `${scrollPosition * 0.5}px center`
-                }}
-              >PeerLogics</span>?
+              Why <span className="headline static-gradient-why">PeerLogics</span>?
             </h2>
             <div className="why-peerlogics-divider" aria-hidden></div>
           </div>
           <p className="why-peerlogics-lede">
-            We don't just build software, we build partnerships that deliver real results. 
-            Here's what sets us apart in the healthcare technology space.
+            We don&apos;t just build software, we build partnerships that deliver real results. 
+            Here&apos;s what sets us apart in the healthcare technology space.
           </p>
           
           <div className="why-peerlogics-grid">

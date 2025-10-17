@@ -4143,6 +4143,36 @@ h1.bg-clip-text {
   background-clip: text;
 }
 
+/* Static gradient for Why PeerLogics - works for both light and dark modes */
+.static-gradient-why {
+  background: linear-gradient(
+    135deg,
+    #3B82F6 0%,
+    #8B5CF6 25%,
+    #EC4899 50%,
+    #F59E0B 75%,
+    #10B981 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark mode specific gradient for better contrast */
+.dark .static-gradient-why {
+  background: linear-gradient(
+    135deg,
+    #60A5FA 0%,
+    #A78BFA 25%,
+    #F472B6 50%,
+    #FBBF24 75%,
+    #34D399 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Why PeerLogics Section */
 .why-peerlogics-section {
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
