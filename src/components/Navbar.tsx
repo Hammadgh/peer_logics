@@ -118,7 +118,6 @@ export default function Navbar() {
 
         <nav className="nav-links nav-center" aria-label="Primary">
           <button onClick={scrollToTop} className="nav-link-btn">Home</button>
-          <button onClick={() => smoothScrollTo('about')} className="nav-link-btn">About</button>
           
           {/* Services Dropdown */}
           <div 
@@ -148,6 +147,8 @@ export default function Navbar() {
               </div>
             )}
           </div>
+          
+          <button onClick={() => smoothScrollTo('about')} className="nav-link-btn">About</button>
         </nav>
 
         <div className="nav-right-controls">
@@ -178,7 +179,6 @@ export default function Navbar() {
         <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)}></div>
         <nav className="mobile-nav" aria-label="Mobile Primary">
           <button onClick={() => { scrollToTop(); setMenuOpen(false); }} className="mobile-nav-link-btn">Home</button>
-          <button onClick={() => smoothScrollTo('about')} className="mobile-nav-link-btn">About</button>
           
           {/* Mobile Services Dropdown */}
           <div className="mobile-nav-dropdown">
@@ -214,6 +214,7 @@ export default function Navbar() {
             )}
           </div>
           
+          <button onClick={() => smoothScrollTo('about')} className="mobile-nav-link-btn">About</button>
           <Link href="/contact" onClick={() => setMenuOpen(false)} className="mobile-contact-btn">Contact Us</Link>
         </nav>
       </div>
