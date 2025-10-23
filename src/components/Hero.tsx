@@ -128,7 +128,7 @@ export default function Hero({ posterImage }: HeroProps) {
               }}
             >
               Build Impact
-            </span>, <span className="hero-text-secondary">Not Just Software.</span>
+            </span>, <span className="hero-text-secondary">Not Just Software</span>
           </h1>
           <p className="service-text hero-sub">
             We specialize in medical billing automation, HR management systems, and custom IT solutions that drive efficiency and compliance for healthcare and business organizations.

@@ -26,20 +26,8 @@ export default function SoftwareDevelopmentPage() {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg-purple">
           <div className="absolute inset-0 bg-white/40 dark:bg-black/30"></div>
 
-          {/* Animated background elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-20 left-20 w-72 h-72 bg-violet-200/40 dark:bg-violet-500/15 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-200/40 dark:bg-purple-500/15 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-violet-200/30 to-purple-200/30 dark:from-violet-400/10 dark:to-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-40 right-40 w-48 h-48 bg-fuchsia-200/30 dark:bg-fuchsia-400/10 rounded-full blur-2xl animate-pulse"></div>
-            <div className="absolute bottom-40 left-40 w-64 h-64 bg-pink-200/30 dark:bg-pink-400/10 rounded-full blur-2xl animate-pulse"></div>
-            
-            {/* Moving shapes like main services section */}
-            <div className="hero-moving-shape-1"></div>
-            <div className="hero-moving-shape-2"></div>
-            <div className="hero-moving-shape-3"></div>
-            <div className="hero-moving-shape-4"></div>
-          </div>
+          {/* Professional moving gradient background */}
+          <div className="absolute inset-0 professional-moving-bg"></div>
 
           <div className="relative z-10 text-center service-heading max-w-5xl mx-auto px-6">
             <nav className="mb-8 text-sm fade-in-up">
