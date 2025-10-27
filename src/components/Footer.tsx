@@ -58,19 +58,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Services */}
-            <div className="footer-section">
-              <h4 className="footer-title">Services</h4>
-              <ul className="footer-links">
-                <li><a href="/services/website-development">Website Development</a></li>
-                <li><a href="/services/ecommerce">E-Commerce Solutions</a></li>
-                <li><a href="/services/ui-ux">UI/UX Design</a></li>
-                <li><a href="/services/software-development">Software Development</a></li>
-                <li><a href="/services/medical-billing">Medical Billing</a></li>
-                <li><a href="/services/hr-management">HR Management</a></li>
-              </ul>
-            </div>
-
             {/* Company */}
             <div className="footer-section">
               <h4 className="footer-title">Company</h4>
