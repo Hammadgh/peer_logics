@@ -148,7 +148,7 @@ export default function Navbar() {
             )}
           </div>
           
-          <button onClick={() => smoothScrollTo('about')} className="nav-link-btn">About</button>
+          <Link href="/about" className="nav-link-btn">About</Link>
         </nav>
 
         <div className="nav-right-controls">
@@ -214,7 +214,7 @@ export default function Navbar() {
             )}
           </div>
           
-          <button onClick={() => smoothScrollTo('about')} className="mobile-nav-link-btn">About</button>
+          <Link href="/about" onClick={() => setMenuOpen(false)} className="mobile-nav-link-btn">About</Link>
           <Link href="/contact" onClick={() => setMenuOpen(false)} className="mobile-contact-btn">Contact Us</Link>
         </nav>
       </div>
