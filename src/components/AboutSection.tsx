@@ -4,8 +4,12 @@ import { useEffect, useState } from "react";
 
 export default function AboutSection() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // Mark as client-side to prevent hydration mismatch
+    setIsClient(true);
+    
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
     };
@@ -24,7 +28,7 @@ export default function AboutSection() {
             <h2 className="about-heading">We build <span 
               className="headline scroll-gradient-about"
               style={{ 
-                backgroundPosition: `${scrollPosition * 0.5}px center`
+                backgroundPosition: isClient ? `${scrollPosition * 0.5}px center` : '0px center'
               }}
             >secure</span> healthcare solutions, fast</h2>
             <div className="about-divider" aria-hidden></div>

@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /out/
+
+# Host
+Host: https://peerlogics.com.pk
+
+# Sitemaps
+Sitemap: https://peerlogics.com.pk/sitemap.xml
+

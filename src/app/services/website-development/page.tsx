@@ -1,476 +1,52 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhyPeerLogics from "@/components/WhyPeerLogics";
-import Link from "next/link";
-import Image from "next/image";
+import ServicePageClient from "@/components/ServicePageClient";
+
+export const metadata: Metadata = {
+  title: "Website Development Services - Professional Web Solutions",
+  description: "Professional website development services using Next.js, React, and modern technologies. Build scalable, fast, and SEO-optimized websites that drive business growth.",
+  keywords: [
+    "website development",
+    "web development services",
+    "Next.js development",
+    "React development",
+    "responsive web design",
+    "SEO optimized websites",
+    "professional web development",
+    "custom website development",
+    "web application development",
+    "modern web technologies"
+  ],
+  openGraph: {
+    title: "Website Development Services - Professional Web Solutions",
+    description: "Professional website development services using Next.js, React, and modern technologies. Build scalable, fast, and SEO-optimized websites that drive business growth.",
+    url: "https://peerlogics.com.pk/services/website-development",
+    images: [
+      {
+        url: "/assests/webdevelopment.png",
+        width: 1200,
+        height: 630,
+        alt: "Website Development Services - Professional Web Solutions",
+      },
+    ],
+  },
+  twitter: {
+    title: "Website Development Services - Professional Web Solutions",
+    description: "Professional website development services using Next.js, React, and modern technologies. Build scalable, fast, and SEO-optimized websites that drive business growth.",
+    images: ["/assests/webdevelopment.png"],
+  },
+  alternates: {
+    canonical: "/services/website-development",
+  },
+};
 
 export default function WebsiteDevelopmentPage() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <>
       <Navbar />
       <main className="min-h-screen bg-white dark:bg-black transition-colors services:website-development">
-        {/* Enhanced Hero Section with Glass Effects */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg-cyan">
-          <div className="absolute inset-0 bg-white/40 dark:bg-black/30"></div>
-
-          {/* Professional moving gradient background */}
-          <div className="absolute inset-0 professional-moving-bg"></div>
-
-          <div className="relative z-10 text-center service-heading max-w-5xl mx-auto px-6">
-            <nav className="mb-8 text-sm fade-in-up">
-              <Link href="/" className="service-text hover:accent-cyan transition-colors">Home</Link>
-              <span className="mx-2 service-text-muted">›</span>
-              <span className="accent-cyan">Website Development</span>
-            </nav>
-
-            <div className={`ios-glass ios-glass-load hero-panel text-center fade-in-up fade-in-up-delay-1`}>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span 
-                  className="scroll-gradient-website"
-                  style={{ 
-                    backgroundPosition: `${scrollPosition * 0.5}px center`
-                  }}
-                >
-                  Website Development
-                </span>
-              </h1>
-
-              <p className="text-xl md:text-2xl mb-8 service-text max-w-3xl mx-auto leading-relaxed fade-in-up fade-in-up-delay-2">
-                Build powerful, scalable web applications that drive results. From concept to deployment, we deliver cutting-edge solutions that transform your digital presence.
-              </p>
-
-              {/* Enhanced feature badges with animations */}
-              <div className="flex flex-wrap justify-center gap-4 mb-12 fade-in-up fade-in-up-delay-3">
-                <div className="ios-glass px-6 py-3 text-sm service-text">
-                  <span className="accent-cyan">⚡</span>
-                  <span className="ml-2 font-semibold">Next.js 14 & React 18</span>
-                </div>
-                <div className="ios-glass px-6 py-3 text-sm service-text">
-                  <span className="accent-cyan">🚀</span>
-                  <span className="ml-2 font-semibold">Performance Optimized</span>
-                </div>
-                <div className="ios-glass px-6 py-3 text-sm service-text">
-                  <span className="accent-cyan">📱</span>
-                  <span className="ml-2 font-semibold">Mobile-First Design</span>
-                </div>
-                <div className="ios-glass px-6 py-3 text-sm service-text">
-                  <span className="accent-cyan">🔒</span>
-                  <span className="ml-2 font-semibold">Enterprise Security</span>
-                </div>
-              </div>
-
-              {/* Key statistics with glass cards */}
-              <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12 fade-in-up fade-in-up-delay-4">
-                <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold accent-cyan mb-2">99.9%</div>
-                  <div className="text-sm service-text">Uptime SLA</div>
-                </div>
-                <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold accent-cyan mb-2">&lt;100ms</div>
-                  <div className="text-sm service-text">Average Load Time</div>
-                </div>
-                <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold accent-cyan mb-2">50+</div>
-                  <div className="text-sm service-text">Technologies</div>
-                </div>
-                <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold accent-cyan mb-2">24/7</div>
-                  <div className="text-sm service-text">Support</div>
-              </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Technologies & Frameworks Section */}
-        <section className="py-20 service-bg-primary">
-          
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
-                  Cutting-Edge <span className="gradient-cyan">Technologies</span>
-                </h2>
-                <p className="text-xl service-text max-w-3xl mx-auto">
-                  We leverage the latest frameworks, libraries, and tools to build future-proof web applications that scale with your business.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in-up fade-in-up-delay-1">
-                {/* Frontend Technologies */}
-                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">⚛️</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Frontend Excellence</h3>
-                  <ul className="space-y-3 service-text">
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      React 18 with TypeScript
-                    </li>
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      Next.js 14 App Router
-                    </li>
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      Tailwind CSS & Framer Motion
-                    </li>
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      Progressive Web Apps (PWA)
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Backend Technologies */}
-                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-400 to-cyan-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🔧</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Backend Power</h3>
-                  <ul className="space-y-3 service-text">
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      Node.js & Express.js
-                    </li>
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      Python FastAPI & Django
-                    </li>
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      RESTful & GraphQL APIs
-                    </li>
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      Microservices Architecture
-                    </li>
-                  </ul>
-              </div>
-
-                {/* Database & Cloud */}
-                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">☁️</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Cloud & Database</h3>
-                  <ul className="space-y-3 service-text">
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      AWS, Azure, Google Cloud
-                    </li>
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      MongoDB, PostgreSQL, Redis
-                    </li>
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      Serverless Functions
-                    </li>
-                    <li className="flex items-center">
-                      <span className="accent-cyan mr-3">✓</span>
-                      CDN & Edge Computing
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Development Process Section */}
-        <section className="py-20 service-bg-alternate">
-          
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="fade-in-left">
-                  <h2 className="text-4xl md:text-5xl font-bold mb-8 service-heading">
-                    Our <span className="gradient-cyan">Development Process</span>
-              </h2>
-                  <p className="text-xl service-text mb-8 leading-relaxed">
-                    We follow agile methodologies and industry best practices to deliver exceptional results. Our process is transparent, collaborative, and designed to exceed expectations.
-                  </p>
-
-                  <div className="space-y-6">
-                    <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
-                      <div className="flex items-start">
-                        <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="service-heading font-bold text-sm">1</span>
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-bold service-heading mb-2">Discovery & Planning</h4>
-                          <p className="service-text">Deep dive into your requirements, market research, and strategic planning for optimal solutions.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
-                      <div className="flex items-start">
-                        <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-cyan-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="service-heading font-bold text-sm">2</span>
-                    </div>
-                    <div>
-                          <h4 className="text-lg font-bold service-heading mb-2">Design & Prototyping</h4>
-                          <p className="service-text">Create wireframes, mockups, and interactive prototypes with user experience at the forefront.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
-                      <div className="flex items-start">
-                        <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="service-heading font-bold text-sm">3</span>
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-bold service-heading mb-2">Development & Testing</h4>
-                          <p className="service-text">Agile development with continuous integration, automated testing, and quality assurance.</p>
-                    </div>
-                    </div>
-                  </div>
-
-                    <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
-                      <div className="flex items-start">
-                        <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="service-heading font-bold text-sm">4</span>
-                    </div>
-                    <div>
-                          <h4 className="text-lg font-bold service-heading mb-2">Deployment & Support</h4>
-                          <p className="service-text">Seamless deployment, performance monitoring, and ongoing support for sustained success.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="fade-in-right">
-                  <div className="glass-card-enhanced p-8">
-                    <Image
-                      src="/assests/process-img.png"
-                      alt="Development Process"
-                      width={600}
-                      height={400}
-                      className="rounded-lg w-full h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us - Enhanced */}
-        <section className="py-20 bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-50 dark:from-cyan-900 dark:via-blue-900 dark:to-indigo-900">
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
-                  Why Choose <span className="gradient-cyan">PeerLogics?</span>
-                </h2>
-                <p className="text-xl service-text max-w-3xl mx-auto">
-                  We&apos;re not just developers, we&apos;re strategic partners who understand business growth through technology. Here&apos;s what sets us apart.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 fade-in-up fade-in-up-delay-1">
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🎯</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">Business-First Approach</h3>
-                  <p className="service-text leading-relaxed">
-                    We don&apos;t just build websites, we create digital solutions that drive measurable business results. Every line of code serves a strategic purpose.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-400 to-cyan-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">⚡</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">Lightning Performance</h3>
-                  <p className="service-text leading-relaxed">
-                    Our websites load in under 100ms with 99.9% uptime. We optimize every aspect, from code splitting to CDN distribution, for unmatched speed.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🔒</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">Enterprise Security</h3>
-                  <p className="service-text leading-relaxed">
-                    SOC 2 compliant with end-to-end encryption, DDoS protection, and regular security audits. Your data is protected by industry-leading standards.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">📱</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">Mobile-First Excellence</h3>
-                  <p className="service-text leading-relaxed">
-                    Every website is built mobile-first with PWA capabilities, ensuring perfect performance across all devices and screen sizes.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🚀</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">SEO & Analytics</h3>
-                  <p className="service-text leading-relaxed">
-                    Built-in SEO optimization, Google Analytics 4 integration, and conversion tracking to measure and improve your ROI from day one.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-teal-400 to-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🔄</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">Scalable Architecture</h3>
-                  <p className="service-text leading-relaxed">
-                    Future-proof solutions built with microservices, serverless functions, and cloud-native technologies that grow with your business.
-                  </p>
-                </div>
-              </div>
-
-              {/* Success Metrics */}
-              <div className="glass-card-enhanced p-12 fade-in-up fade-in-up-delay-2">
-                <h3 className="text-3xl font-bold mb-8 service-heading text-center">
-                  Proven Track Record of Success
-                </h3>
-                <div className="grid md:grid-cols-4 gap-8 text-center">
-                  <div>
-                    <div className="text-4xl font-bold accent-cyan mb-2">150+</div>
-                    <div className="service-text">Websites Launched</div>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold accent-cyan mb-2">98%</div>
-                    <div className="service-text">Client Satisfaction</div>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold accent-cyan mb-2">3 Years</div>
-                    <div className="service-text">Average Partnership</div>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold accent-cyan mb-2">$100k+</div>
-                    <div className="service-text">Client Revenue Generated</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why PeerLogics Section */}
-        <WhyPeerLogics theme="website" />
-
-        {/* Enhanced CTA Section */}
-        <section className="py-20 service-bg-primary">
-          
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="glass-card-enhanced p-12 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
-                  Ready to Transform Your <span className="gradient-cyan">Digital Presence?</span>
-                </h2>
-                <p className="text-xl service-text mb-8 leading-relaxed max-w-2xl mx-auto">
-                  Join 150+ businesses that have accelerated their growth with our cutting-edge web development solutions. Let&apos;s discuss your project and turn your vision into reality.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                  <a href="/contact" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-lg text-lg">
-                    Start Your Project <span className="text-xl">→</span>
-                  </a>
-              </div>
-
-                <div className="grid md:grid-cols-3 gap-6 text-center">
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span className="service-text">Free Consultation</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span className="service-text">Custom Proposal</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span className="service-text">30-Day Support</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-20 service-bg-alternate">
-          
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-16 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
-                  Frequently Asked <span className="gradient-cyan">Questions</span>
-              </h2>
-                <p className="text-xl service-text max-w-2xl mx-auto">
-                  Get answers to common questions about our web development services.
-                </p>
-              </div>
-
-              <div className="space-y-6 fade-in-up fade-in-up-delay-1">
-                <div className="glass-card-enhanced p-8">
-                  <h3 className="text-xl font-bold service-heading mb-4">How long does a typical website project take?</h3>
-                  <p className="service-text leading-relaxed">
-                    Most projects are completed within 4-8 weeks, depending on complexity. Simple websites can be done in 2-3 weeks, while complex web applications may take 8-12 weeks. We provide detailed timelines during our initial consultation.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8">
-                  <h3 className="text-xl font-bold service-heading mb-4">Do you provide ongoing maintenance and support?</h3>
-                  <p className="service-text leading-relaxed">
-                    Yes! We offer comprehensive maintenance packages including security updates, performance monitoring, content updates, and technical support. Our 24/7 monitoring ensures your website stays secure and fast.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8">
-                  <h3 className="text-xl font-bold service-heading mb-4">Can you work with our existing design or branding?</h3>
-                  <p className="service-text leading-relaxed">
-                    Absolutely! We can work with your existing brand guidelines, design assets, or even redesign specific sections while maintaining consistency with your current visual identity.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8">
-                  <h3 className="text-xl font-bold service-heading mb-4">What technologies do you use for web development?</h3>
-                  <p className="service-text leading-relaxed">
-                    We use cutting-edge technologies including React 18, Next.js 14, TypeScript, Node.js, Python, AWS/Azure/Google Cloud, MongoDB, PostgreSQL, and more. We choose the best tech stack for your specific needs.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8">
-                  <h3 className="text-xl font-bold service-heading mb-4">Do you offer SEO optimization services?</h3>
-                  <p className="service-text leading-relaxed">
-                    Yes, SEO is built into every website we create. We implement best practices including semantic HTML, meta tags, structured data, performance optimization, and mobile-first design to ensure your site ranks well in search engines.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServicePageClient service="website-development" />
       </main>
       <Footer />
     </>

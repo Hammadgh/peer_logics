@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
@@ -8,49 +6,61 @@ import ServiceCards from "@/components/ServiceCards";
 import WhyPeerLogics from "@/components/WhyPeerLogics";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
+import StructuredData from "@/components/StructuredData";
+import HomePageClient from "@/components/HomePageClient";
+
+export const metadata: Metadata = {
+  title: "PeerLogics - End-to-End Product Delivery",
+  description: "We architect cloud-native platforms, craft usable interfaces, and turn data into decisions, fast. Partner with our expert team for reliable software development.",
+  keywords: [
+    "web development",
+    "software development", 
+    "e-commerce development",
+    "UI/UX design",
+    "medical billing software",
+    "HR management systems",
+    "Next.js development",
+    "React development",
+    "cloud solutions",
+    "digital transformation"
+  ],
+  openGraph: {
+    title: "PeerLogics - End-to-End Product Delivery",
+    description: "We architect cloud-native platforms, craft usable interfaces, and turn data into decisions, fast. Partner with our expert team for reliable software development.",
+    url: "https://peerlogics.com.pk",
+    images: [
+      {
+        url: "/assests/peerlogics.png",
+        width: 1200,
+        height: 630,
+        alt: "PeerLogics - Professional Software Development Services",
+      },
+    ],
+  },
+  twitter: {
+    title: "PeerLogics - End-to-End Product Delivery",
+    description: "We architect cloud-native platforms, craft usable interfaces, and turn data into decisions, fast. Partner with our expert team for reliable software development.",
+    images: ["/assests/peerlogics.png"],
+  },
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <>
       <Navbar />
-      <Hero />
-
-      <section id="services">
-        <div className="services-section">
-          <div className="container text-lg-start text-center">
-            <p className="expertise-text">Expertise</p>
-            <h1 className="services-text">
-              Our <span 
-                className="scroll-gradient-services"
-                style={{ 
-                  backgroundPosition: `${scrollPosition * 0.5}px center`
-                }}
-              >Services</span>
-            </h1>
-          </div>
-        </div>
-        <div className="service-cards">
-          <ServiceCards />
-        </div>
-      </section>
-
-      <AboutSection />
-
-      <CTA />
-
-      <WhyPeerLogics />
+      <HomePageClient />
       <Footer />
+      <StructuredData 
+        type="service" 
+        data={{
+          name: "Software Development Services",
+          description: "Professional software development services including web development, e-commerce, UI/UX design, medical billing, and HR management solutions.",
+          serviceType: "Software Development"
+        }} 
+      />
     </>
   );
 }

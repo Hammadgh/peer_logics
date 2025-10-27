@@ -1,5 +1,41 @@
+import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "About PeerLogics - Our Story & Mission",
+  description: "Learn about PeerLogics' journey, mission, and vision. We're a team of senior engineers and designers dedicated to delivering exceptional software solutions that drive business growth.",
+  keywords: [
+    "about peerlogics",
+    "software development company",
+    "web development team",
+    "technology solutions",
+    "digital transformation",
+    "software engineering",
+    "development services"
+  ],
+  openGraph: {
+    title: "About PeerLogics - Our Story & Mission",
+    description: "Learn about PeerLogics' journey, mission, and vision. We're a team of senior engineers and designers dedicated to delivering exceptional software solutions that drive business growth.",
+    url: "https://peerlogics.com.pk/about",
+    images: [
+      {
+        url: "/assests/aboutBgImg.png",
+        width: 1200,
+        height: 630,
+        alt: "About PeerLogics - Professional Software Development Team",
+      },
+    ],
+  },
+  twitter: {
+    title: "About PeerLogics - Our Story & Mission",
+    description: "Learn about PeerLogics' journey, mission, and vision. We're a team of senior engineers and designers dedicated to delivering exceptional software solutions that drive business growth.",
+    images: ["/assests/aboutBgImg.png"],
+  },
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (

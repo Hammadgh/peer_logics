@@ -1,433 +1,52 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhyPeerLogics from "@/components/WhyPeerLogics";
-import Link from "next/link";
+import ServicePageClient from "@/components/ServicePageClient";
+
+export const metadata: Metadata = {
+  title: "HR Management Software - Healthcare HR Solutions",
+  description: "Comprehensive HR management software for healthcare organizations. HIPAA compliant, automated payroll, recruitment, and employee management solutions for medical environments.",
+  keywords: [
+    "HR management software",
+    "healthcare HR solutions",
+    "employee management system",
+    "healthcare payroll software",
+    "HR automation",
+    "healthcare recruitment",
+    "HIPAA compliant HR",
+    "employee self-service",
+    "healthcare workforce management",
+    "HR analytics"
+  ],
+  openGraph: {
+    title: "HR Management Software - Healthcare HR Solutions",
+    description: "Comprehensive HR management software for healthcare organizations. HIPAA compliant, automated payroll, recruitment, and employee management solutions for medical environments.",
+    url: "https://peerlogics.com.pk/services/hr-management",
+    images: [
+      {
+        url: "/assests/HR.jpg",
+        width: 1200,
+        height: 630,
+        alt: "HR Management Software - Healthcare HR Solutions",
+      },
+    ],
+  },
+  twitter: {
+    title: "HR Management Software - Healthcare HR Solutions",
+    description: "Comprehensive HR management software for healthcare organizations. HIPAA compliant, automated payroll, recruitment, and employee management solutions for medical environments.",
+    images: ["/assests/HR.jpg"],
+  },
+  alternates: {
+    canonical: "/services/hr-management",
+  },
+};
 
 export default function HRManagementPage() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <>
       <Navbar />
       <main className="min-h-screen bg-white dark:bg-black transition-colors services:hr-management">
-        {/* Enhanced Hero Section with Glass Effects */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg-cyan">
-          <div className="absolute inset-0 bg-white/40 dark:bg-black/30"></div>
-
-          {/* Professional moving gradient background */}
-          <div className="absolute inset-0 professional-moving-bg"></div>
-
-          <div className="relative z-10 text-center service-heading max-w-5xl mx-auto px-6">
-            <nav className="mb-8 text-sm fade-in-up">
-              <Link href="/" className="service-text hover:accent-cyan transition-colors">Home</Link>
-              <span className="mx-2 service-text-muted">›</span>
-              <span className="accent-cyan">HR Management</span>
-            </nav>
-
-            <div className={`glass-panel hero-panel text-center fade-in-up fade-in-up-delay-1`}>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span 
-                  className="scroll-gradient-hr"
-                  style={{ 
-                    backgroundPosition: `${scrollPosition * 0.5}px center`
-                  }}
-                >
-                  HR Management
-                </span>
-              </h1>
-
-              <p className="text-xl md:text-2xl mb-8 service-text max-w-3xl mx-auto leading-relaxed fade-in-up fade-in-up-delay-2">
-                Comprehensive healthcare HR solutions that streamline recruitment, employee management, payroll, and compliance. Built specifically for medical environments with HIPAA compliance at the core.
-              </p>
-
-              {/* Enhanced feature badges with animations */}
-              <div className="flex flex-wrap justify-center gap-4 mb-12 fade-in-up fade-in-up-delay-3">
-                <div className="ios-glass px-6 py-3 text-sm service-text">
-                  <span className="accent-cyan">👥</span>
-                  <span className="ml-2 font-semibold">Smart Recruitment</span>
-                </div>
-                <div className="ios-glass px-6 py-3 text-sm service-text">
-                  <span className="accent-cyan">💰</span>
-                  <span className="ml-2 font-semibold">Automated Payroll</span>
-                </div>
-                <div className="ios-glass px-6 py-3 text-sm service-text">
-                  <span className="accent-cyan">🔒</span>
-                  <span className="ml-2 font-semibold">HIPAA Compliant</span>
-                </div>
-                <div className="ios-glass px-6 py-3 text-sm service-text">
-                  <span className="accent-cyan">📊</span>
-                  <span className="ml-2 font-semibold">Real-time Analytics</span>
-                </div>
-              </div>
-
-              {/* Key statistics with glass cards */}
-              <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12 fade-in-up fade-in-up-delay-4">
-                <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold accent-cyan mb-2">80%</div>
-                  <div className="text-sm service-text">Faster Hiring</div>
-                </div>
-                <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold accent-cyan mb-2">95%</div>
-                  <div className="text-sm service-text">Payroll Accuracy</div>
-                </div>
-                <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold accent-cyan mb-2">100%</div>
-                  <div className="text-sm service-text">Compliance</div>
-                </div>
-                <div className="ios-glass p-6 text-center">
-                  <div className="text-3xl font-bold accent-cyan mb-2">300+</div>
-                  <div className="text-sm service-text">Healthcare Clients</div>
-              </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Healthcare HR Solutions & Recruitment */}
-        <section className="py-20 service-bg-primary">
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
-                  Healthcare <span className="gradient-cyan">HR Solutions</span>
-                </h2>
-                <p className="text-xl service-text max-w-3xl mx-auto">
-                  Complete HR management systems designed specifically for healthcare organizations, ensuring compliance, efficiency, and exceptional employee experience.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-8 fade-in-up fade-in-up-delay-1">
-                {/* Smart Recruitment */}
-                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">👥</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Smart Recruitment</h3>
-                  <ul className="space-y-3 service-text">
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      AI-powered candidate matching
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      Automated interview scheduling
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      Background check integration
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      Credential verification
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Employee Management */}
-                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">👤</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Employee Management</h3>
-                  <ul className="space-y-3 service-text">
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      Digital employee profiles
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      Performance tracking
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      Skills & certification management
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      Succession planning tools
-                    </li>
-                  </ul>
-              </div>
-
-                {/* Compliance & Security */}
-                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🔒</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Compliance & Security</h3>
-                  <ul className="space-y-3 service-text">
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      HIPAA & HITECH compliant
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      SOC 2 Type II certified
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      Automated compliance tracking
-                    </li>
-                    <li className="flex items-center">
-                      <span className="text-blue-400 mr-3">✓</span>
-                      Audit trail management
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Payroll & Benefits Management */}
-        <section className="py-20 service-bg-alternate">
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="fade-in-left">
-                  <h2 className="text-4xl md:text-5xl font-bold mb-8 service-heading">
-                    Automated <span className="gradient-cyan">Payroll & Benefits</span>
-              </h2>
-                  <p className="text-xl service-text mb-8 leading-relaxed">
-                    Streamlined payroll processing and benefits administration designed for healthcare organizations with complex scheduling, overtime, and compliance requirements.
-                  </p>
-
-                  <div className="space-y-6">
-                    <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
-                      <div className="flex items-start">
-                        <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="service-heading font-bold text-sm">💰</span>
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-bold service-heading mb-2">Automated Payroll Processing</h4>
-                          <p className="service-text">Accurate calculations, tax compliance, and direct deposit for all healthcare staff including shift differentials.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
-                      <div className="flex items-start">
-                        <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="service-heading font-bold text-sm">🏥</span>
-                    </div>
-                    <div>
-                          <h4 className="text-lg font-bold service-heading mb-2">Benefits Administration</h4>
-                          <p className="service-text">Healthcare-specific benefits management including insurance, retirement, and wellness programs.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
-                      <div className="flex items-start">
-                        <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="service-heading font-bold text-sm">📊</span>
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-bold service-heading mb-2">Time & Attendance</h4>
-                          <p className="service-text">Smart scheduling, time tracking, and leave management optimized for healthcare shift work.</p>
-                    </div>
-                    </div>
-                  </div>
-
-                    <div className="glass-card-enhanced p-6 hover:scale-105 transition-all duration-300">
-                      <div className="flex items-start">
-                        <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="service-heading font-bold text-sm">📋</span>
-                    </div>
-                    <div>
-                          <h4 className="text-lg font-bold service-heading mb-2">Regulatory Compliance</h4>
-                          <p className="service-text">FLSA compliance, wage & hour tracking, and automated reporting for healthcare regulations.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="fade-in-right">
-                  <div className="glass-card-enhanced p-8">
-                    <h3 className="text-2xl font-bold service-heading mb-6 text-center">Key Performance Metrics</h3>
-                    <div className="space-y-6">
-                      <div className="text-center">
-                        <div className="text-4xl font-bold text-blue-400 mb-2">95%</div>
-                        <div className="text-sm service-text">Payroll Accuracy Rate</div>
-                    </div>
-
-                      <div className="text-center">
-                        <div className="text-4xl font-bold text-blue-400 mb-2">80%</div>
-                        <div className="text-sm service-text">Faster Recruitment</div>
-                    </div>
-
-                      <div className="text-center">
-                        <div className="text-4xl font-bold text-blue-400 mb-2">60%</div>
-                        <div className="text-sm service-text">Administrative Time Saved</div>
-                  </div>
-
-                      <div className="text-center">
-                        <div className="text-4xl font-bold text-blue-400 mb-2">100%</div>
-                        <div className="text-sm service-text">HIPAA Compliance</div>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us - Enhanced */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900 dark:via-indigo-900 dark:to-purple-900">
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
-                  Why Choose <span className="gradient-cyan">PeerLogics HR?</span>
-                </h2>
-                <p className="text-xl service-text max-w-3xl mx-auto">
-                  We&apos;re healthcare HR technology experts with deep industry knowledge, ensuring your organization attracts, retains, and develops top healthcare talent while maintaining complete compliance.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 fade-in-up fade-in-up-delay-1">
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🏥</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">Healthcare Specialized</h3>
-                  <p className="service-text leading-relaxed">
-                    Built specifically for medical environments with deep understanding of healthcare regulations, licensing, and credentialing requirements.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🤖</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">AI-Powered Automation</h3>
-                  <p className="service-text leading-relaxed">
-                    Intelligent automation for routine tasks, predictive analytics for retention, and smart matching for optimal candidate placement.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">📊</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">Advanced Analytics</h3>
-                  <p className="service-text leading-relaxed">
-                    Comprehensive HR analytics, turnover prediction, diversity tracking, and performance insights for data-driven decisions.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🔒</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">Complete Compliance</h3>
-                  <p className="service-text leading-relaxed">
-                    HIPAA, FLSA, EEOC, and healthcare-specific compliance with automated reporting, audit trails, and regulatory updates.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">👥</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">Employee Experience</h3>
-                  <p className="service-text leading-relaxed">
-                    Self-service portals, mobile apps, wellness tracking, and engagement tools to improve healthcare worker satisfaction and retention.
-                  </p>
-                </div>
-
-                <div className="glass-card-enhanced p-8 text-center hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🔄</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 service-heading">Scalable Solutions</h3>
-                  <p className="service-text leading-relaxed">
-                    From small clinics to large hospital systems, our solutions scale with your organization&apos;s growth and complexity.
-                  </p>
-                </div>
-              </div>
-
-              {/* Success Metrics */}
-              <div className="glass-card-enhanced p-12 fade-in-up fade-in-up-delay-2">
-                <h3 className="text-3xl font-bold mb-8 service-heading text-center">
-                  Measurable Impact on Healthcare HR Operations
-                </h3>
-                <div className="grid md:grid-cols-4 gap-8 text-center">
-                  <div>
-                    <div className="text-4xl font-bold accent-cyan mb-2">80%</div>
-                    <div className="service-text">Faster Hiring</div>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold accent-cyan mb-2">95%</div>
-                    <div className="service-text">Payroll Accuracy</div>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold accent-cyan mb-2">60%</div>
-                    <div className="service-text">Admin Time Saved</div>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold accent-cyan mb-2">40%</div>
-                    <div className="service-text">Turnover Reduction</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why PeerLogics Section */}
-        <WhyPeerLogics theme="hr" />
-
-        {/* Enhanced CTA Section */}
-        <section className="py-20 service-bg-primary">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="glass-card-enhanced p-12 fade-in-up">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
-                  Ready to Transform Your <span className="gradient-cyan">Healthcare HR?</span>
-              </h2>
-                <p className="text-xl service-text mb-8 leading-relaxed max-w-2xl mx-auto">
-                  Join 300+ healthcare organizations that have revolutionized their HR operations with our intelligent, compliant solutions. Focus on patient care while we optimize your workforce management.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                  <a href="/contact" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-lg text-lg">
-                    Transform HR Operations <span className="text-xl">→</span>
-                  </a>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-6 text-center">
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span className="service-text">Free HR Assessment</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span className="service-text">Custom Implementation Plan</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span className="service-text">HIPAA Compliant Solutions</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServicePageClient service="hr-management" />
       </main>
       <Footer />
     </>
