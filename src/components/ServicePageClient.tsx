@@ -8,6 +8,20 @@ interface ServicePageClientProps {
   service: string;
 }
 
+interface ServiceConfig {
+  title: string;
+  description: string;
+  color: string;
+  gradient: string;
+  accent: string;
+  bgClass: string;
+  scrollGradient: string;
+  image: string;
+  features: Array<{ icon: string; text: string }>;
+  stats: Array<{ value: string; label: string }>;
+  theme: 'default' | 'ecommerce' | 'website' | 'software' | 'medical' | 'hr' | 'uiux';
+}
+
 export default function ServicePageClient({ service }: ServicePageClientProps) {
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -20,8 +34,8 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const getServiceConfig = (serviceType: string) => {
-    const configs = {
+  const getServiceConfig = (serviceType: string): ServiceConfig => {
+    const configs: Record<string, ServiceConfig> = {
       'hr-management': {
         title: 'HR Management',
         description: 'Comprehensive healthcare HR solutions that streamline recruitment, employee management, payroll, and compliance. Built specifically for medical environments with HIPAA compliance at the core.',
@@ -136,10 +150,33 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
           { value: '24/7', label: 'Support' }
         ],
         theme: 'website'
+      },
+      'ecommerce': {
+        title: 'E-Commerce Development',
+        description: 'Build powerful online stores that drive sales and provide exceptional shopping experiences. From product catalogs to payment processing, we create complete e-commerce solutions.',
+        color: 'orange',
+        gradient: 'gradient-orange',
+        accent: 'accent-orange',
+        bgClass: 'hero-bg-orange',
+        scrollGradient: 'scroll-gradient-ecommerce',
+        image: '/assests/Ecom.jpeg',
+        features: [
+          { icon: '🛒', text: 'Shopping Cart' },
+          { icon: '💳', text: 'Payment Gateway' },
+          { icon: '📦', text: 'Inventory Management' },
+          { icon: '🔒', text: 'Secure Checkout' }
+        ],
+        stats: [
+          { value: '1000+', label: 'Online Stores' },
+          { value: '40%', label: 'Conversion Rate' },
+          { value: '99.9%', label: 'Uptime' },
+          { value: '24/7', label: 'Support' }
+        ],
+        theme: 'ecommerce'
       }
     };
     
-    return configs[serviceType as keyof typeof configs] || configs['website-development'];
+    return configs[serviceType as string] || configs['website-development'];
   };
 
   const config = getServiceConfig(service);
@@ -257,7 +294,7 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
                 Ready to Get Started with <span className={config.gradient}>{config.title}?</span>
               </h2>
               <p className="text-xl service-text mb-8 leading-relaxed max-w-2xl mx-auto">
-                Let's discuss your project requirements and create a custom solution that drives your business forward.
+                Let&apos;s discuss your project requirements and create a custom solution that drives your business forward.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">

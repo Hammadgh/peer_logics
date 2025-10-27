@@ -1,11 +1,6 @@
 import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import AboutSection from "@/components/AboutSection";
-import ServiceCards from "@/components/ServiceCards";
-import WhyPeerLogics from "@/components/WhyPeerLogics";
 import Footer from "@/components/Footer";
-import CTA from "@/components/CTA";
 import StructuredData from "@/components/StructuredData";
 import HomePageClient from "@/components/HomePageClient";
 

@@ -2,6 +2,16 @@
 
 import { useEffect } from 'react';
 
+// Performance API type definitions
+interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: number;
+}
+
+interface LayoutShift extends PerformanceEntry {
+  hadRecentInput: boolean;
+  value: number;
+}
+
 export default function PerformanceMonitor() {
   useEffect(() => {
     // Core Web Vitals monitoring
@@ -19,7 +29,10 @@ export default function PerformanceMonitor() {
         const fidObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries();
           entries.forEach((entry) => {
-            console.log('FID:', entry.processingStart - entry.startTime);
+            const fidEntry = entry as PerformanceEventTiming;
+            if (fidEntry.processingStart) {
+              console.log('FID:', fidEntry.processingStart - fidEntry.startTime);
+            }
           });
         });
         fidObserver.observe({ entryTypes: ['first-input'] });
@@ -29,8 +42,9 @@ export default function PerformanceMonitor() {
         const clsObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries();
           entries.forEach((entry) => {
-            if (!entry.hadRecentInput) {
-              clsValue += entry.value;
+            const clsEntry = entry as LayoutShift;
+            if (!clsEntry.hadRecentInput) {
+              clsValue += clsEntry.value;
             }
           });
           console.log('CLS:', clsValue);
@@ -54,12 +68,14 @@ export default function PerformanceMonitor() {
     // Memory usage monitoring
     const monitorMemory = () => {
       if ('memory' in performance) {
-        const memory = (performance as any).memory;
-        console.log('Memory usage:', {
-          used: Math.round(memory.usedJSHeapSize / 1048576) + ' MB',
-          total: Math.round(memory.totalJSHeapSize / 1048576) + ' MB',
-          limit: Math.round(memory.jsHeapSizeLimit / 1048576) + ' MB'
-        });
+        const memory = (performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number; jsHeapSizeLimit: number } }).memory;
+        if (memory) {
+          console.log('Memory usage:', {
+            used: Math.round(memory.usedJSHeapSize / 1048576) + ' MB',
+            total: Math.round(memory.totalJSHeapSize / 1048576) + ' MB',
+            limit: Math.round(memory.jsHeapSizeLimit / 1048576) + ' MB'
+          });
+        }
       }
     };
 

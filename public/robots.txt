@@ -11,4 +11,3 @@ Host: https://peerlogics.com.pk
 
 # Sitemaps
 Sitemap: https://peerlogics.com.pk/sitemap.xml
-
