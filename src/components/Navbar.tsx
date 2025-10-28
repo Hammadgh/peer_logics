@@ -148,7 +148,7 @@ export default function Navbar() {
             )}
           </div>
           
-          <Link href="/about" className="nav-link-btn">About</Link>
+          <Link href="/about" className="nav-link-btn">About Us</Link>
         </nav>
 
         <div className="nav-right-controls">
@@ -214,7 +214,7 @@ export default function Navbar() {
             )}
           </div>
           
-          <Link href="/about" onClick={() => setMenuOpen(false)} className="mobile-nav-link-btn">About</Link>
+          <Link href="/about" onClick={() => setMenuOpen(false)} className="mobile-nav-link-btn">About Us</Link>
           <Link href="/contact" onClick={() => setMenuOpen(false)} className="mobile-contact-btn">Contact Us</Link>
         </nav>
       </div>

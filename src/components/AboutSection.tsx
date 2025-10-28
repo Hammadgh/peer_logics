@@ -34,9 +34,8 @@ export default function AboutSection() {
             <div className="about-divider" aria-hidden></div>
           </div>
           <p className="about-lede">
-            We specialize in healthcare technology solutions, from medical billing automation to HR management systems. 
-            Our team combines deep healthcare industry knowledge with modern technology practices to deliver 
-            HIPAA-compliant, scalable solutions that improve operational efficiency and patient care.
+          We deliver reliable, scalable software and web solutions.
+          Our team combines innovation with technical precision to drive digital transformation.
           </p>
           <ul className="about-bullets">
             <li>HIPAA-compliant solutions with enterprise-grade security</li>

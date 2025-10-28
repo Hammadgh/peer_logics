@@ -306,15 +306,7 @@ a[href="/contact"].bg-gradient-to-r:hover {
   transform: translateY(-2px);
 }
 
-/* Footer contact link */
-.footer-links a[href="/contact"] {
-  color: #D54E3E;
-  transition: color 0.3s ease;
-}
-
-.footer-links a[href="/contact"]:hover {
-  color: #e55a4a;
-}
+/* Footer contact link - same as other links */
 
 
 /* Light mode colors */
@@ -4338,6 +4330,22 @@ h1.bg-clip-text {
   
   .why-peerlogics-lede {
     font-size: 18px;
+  }
+}
+
+/* Mobile spacing fixes */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 0;
+  }
+  
+  .services-section {
+    padding: 40px 0 24px;
+  }
+  
+  .ah-card {
+    padding: 16px;
+    margin-bottom: 8px;
   }
 }
 
