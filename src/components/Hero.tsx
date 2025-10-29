@@ -8,12 +8,12 @@ export default function Hero() {
           {/* Left Section - Headline and CTAs */}
           <div className="hero-modern-left">
             <h1 className="hero-modern-headline">
-              Build.<br />
-              Scale.<br />
-              Innovate.
+              <span className="hero-modern-word">Build.</span>
+              <span className="hero-modern-word accent-scale">Scale.</span>
+              <span className="hero-modern-word">Innovate.</span>
             </h1>
             <p className="hero-modern-subhead">
-              Empowering businesses with secure, scalable digital solutions.
+              Empowering businesses with secure, <br></br>scalable digital solutions.
             </p>
             <div className="hero-modern-cta-group">
               <a href="#services" className="contact-us-btn">

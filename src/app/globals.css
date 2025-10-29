@@ -1515,6 +1515,11 @@ body {
   display: block;
 }
 
+/* Accent color for the word "Scale" to match logo orange */
+.accent-scale {
+  color: #DA4E3E;
+}
+
 .dark .hero-modern-headline {
   color: #ffffff;
 }
@@ -1787,7 +1792,7 @@ body {
 
 @media (max-width: 768px) {
   .hero-modern {
-    padding: 80px 0 40px;
+    padding: 40px 0 24px;
     min-height: 100vh;
   }
   
@@ -1797,10 +1802,16 @@ body {
   
   .hero-modern-content {
     text-align: left;
+    align-items: start;
+  }
+  
+  .hero-modern-left {
+    margin-top: 0;
   }
   
   .hero-modern-headline {
-    font-size: clamp(32px, 8vw, 56px);
+    font-size: clamp(64px, 19vw, 72px);
+    line-height: 1.2;
   }
   
   .hero-modern-subhead {
@@ -2712,6 +2723,14 @@ body {
   overflow: hidden;
   min-height: 300px;
   padding: 80px 0;
+}
+
+/* Remove background behind the Services heading */
+.services-section {
+  background: transparent !important;
+}
+.services-section::before {
+  display: none !important;
 }
 
 .services-section .moving-shape-1 {
