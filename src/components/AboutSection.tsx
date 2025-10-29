@@ -30,18 +30,15 @@ export default function AboutSection() {
               style={{ 
                 backgroundPosition: isClient ? `${scrollPosition * 0.5}px center` : '0px center'
               }}
-            >secure</span> healthcare solutions, fast</h2>
+            >relaible</span> scalable software solutions</h2>
             <div className="about-divider" aria-hidden></div>
           </div>
           <p className="about-lede">
-          We deliver reliable, scalable software and web solutions.
           Our team combines innovation with technical precision to drive digital transformation.
+          From enterprise systems to modern web platforms, we build what your business needs to grow.
+
           </p>
-          <ul className="about-bullets">
-            <li>HIPAA-compliant solutions with enterprise-grade security</li>
-            <li>Streamlined medical billing and revenue cycle management</li>
-            <li>Integrated HR systems designed for healthcare organizations</li>
-          </ul>
+          
           <div className="about-highlights">
             <div className="ah-card glass-card-realistic">
               <div className="ah-icon" aria-hidden>🏥</div>

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
-import { useTheme } from "next-themes";
 
 const services = [
   { name: "Website Development", href: "/services/website-development" },
@@ -20,11 +19,10 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  
 
   useEffect(() => {
-    setMounted(true);
+    
     let ticking = false;
     
     const handleScroll = () => {
@@ -93,22 +91,14 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`navbar ${menuOpen ? "navbar-open" : ""} ${isScrolled ? "navbar-scrolled" : ""} ${isLoaded ? "navbar-loaded" : ""}`}>
+    <header className={`navbar force-dark-nav ${menuOpen ? "navbar-open" : ""} ${isScrolled ? "navbar-scrolled" : ""} ${isLoaded ? "navbar-loaded" : ""}`}>
       <div className="container navbar-inner">
         <button onClick={scrollToTop} className="brand brand-logo" aria-label="Peerlogics home">
           <div className="logo-wrapper">
             <Image
               src="/assests/peerlogics.png"
               alt="Peerlogics"
-              className={`logo logo-dark ${mounted && theme === 'dark' ? 'logo-active' : 'logo-hidden'}`}
-              width={160}
-              height={40}
-              priority
-            />
-            <Image
-              src="/assests/PL-Logo-in-grey-color.png"
-              alt="Peerlogics"
-              className={`logo logo-light ${mounted && theme === 'light' ? 'logo-active' : 'logo-hidden'}`}
+              className="logo logo-dark logo-active"
               width={160}
               height={40}
               priority

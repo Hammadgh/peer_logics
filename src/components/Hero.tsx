@@ -59,7 +59,7 @@ export default function Hero({ posterImage }: HeroProps) {
   }, []);
 
   return (
-    <section className="hero-modern" style={{ contain: 'layout style paint', isolation: 'isolate' }}>
+    <section className="hero-modern force-dark-hero" style={{ contain: 'layout style paint', isolation: 'isolate' }}>
       {/* Background Video */}
       <div className="hero-media">
         <video
@@ -82,9 +82,9 @@ export default function Hero({ posterImage }: HeroProps) {
           {/* Left Section - Headline and CTAs */}
           <div className="hero-modern-left">
             <h1 className="hero-modern-headline">
-              Build.<br />
-              Scale.<br />
-              Innovate.
+              <span className="hero-modern-word hero-word-build">Build.</span>
+              <span className="hero-modern-word hero-word-scale">Scale.</span>
+              <span className="hero-modern-word hero-word-innovate">Innovate.</span>
             </h1>
             <p className="hero-modern-subhead">
               Empowering businesses with secure, scalable digital solutions.
@@ -96,9 +96,7 @@ export default function Hero({ posterImage }: HeroProps) {
                   <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="/contact" className="btn-hero-secondary">
-                Contact Us
-              </a>
+             
             </div>
           </div>
 
