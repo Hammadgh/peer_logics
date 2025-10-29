@@ -23,40 +23,37 @@ export default function AboutSection() {
       <div className="about-illustration" aria-hidden></div>
       <div className="container">
         <div className="about-panel glass-panel-enhanced text-center">
-          <p className="eyebrow-badge">ABOUT PEERLOGICS</p>
+        
           <div className="about-header-wrapper">
             <h2 className="about-heading">We build <span 
               className="headline scroll-gradient-about"
               style={{ 
                 backgroundPosition: isClient ? `${scrollPosition * 0.5}px center` : '0px center'
               }}
-            >secure</span> healthcare solutions, fast</h2>
+            >secure</span> digital solutions.</h2>
             <div className="about-divider" aria-hidden></div>
           </div>
           <p className="about-lede">
-          We deliver reliable, scalable software and web solutions.
+          
           Our team combines innovation with technical precision to drive digital transformation.
           </p>
-          <ul className="about-bullets">
-            <li>HIPAA-compliant solutions with enterprise-grade security</li>
-            <li>Streamlined medical billing and revenue cycle management</li>
-            <li>Integrated HR systems designed for healthcare organizations</li>
-          </ul>
+          
           <div className="about-highlights">
             <div className="ah-card glass-card-realistic">
-              <div className="ah-icon" aria-hidden>🏥</div>
-              <h3 className="ah-title">Healthcare expertise</h3>
-              <p className="ah-text">Deep understanding of medical billing, compliance, and healthcare workflows.</p>
+              <div className="ah-icon" aria-hidden>💻</div>
+              <h3 className="ah-title">Full-Stack Expertise
+              </h3>
+              <p className="ah-text">End-to-end development across web, mobile, and cloud platforms with modern frameworks and tools.</p>
             </div>
             <div className="ah-card glass-card-realistic">
               <div className="ah-icon" aria-hidden>🔒</div>
-              <h3 className="ah-title">HIPAA compliant</h3>
-              <p className="ah-text">Security-first approach with built-in compliance and audit capabilities.</p>
+              <h3 className="ah-title">Secure Architecture</h3>
+              <p className="ah-text">Enterprise-grade security, clean code practices, and data protection built into every project.</p>
             </div>
             <div className="ah-card glass-card-realistic">
               <div className="ah-icon" aria-hidden>⚡</div>
               <h3 className="ah-title">Rapid deployment</h3>
-              <p className="ah-text">Fast implementation with minimal disruption to your existing operations.</p>
+              <p className="ah-text">Agile workflows ensure fast delivery and seamless integration with your existing systems.</p>
             </div>
           </div>
         </div>

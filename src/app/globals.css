@@ -4710,8 +4710,17 @@ h1.bg-clip-text {
   }
   
   .services-section {
-    padding: 40px 0 24px;
+    padding: 24px 0 12px;
+    min-height: auto;
   }
+  
+  /* Reduce gap under heading on mobile */
+  .service-cards {
+    padding: 16px 0 40px;
+  }
+  
+  .expertise-text { margin-bottom: 6px; }
+  .services-text { margin: 6px 0 8px; }
   
   .ah-card {
     padding: 16px;
