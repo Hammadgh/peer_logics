@@ -38,7 +38,7 @@ export default function CTA() {
             </p>
 
             <div className="cta-actions">
-              <a className="svc-btn" href="/contact">
+              <a className="btn-primary" href="/contact">
                 Start Your Project
               </a>
               <a className="btn-secondary" href="#services">
