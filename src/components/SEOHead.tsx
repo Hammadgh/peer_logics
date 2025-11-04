@@ -12,8 +12,7 @@ interface SEOHeadProps {
 
 export default function SEOHead({
   title = "PeerLogics | Enterprise Software & Digital Transformation Experts",
-  description = "Meta Description (≈155 characters):
-PeerLogics helps enterprises innovate with secure, scalable web, e-commerce, and custom software solutions—bridging technology with real business impact.",
+  description = "PeerLogics helps enterprises innovate with secure, scalable web, e-commerce, and custom software solutions—bridging technology with real business impact.",
   keywords = [],
   canonical,
   ogImage = "/assests/peerlogics.png",
