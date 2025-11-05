@@ -38,7 +38,7 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
     const configs: Record<string, ServiceConfig> = {
       'hr-management': {
         title: 'HR Management',
-        description: 'Comprehensive healthcare HR solutions that streamline recruitment, employee management, payroll, and compliance. Built specifically for medical environments with HIPAA compliance at the core.',
+        description: 'Comprehensive HR solutions that streamline your business goals. Expertise in attendance & leave management, recruitment & selection, performance management, payroll, compliance.',
         color: 'cyan',
         gradient: 'gradient-cyan',
         accent: 'accent-cyan',
