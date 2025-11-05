@@ -28,21 +28,22 @@ export default function AboutSection() {
               Our team combines innovation with technical precision to drive digital transformation.
             </p>
             <div className="about-highlights">
-              <div className="ah-card">
-                <div className="ah-icon" aria-hidden>💻</div>
-                <h3 className="ah-title">Full-Stack Expertise</h3>
-                <p className="ah-text">End-to-end development across web, mobile, and cloud platforms with modern frameworks and tools.</p>
-              </div>
-              <div className="ah-card">
-                <div className="ah-icon" aria-hidden>🔒</div>
-                <h3 className="ah-title">Secure Architecture</h3>
-                <p className="ah-text">Enterprise-grade security, clean code practices, and data protection built into every project.</p>
-              </div>
-              <div className="ah-card">
-                <div className="ah-icon" aria-hidden>⚡</div>
-                <h3 className="ah-title">Rapid deployment</h3>
-                <p className="ah-text">Agile workflows ensure fast delivery and seamless integration with your existing systems.</p>
-              </div>
+            <div className="ah-card glass-card-realistic">
+              <div className="ah-icon" aria-hidden>💻</div>
+              <h3 className="ah-title">Full-Stack Expertise
+              </h3>
+              <p className="ah-text">End-to-end development across web, mobile, and cloud platforms with modern frameworks and tools.</p>
+            </div>
+            <div className="ah-card glass-card-realistic">
+              <div className="ah-icon" aria-hidden>🔒</div>
+              <h3 className="ah-title">Secure Architecture</h3>
+              <p className="ah-text">Enterprise-grade security, clean code practices, and data protection built into every project.</p>
+            </div>
+            <div className="ah-card glass-card-realistic">
+              <div className="ah-icon" aria-hidden>⚡</div>
+              <h3 className="ah-title">Rapid deployment</h3>
+              <p className="ah-text">Agile workflows ensure fast delivery and seamless integration with your existing systems.</p>
+            </div>
             </div>
           </div>
         </div>
