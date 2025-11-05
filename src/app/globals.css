@@ -2504,9 +2504,35 @@ body {
 }
 
 /* Remove grid, overlay, and ambient lighting from about-section */
-.about-section::before,
-.about-section::after { display: none !important; content: unset !important; background: none !important; }
+/* .about-section::before,
+.about-section::after { display: none !important; content: unset !important; background: none !important; } */
+/* Subtle background that enhances glass effect */
+.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    /* Ultra-subtle grid for texture */
+    linear-gradient(rgba(255,255,255,0.015) 1px, rgba(0,0,0,0) 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, rgba(0,0,0,0) 1px);
+  background-size: 80px 80px, 80px 80px;
+  background-position: top left, top left;
+  pointer-events: none;
+  opacity: 0.4;
+}
 
+/* Soft ambient lighting for glass enhancement */
+.about-section::after {
+  content: "";
+  position: absolute;
+  inset: -15% -8% -25% -8%;
+  background:
+    radial-gradient(1000px 800px at 25% 25%, rgba(255,255,255,0.03), rgba(255,255,255,0) 80%),
+    radial-gradient(1200px 900px at 75% 75%, rgba(218,79,63,0.02), rgba(218,79,63,0) 80%);
+  filter: blur(60px);
+  opacity: 0.6;
+  pointer-events: none;
+}
 .about-panel {
   max-width: 1200px;
   margin: 0 auto;
