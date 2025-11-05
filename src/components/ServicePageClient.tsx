@@ -47,9 +47,7 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
         image: '/assests/HR.jpg',
         features: [
           { icon: '👥', text: 'Smart Recruitment' },
-          { icon: '💰', text: 'Automated Payroll' },
-          { icon: '🔒', text: 'HIPAA Compliant' },
-          { icon: '📊', text: 'Real-time Analytics' }
+         
         ],
         stats: [
           { value: '80%', label: 'Faster Hiring' },
