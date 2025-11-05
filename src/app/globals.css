@@ -2504,58 +2504,51 @@ body {
 }
 
 /* Remove grid, overlay, and ambient lighting from about-section */
-/* .about-section::before,
-.about-section::after { display: none !important; content: unset !important; background: none !important; } */
-/* Subtle background that enhances glass effect */
-.about-section::before {
+.about-section::before,
+.about-section::after { display: none !important; content: unset !important; background: none !important; }
+
+.about-panel {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 40px;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .about-panel { padding: 40px 48px; }
+}
+
+@media (min-width: 1536px) {
+  .about-panel { max-width: 1400px; padding: 48px 56px; }
+}
+
+@media (min-width: 1920px) {
+  .about-panel { max-width: 1600px; padding: 56px 64px; }
+}
+
+/* Perfect glass morphism rim lighting */
+.about-panel::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    /* Ultra-subtle grid for texture */
-    linear-gradient(rgba(255,255,255,0.015) 1px, rgba(0,0,0,0) 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, rgba(0,0,0,0) 1px);
-  background-size: 80px 80px, 80px 80px;
-  background-position: top left, top left;
-  pointer-events: none;
-  opacity: 0.4;
-}
-
-/* Soft ambient lighting for glass enhancement */
-.about-section::after {
-  content: "";
-  position: absolute;
-  inset: -15% -8% -25% -8%;
-  background:
-    radial-gradient(1000px 800px at 25% 25%, rgba(255,255,255,0.03), rgba(255,255,255,0) 80%),
-    radial-gradient(1200px 900px at 75% 75%, rgba(218,79,63,0.02), rgba(218,79,63,0) 80%);
-  filter: blur(60px);
-  opacity: 0.6;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.12));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
   pointer-events: none;
 }
 
 .about-panel {
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(28px) saturate(140%);
-  border: 1px solid rgba(255,255,255,0.28);
-  box-shadow:
-    0 32px 96px rgba(0,0,0,0.4),
-    0 16px 40px rgba(0,0,0,0.3),
-    inset 0 1px 0 rgba(255,255,255,0.15);
-  transition: all 0.3s ease;
   background: transparent!important;
   box-shadow: none!important;
   border: none!important;
   border-radius: 0!important;
 }
 
-.light .about-panel {
-  background: rgba(255,255,255,0.8);
-  border-color: rgba(0,0,0,0.15);
-  box-shadow:
-    0 32px 96px rgba(0,0,0,0.08),
-    0 16px 40px rgba(0,0,0,0.06),
-    inset 0 1px 0 rgba(255,255,255,1);
 .ah-card {
   background: transparent!important;
   border: 1px solid #e5e7eb;
@@ -2563,19 +2556,6 @@ body {
   box-shadow: none!important;
 }
 
-/* Subtle glossy sheen for glass perfection */
-.about-panel::after {
-  content: "";
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  top: -12%;
-  height: 40%;
-  border-radius: 32px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0) 75%);
-  filter: blur(20px);
-  opacity: 0.35;
-  pointer-events: none;
 .dark .ah-card {
   border-color: #222;
 }
@@ -2585,18 +2565,6 @@ body {
 .about-highlights { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 22px; }
 @media (min-width: 768px) { .about-highlights { grid-template-columns: repeat(3, 1fr); } }
 .ah-card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.22);
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-  backdrop-filter: blur(8px) saturate(118%);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    0 8px 24px rgba(0,0,0,0.18);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
   background: transparent!important;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
