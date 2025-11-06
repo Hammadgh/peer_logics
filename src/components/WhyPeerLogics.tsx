@@ -4,7 +4,49 @@ interface WhyPeerLogicsProps {
 
 export default function WhyPeerLogics({ theme = 'default' }: WhyPeerLogicsProps) {
 
-  const features = [
+  const hrFeatures = [
+    {
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" fill="currentColor"/>
+          <path d="M12 18L13.09 14.26L18 15L13.09 15.74L12 20L10.91 15.74L6 15L10.91 14.26L12 18Z" fill="currentColor" opacity="0.6"/>
+        </svg>
+      ),
+      title: "HR Outsourcing Expertise",
+      description: "Proven track record in delivering comprehensive HR operations solutions."
+    },
+    {
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+        </svg>
+      ),
+      title: "Certified HR Specialists",
+      description: "Certified HR and compliance specialists ensuring best practices."
+    },
+    {
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/>
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="currentColor" opacity="0.3"/>
+        </svg>
+      ),
+      title: "Data Security & Confidentiality",
+      description: "Data security and confidentiality at every step of the process."
+    },
+    {
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z" fill="currentColor"/>
+          <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" fill="currentColor" opacity="0.6"/>
+        </svg>
+      ),
+      title: "Flexible Engagement Models",
+      description: "Onshore, offshore, or hybrid—choose what works best for your business."
+    }
+  ];
+
+  const defaultFeatures = [
     {
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,6 +88,8 @@ export default function WhyPeerLogics({ theme = 'default' }: WhyPeerLogicsProps)
     }
   ];
 
+  const features = theme === 'hr' ? hrFeatures : defaultFeatures;
+
   return (
     <section className={`why-peerlogics-section why-peerlogics-${theme} py-5`}>
       <div className="container">
@@ -58,8 +102,10 @@ export default function WhyPeerLogics({ theme = 'default' }: WhyPeerLogicsProps)
             <div className="why-peerlogics-divider" aria-hidden></div>
           </div>
           <p className="why-peerlogics-lede">
-            We don&apos;t just build software, we build partnerships that deliver real results. 
-            Here&apos;s what sets us apart in the healthcare technology space.
+            {theme === 'hr' 
+              ? "We don't just manage HR operations, we build partnerships that deliver real results. Here's what sets us apart in HR outsourcing."
+              : "We don't just build software, we build partnerships that deliver real results. Here's what sets us apart in the healthcare technology space."
+            }
           </p>
           
           <div className="why-peerlogics-grid">

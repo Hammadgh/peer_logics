@@ -4,36 +4,36 @@ import Footer from "@/components/Footer";
 import ServicePageClient from "@/components/ServicePageClient";
 
 export const metadata: Metadata = {
-  title: "HR Management Software - Healthcare HR Solutions",
-  description: "Comprehensive HR management software for healthcare organizations. HIPAA compliant, automated payroll, recruitment, and employee management solutions for medical environments.",
+  title: "HR Operations Outsourcing Services - Streamline Your HR | PeerLogics",
+  description: "Streamline your HR operations with our comprehensive HR outsourcing services. Payroll, benefits administration, compliance, recruitment, and employee lifecycle management. Cost-efficient, scalable, and compliant HR solutions.",
   keywords: [
-    "HR management software",
-    "healthcare HR solutions",
-    "employee management system",
-    "healthcare payroll software",
-    "HR automation",
-    "healthcare recruitment",
-    "HIPAA compliant HR",
-    "employee self-service",
-    "healthcare workforce management",
-    "HR analytics"
+    "HR operations outsourcing",
+    "HR outsourcing services",
+    "payroll administration",
+    "HR compliance services",
+    "employee data management",
+    "recruitment administration",
+    "HR operations management",
+    "outsourced HR services",
+    "HRIS implementation",
+    "employee lifecycle management"
   ],
   openGraph: {
-    title: "HR Management Software - Healthcare HR Solutions",
-    description: "Comprehensive HR management software for healthcare organizations. HIPAA compliant, automated payroll, recruitment, and employee management solutions for medical environments.",
+    title: "HR Operations Outsourcing Services - Streamline Your HR | PeerLogics",
+    description: "Streamline your HR operations with our comprehensive HR outsourcing services. Payroll, benefits administration, compliance, recruitment, and employee lifecycle management.",
     url: "https://peerlogics.com.pk/services/hr-management",
     images: [
       {
         url: "/assests/HR.jpg",
         width: 1200,
         height: 630,
-        alt: "HR Management Software - Healthcare HR Solutions",
+        alt: "HR Operations Outsourcing Services - PeerLogics",
       },
     ],
   },
   twitter: {
-    title: "HR Management Software - Healthcare HR Solutions",
-    description: "Comprehensive HR management software for healthcare organizations. HIPAA compliant, automated payroll, recruitment, and employee management solutions for medical environments.",
+    title: "HR Operations Outsourcing Services - Streamline Your HR | PeerLogics",
+    description: "Streamline your HR operations with our comprehensive HR outsourcing services. Payroll, benefits administration, compliance, recruitment, and employee lifecycle management.",
     images: ["/assests/HR.jpg"],
   },
   alternates: {

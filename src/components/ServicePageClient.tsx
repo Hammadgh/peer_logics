@@ -37,8 +37,8 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
   const getServiceConfig = (serviceType: string): ServiceConfig => {
     const configs: Record<string, ServiceConfig> = {
       'hr-management': {
-        title: 'HR Management',
-        description: 'Comprehensive HR solutions that streamline your business goals. Expertise in attendance & leave management, recruitment & selection, performance management, payroll, compliance.',
+        title: 'HR Operations Outsourcing Services',
+        description: 'Streamline Your HR. Empower Your People.',
         color: 'cyan',
         gradient: 'gradient-cyan',
         accent: 'accent-cyan',
@@ -46,14 +46,16 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
         scrollGradient: 'scroll-gradient-hr',
         image: '/assests/HR.jpg',
         features: [
-          { icon: '👥', text: 'Smart Recruitment' },
-         
+          { icon: '💰', text: 'Cost Efficient' },
+          { icon: '📈', text: 'Scalable Solutions' },
+          { icon: '✅', text: '100% Compliance' },
+          { icon: '🔒', text: 'Secure & Confidential' }
         ],
         stats: [
-          { value: '80%', label: 'Faster Hiring' },
           { value: '95%', label: 'Payroll Accuracy' },
           { value: '100%', label: 'Compliance' },
-          { value: '300+', label: 'Healthcare Clients' }
+          { value: '30%', label: 'Cost Reduction' },
+          { value: '500+', label: 'Clients Served' }
         ],
         theme: 'hr'
       },
@@ -233,52 +235,240 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
       </section>
 
       {/* Service-specific content sections */}
-      <section className="py-20 service-bg-primary">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16 fade-in-up">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
-                Professional <span className={config.gradient}>{config.title} Services</span>
-              </h2>
-              <p className="text-xl service-text max-w-3xl mx-auto">
-                We deliver exceptional {config.title.toLowerCase()} solutions tailored to your specific needs, ensuring maximum impact and return on investment.
-              </p>
+      {service === 'hr-management' ? (
+        <>
+          {/* Intro Section */}
+          <section className="py-20 service-bg-primary">
+            <div className="container mx-auto px-6">
+              <div className="max-w-4xl mx-auto text-center fade-in-up">
+                <p className="text-lg md:text-xl service-text leading-relaxed">
+                  Managing HR operations in-house can be time-consuming, costly, and complex. Our HR Operations Outsourcing services help you simplify processes, improve compliance, and enhance employee experience—so your business can focus on what it does best.
+                </p>
+              </div>
             </div>
+          </section>
 
-            <div className="grid md:grid-cols-3 gap-8 fade-in-up fade-in-up-delay-1">
-              <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
-                  <span className="text-2xl">🎯</span>
+          {/* Why Outsource Section */}
+          <section className="py-20 service-bg-secondary">
+            <div className="container mx-auto px-6">
+              <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-12 fade-in-up">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
+                    Why <span className={config.gradient}>Outsource HR Operations?</span>
+                  </h2>
                 </div>
-                <h3 className="text-xl font-bold mb-4 service-heading text-center">Strategic Planning</h3>
-                <p className="service-text text-center">
-                  Comprehensive analysis and strategic planning to ensure your project aligns with business objectives and delivers measurable results.
+                <div className="max-w-4xl mx-auto fade-in-up fade-in-up-delay-1">
+                  <p className="text-lg service-text leading-relaxed mb-4">
+                    Efficient HR management is the backbone of every successful organization. However, routine administrative tasks can overwhelm your HR team, pulling focus from strategic priorities such as talent development and engagement.
+                  </p>
+                  <p className="text-lg service-text leading-relaxed">
+                    By outsourcing HR operations, you gain access to experienced professionals, proven processes, and advanced HR technologies—all without the overhead of maintaining an in-house HR infrastructure.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Our HR Operations Services */}
+          <section className="py-20 service-bg-primary">
+            <div className="container mx-auto px-6">
+              <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-16 fade-in-up">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
+                    Our <span className={config.gradient}>HR Operations Services</span>
+                  </h2>
+                  <p className="text-xl service-text max-w-3xl mx-auto">
+                    We offer end-to-end HR support tailored to your business size, industry, and goals:
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in-up fade-in-up-delay-1">
+                  <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
+                      <span className="text-2xl">💰</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 service-heading text-center">Payroll & Benefits Administration</h3>
+                    <ul className="service-text text-left space-y-2 text-sm">
+                      <li>• Accurate and timely payroll processing</li>
+                      <li>• Statutory compliance and tax filing</li>
+                      <li>• Benefits management and employee self-service portals</li>
+                    </ul>
+                  </div>
+
+                  <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+                      <span className="text-2xl">📊</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 service-heading text-center">Employee Data Management</h3>
+                    <ul className="service-text text-left space-y-2 text-sm">
+                      <li>• Centralized HR records and data accuracy</li>
+                      <li>• HRIS implementation and maintenance</li>
+                      <li>• Secure document management and reporting</li>
+                    </ul>
+                  </div>
+
+                  <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
+                      <span className="text-2xl">🛡️</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 service-heading text-center">HR Compliance & Policy Management</h3>
+                    <ul className="service-text text-left space-y-2 text-sm">
+                      <li>• Labor law compliance and audit support</li>
+                      <li>• Policy creation, review, and updates</li>
+                      <li>• Risk management and employee relations support</li>
+                    </ul>
+                  </div>
+
+                  <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center">
+                      <span className="text-2xl">👥</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 service-heading text-center">Recruitment Administration</h3>
+                    <ul className="service-text text-left space-y-2 text-sm">
+                      <li>• Job posting and candidate coordination</li>
+                      <li>• Background checks and onboarding support</li>
+                      <li>• Offer letter and documentation management</li>
+                    </ul>
+                  </div>
+
+                  <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
+                      <span className="text-2xl">🔄</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 service-heading text-center">Employee Lifecycle Management</h3>
+                    <ul className="service-text text-left space-y-2 text-sm">
+                      <li>• Onboarding, transitions, and exit management</li>
+                      <li>• Leave tracking and attendance management</li>
+                      <li>• HR analytics and workforce reporting</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Benefits Section */}
+          <section className="py-20 service-bg-secondary">
+            <div className="container mx-auto px-6">
+              <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-12 fade-in-up">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
+                    Benefits of <span className={config.gradient}>Partnering With Us</span>
+                  </h2>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in-up fade-in-up-delay-1">
+                  <div className="glass-card-enhanced p-6">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">✅</span>
+                      <div>
+                        <h3 className="font-bold mb-2 service-heading">Cost Efficiency</h3>
+                        <p className="service-text text-sm">Reduce overhead and optimize your HR spend</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="glass-card-enhanced p-6">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">✅</span>
+                      <div>
+                        <h3 className="font-bold mb-2 service-heading">Scalability</h3>
+                        <p className="service-text text-sm">Easily adapt to workforce changes and business growth</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="glass-card-enhanced p-6">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">✅</span>
+                      <div>
+                        <h3 className="font-bold mb-2 service-heading">Accuracy & Compliance</h3>
+                        <p className="service-text text-sm">Stay compliant with evolving labor laws</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="glass-card-enhanced p-6">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">✅</span>
+                      <div>
+                        <h3 className="font-bold mb-2 service-heading">Focus on Strategy</h3>
+                        <p className="service-text text-sm">Free your HR leaders to drive culture and engagement</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="glass-card-enhanced p-6">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">✅</span>
+                      <div>
+                        <h3 className="font-bold mb-2 service-heading">Technology-Driven</h3>
+                        <p className="service-text text-sm">Leverage modern HR platforms for efficiency and transparency</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Industries Section */}
+          <section className="py-20 service-bg-primary">
+            <div className="container mx-auto px-6">
+              <div className="max-w-4xl mx-auto text-center fade-in-up">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 service-heading">
+                  Industries <span className={config.gradient}>We Serve</span>
+                </h2>
+                <p className="text-lg service-text">
+                  We partner with organizations across sectors including IT, manufacturing, healthcare, retail, financial services, and more.
+                </p>
+              </div>
+            </div>
+          </section>
+        </>
+      ) : (
+        <section className="py-20 service-bg-primary">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16 fade-in-up">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 service-heading">
+                  Professional <span className={config.gradient}>{config.title} Services</span>
+                </h2>
+                <p className="text-xl service-text max-w-3xl mx-auto">
+                  We deliver exceptional {config.title.toLowerCase()} solutions tailored to your specific needs, ensuring maximum impact and return on investment.
                 </p>
               </div>
 
-              <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
-                  <span className="text-2xl">⚡</span>
+              <div className="grid md:grid-cols-3 gap-8 fade-in-up fade-in-up-delay-1">
+                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🎯</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Strategic Planning</h3>
+                  <p className="service-text text-center">
+                    Comprehensive analysis and strategic planning to ensure your project aligns with business objectives and delivers measurable results.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold mb-4 service-heading text-center">Expert Execution</h3>
-                <p className="service-text text-center">
-                  Professional implementation using industry best practices and cutting-edge technologies for optimal performance and scalability.
-                </p>
-              </div>
 
-              <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
-                  <span className="text-2xl">🔄</span>
+                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">⚡</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Expert Execution</h3>
+                  <p className="service-text text-center">
+                    Professional implementation using industry best practices and cutting-edge technologies for optimal performance and scalability.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold mb-4 service-heading text-center">Ongoing Support</h3>
-                <p className="service-text text-center">
-                  Continuous support, maintenance, and optimization to ensure your solution remains effective and up-to-date with evolving requirements.
-                </p>
+
+                <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🔄</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 service-heading text-center">Ongoing Support</h3>
+                  <p className="service-text text-center">
+                    Continuous support, maintenance, and optimization to ensure your solution remains effective and up-to-date with evolving requirements.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Why PeerLogics Section */}
       <WhyPeerLogics theme={config.theme} />
