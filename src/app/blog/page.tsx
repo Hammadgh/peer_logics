@@ -19,14 +19,19 @@ export default function BlogLandingPage() {
           <div className="blog-cards-grid" style={{display: 'grid', gap: 32, gridTemplateColumns: '1fr', maxWidth: 800}}>
             <article className="glass-card-realistic blog-card" style={{padding: 36, borderRadius: 16, minHeight: 180}}>
               <div style={{display: 'flex', alignItems: 'center', gap: 18, marginBottom: 16}}>
-                <span style={{fontSize: 32, color: '#DA4E3E'}}>📝</span>
-                <h2 style={{fontSize: 22, fontWeight: 700, margin: 0}}>First Article Coming Soon</h2>
+                <span style={{fontSize: 32, color: '#DA4E3E'}}>🔍</span>
+                <h2 style={{fontSize: 22, fontWeight: 700, margin: 0}}>10 Essential Tips for Improving Your Site SEO in 2024</h2>
               </div>
-              <p style={{fontSize: 16, opacity: 0.73, margin: 0}}>
-                Our team is prepping a collection of real-world expertise for business owners and tech leaders. Stay tuned!
+              <p style={{fontSize: 16, opacity: 0.73, margin: 0, marginBottom: 12}}>
+                Discover proven SEO strategies to improve your website's search engine rankings. Learn about on-page optimization, technical SEO, content strategy, and more to boost your organic traffic.
               </p>
+              <div style={{display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, fontSize: '14px', opacity: 0.7}}>
+                <span>January 15, 2024</span>
+                <span>•</span>
+                <span>10 min read</span>
+              </div>
               <div style={{marginTop: 28}}>
-                <a className="btn-hero-primary" href="#" style={{pointerEvents: 'none', opacity: 0.6}}>Read More</a>
+                <a className="btn-hero-primary" href="/blog/improving-site-seo">Read More</a>
               </div>
             </article>
           </div>
