@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
@@ -77,16 +78,16 @@ export default function ImprovingSiteSEOPage() {
 
   return (
     <>
-      <StructuredData type="custom" data={articleStructuredData} />
+      <StructuredData type="article" data={articleStructuredData} />
       <Navbar />
       <article className="blog-post" style={{ padding: '80px 0 60px 0', minHeight: '100vh' }}>
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 24px' }}>
           {/* Header */}
           <header style={{ marginBottom: '48px' }}>
             <nav style={{ marginBottom: '24px', fontSize: '14px', opacity: 0.7 }}>
-              <a href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</a>
+              <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
               <span style={{ margin: '0 8px' }}>›</span>
-              <a href="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>Blog</a>
+              <Link href="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>Blog</Link>
               <span style={{ margin: '0 8px' }}>›</span>
               <span>Improving Site SEO</span>
             </nav>
@@ -107,7 +108,7 @@ export default function ImprovingSiteSEOPage() {
           {/* Content */}
           <div className="blog-content" style={{ lineHeight: '1.8', fontSize: '18px' }}>
             <p style={{ fontSize: '20px', fontWeight: 500, marginBottom: '32px', opacity: 0.9 }}>
-              Search Engine Optimization (SEO) is crucial for improving your website's visibility and driving organic traffic. In 2024, SEO continues to evolve with new algorithms and best practices. Here are 10 essential tips to help you improve your site's SEO performance.
+              Search Engine Optimization (SEO) is crucial for improving your website&apos;s visibility and driving organic traffic. In 2024, SEO continues to evolve with new algorithms and best practices. Here are 10 essential tips to help you improve your site&apos;s SEO performance.
             </p>
 
             <h2 style={{ fontSize: '32px', fontWeight: 700, marginTop: '48px', marginBottom: '24px' }}>1. Optimize Your Page Speed</h2>
@@ -180,7 +181,7 @@ export default function ImprovingSiteSEOPage() {
 
             <h2 style={{ fontSize: '32px', fontWeight: 700, marginTop: '48px', marginBottom: '24px' }}>7. Improve User Experience (UX)</h2>
             <p style={{ marginBottom: '20px' }}>
-              Google's algorithms increasingly prioritize user experience signals. Improve UX by:
+              Google&apos;s algorithms increasingly prioritize user experience signals. Improve UX by:
             </p>
             <ul style={{ marginBottom: '32px', paddingLeft: '24px' }}>
               <li style={{ marginBottom: '12px' }}>Reducing bounce rate with engaging, relevant content</li>
@@ -216,7 +217,7 @@ export default function ImprovingSiteSEOPage() {
 
             <h2 style={{ fontSize: '32px', fontWeight: 700, marginTop: '48px', marginBottom: '24px' }}>10. Monitor and Analyze Performance</h2>
             <p style={{ marginBottom: '20px' }}>
-              Regular monitoring helps you understand what's working and what needs improvement:
+              Regular monitoring helps you understand what&apos;s working and what needs improvement:
             </p>
             <ul style={{ marginBottom: '32px', paddingLeft: '24px' }}>
               <li style={{ marginBottom: '12px' }}>Use Google Analytics to track traffic, bounce rate, and user behavior</li>
@@ -228,21 +229,21 @@ export default function ImprovingSiteSEOPage() {
 
             <h2 style={{ fontSize: '32px', fontWeight: 700, marginTop: '48px', marginBottom: '24px' }}>Conclusion</h2>
             <p style={{ marginBottom: '32px' }}>
-              Improving your site's SEO is an ongoing process that requires patience, consistency, and adaptation to search engine algorithm changes. By implementing these 10 essential tips, you'll be well on your way to improving your search engine rankings and driving more organic traffic to your website.
+              Improving your site&apos;s SEO is an ongoing process that requires patience, consistency, and adaptation to search engine algorithm changes. By implementing these 10 essential tips, you&apos;ll be well on your way to improving your search engine rankings and driving more organic traffic to your website.
             </p>
             <p style={{ marginBottom: '48px' }}>
-              Remember, SEO success doesn't happen overnight. Focus on providing value to your users, and the rankings will follow. If you need professional SEO assistance, consider partnering with an experienced digital marketing team that can help you develop and execute a comprehensive SEO strategy.
+              Remember, SEO success doesn&apos;t happen overnight. Focus on providing value to your users, and the rankings will follow. If you need professional SEO assistance, consider partnering with an experienced digital marketing team that can help you develop and execute a comprehensive SEO strategy.
             </p>
 
             {/* CTA Section */}
             <div className="glass-card-realistic" style={{ padding: '32px', borderRadius: '16px', marginTop: '48px', textAlign: 'center' }}>
               <h3 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '16px' }}>Need Help with SEO?</h3>
               <p style={{ marginBottom: '24px', opacity: 0.9 }}>
-                Our team at PeerLogics specializes in SEO optimization and can help improve your website's search engine rankings.
+                Our team at PeerLogics specializes in SEO optimization and can help improve your website&apos;s search engine rankings.
               </p>
-              <a href="/contact" className="btn-hero-primary" style={{ display: 'inline-block' }}>
+              <Link href="/contact" className="btn-hero-primary" style={{ display: 'inline-block' }}>
                 Get SEO Consultation
-              </a>
+              </Link>
             </div>
           </div>
         </div>

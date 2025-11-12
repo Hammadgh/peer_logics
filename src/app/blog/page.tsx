@@ -23,7 +23,7 @@ export default function BlogLandingPage() {
                 <h2 style={{fontSize: 22, fontWeight: 700, margin: 0}}>10 Essential Tips for Improving Your Site SEO in 2024</h2>
               </div>
               <p style={{fontSize: 16, opacity: 0.73, margin: 0, marginBottom: 12}}>
-                Discover proven SEO strategies to improve your website's search engine rankings. Learn about on-page optimization, technical SEO, content strategy, and more to boost your organic traffic.
+                Discover proven SEO strategies to improve your website&apos;s search engine rankings. Learn about on-page optimization, technical SEO, content strategy, and more to boost your organic traffic.
               </p>
               <div style={{display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, fontSize: '14px', opacity: 0.7}}>
                 <span>January 15, 2024</span>

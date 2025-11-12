@@ -1,7 +1,7 @@
 import Script from 'next/script';
 
 interface StructuredDataProps {
-  type: 'organization' | 'service' | 'breadcrumb' | 'faq';
+  type: 'organization' | 'service' | 'breadcrumb' | 'faq' | 'article' | 'custom';
   data?: Record<string, unknown>;
 }
 
@@ -91,6 +91,12 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
             }
           })) || []
         };
+
+      case 'article':
+        return data || {};
+
+      case 'custom':
+        return data || {};
 
       default:
         return {};
