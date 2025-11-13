@@ -16,13 +16,13 @@ type BlogPost = {
 
 const blogPosts: BlogPost[] = [
   {
-    title: "10 Essential Tips for Improving Your Site SEO in 2024",
-    description: "Discover proven SEO strategies to improve your website's search engine rankings. Learn about on-page optimization, technical SEO, content strategy, and more to boost your organic traffic.",
-    date: "January 15, 2024",
-    readTime: "10 min read",
-    icon: "🔍",
-    href: "/blog/improving-site-seo",
-    category: "SEO"
+    title: "Why Every Business Needs a Modern Website (and How PeerLogics Can Help You Build One That Works)",
+    description: "Your website is your first impression. Learn why U.S. businesses need modern, high-performing websites and how PeerLogics builds custom websites that convert visitors into customers.",
+    date: "January 20, 2024",
+    readTime: "8 min read",
+    icon: "🌐",
+    href: "/blog/why-every-business-needs-modern-website",
+    category: "Web Development"
   },
   // Add more blog posts here as they're created
 ];
