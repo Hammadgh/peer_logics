@@ -4329,16 +4329,16 @@ h1.bg-clip-text {
   }
   
   /* Service page grid adjustments */
-  .grid.md\\:grid-cols-4 {
+  .grid.md\:grid-cols-4 {
     grid-template-columns: 1fr 1fr !important;
     gap: 12px !important;
   }
   
-  .grid.md\\:grid-cols-3 {
+  .grid.md\:grid-cols-3 {
     grid-template-columns: 1fr !important;
   }
   
-  .grid.md\\:grid-cols-2 {
+  .grid.md\:grid-cols-2 {
     grid-template-columns: 1fr !important;
   }
   
